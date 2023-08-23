@@ -1,3 +1,6 @@
 .env
 *.env
 __pycache__
+map_cache_*
+faiss.index
+sqlite.db
