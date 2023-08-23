@@ -1,0 +1,662 @@
+Speaker 1  0:00  
+Good feedback on it DevOps day Chicago during that open space is the LM one is much newer, like this week, based off a lot of what Jason shared with us yesterday. And also, I had sketching stuff out in my notebook during the day. When I was hopping around the room just today listening in on the breakout sessions. I was really looking to see where my what I had back there independently, which is like a really confined. That's a standard thing I do in an org will break up teams and have them have the same problem and abandon the same stuff on the map. Indicator, there's consensus and there are some intention of moving in the same direction. And that's really what the intent of these is. So both from a platform engineering perspective, how DevOps and SRE move forward together like cloud computing, and then we're on topic for what we're doing today. Has this platform perspective from an architecture representative perspective? How should the broader industry go about assembling bees? And what are the emergent practices that are going to become best practices as This solidifies? So I'm good. Yeah, sounds great. So this is like my Default Value Stream Map. I did this cookie obviously with my kids, when they were 18. Now Patrick's a big fan. the cookout stuff. Cool. Yeah, we've got a value stream shows horizontal flow from left to right. You've got resources on the left your customers on the right. You serve as blueprint design is another mechanism. You can use a horizontal flow. There's other visuals for this. Usually what I do is you got fishing control on top. The process says, you got your batter, your output is matches. The trade is down but it's traced to your baking station because about cookies pooling and expansion drops to batches and cookies. They get packaged up eventually shut down to the people that were answering these DevOps surveys. I was dropping guerilla warfare style 10 years ago. Usually what I do is I go through each process that we we were making and shipping cookies. nationally. Patrick picked up on the tweet and retweeted it. Again, something from Belgium and South America. I think my favorite one was Argentinian customs broke into it because With all this myriad emergent behavior you're expecting, which is awesome. So, usually I break dependency map out using a Wardley map for each process step. Sometimes that easier, every process that works about some of them get more detailed or a bit more engaging. That comes with practice and the from a complexity science perspective, really it's a you're looking at like black swan events, in fact tail distributions, which is to say impossible things don't happen unless all the dependencies line up perfectly and you get these miracles occur or disasters depending on but it runs through four standard bell curves that if my oven is broken by big station is going to be having problems or even if the temperature is really all right, I'm gonna end up with more with my waste. And you can process flow. At least I can like pretty much anything in the universe using this approach. So here's like a garden grand Wardley map. This one is super idealized and over simplified. It's just for an example. You typically have your customer name in your upper left hand corner. It's highly visible. There's your vertical axis. It's also in Genesis, which means it's more emergent and super custom. And it shouldn't be your brand differentiator. It shouldn't be the thing that makes you attracted to the customer is going to be highly visible and unique to your organization. Moving to the right on the evolution axis bottom, you move into custom bill. So for a technical need are typically going to have requirements moving in
+
+Speaker 1  5:03  
+And then very bottom, right is where we've got commodity where you get a utility function, and I've gotten started as a service. There. So you can think AWS, the rental functions easy enough to understand, you know, to lease stuff in a colo, that's all on a product space. What cloud computing did was drive this utility function to a commodity domain. So now instead of renting it lease per year, I'm getting billed by the hour if I'm on like EC to instincts, even further into commodity is serverless compute where it functions as a service. I'm getting killed per function call. So make sense so far. Yeah. Done like five minutes really sharp groups. So, I literally chalk this up this morning. This could have been fancier but it doesn't need to be. This is platform stream value stream where really we optimized Compute Cloud, brown horizontal vertical scale where CPU and memory no longer became the constraint, we typically have on the development side, it's lower risk you're Greenfield. This is where DevOps practices come in. These are ones that came out of in space that we did in Chicago, so damn experience is like. He, the most important for DevOps practitioner on the platform team. I'm trying to reduce friction, you. your first lifecycle because it's testable. But it's absolutely not exposed to a customer yet. We're still in development and we're still in Greenfield. Moving into QA and staging, we get some overlapping practices, like continuous delivery. How does that scale becomes a concern? Is this just test good? Or is this looking minimally viable? Are we ready to go to staging and trying to get to production? Cloud Spin comes in, how many times like in development we want to log all the things and data dog and end up getting a huge bill in trouble for that. worth noting, from the open space in Chicago, the DevOps practices at a platform level on a team can be temporary. Once we've got their pipeline set up, they've got life cycles. They can spin up new environments. So you've got scripts to do that. Those responsibilities sort of drift as they start moving to production, and they get more concerned with SRE practices. So further on the right towards production where we've got SRE practices, where we'll if I'm an industry is you're not doing Site Reliability Engineering unless you have error budgets defined in Essos. So error budgets are simply if we've got a problem in production, that's hot. We're gonna stop pushing code until that gets fixed. The shortest I can explain simplest I can explain it. Until product stable, new development is a major concern. It's got to stop the factory floor until the instability production again. You can't have service level agreements until you have customers till they've signed the agreement and we know what we're providing them then they're not paying us any money. We're not as worried about uptime availability. And these SL X's sort of align these practices across your value stream. service level objectives are a step back from SLA. So SLOs are typically going to be ranges. And everybody should
+
+Unknown Speaker  8:48  
+be able to write this Yeah. But it's important for the next step. So sorry.
+
+Speaker 1  8:56  
+level indicators. It's just like what can we even measure in the system starting, right? So shifting this into LM land. This is what I landed on yesterday. And a lot of this is based off of just this diagram. So far there on the left, I've always struggled with this factory store, product, corpus of data, or rules of engagement. So the LLM space we had in Chicago they were talking about loading everything in the kitchen sink into your vector store. You end up with a higher churn and it's going to end up costing you more money. If this is a more static way of knowledge that is more Feature Driven. You're not going to end up in this Becker's for the fresh game that ends up costing you more moving in to your miles. This is where the strategy comes in. Fine tuning becomes an option if you're running off of a foundational model instead of something more monolithic. Moving from there, we run into data integration, which is really this contextual data operational cycles. Yesterday were some of us talking about this players on the field data. So vector store model, you're really getting your game board set, moving into the data integration. This is starting the clock and we're actually getting answers in this thing moving in the mortar production mode. And then finally, we live in this observable, observable field process where describe that as a live broadcast. Now that we've got this thing staged we've gone through it and gotten some feedback. and we actually move it in this to customers, the broader audience that we think it's safe for them to use and there's going to behave as expected. And I've got some of the dependencies. Underneath this, this concept of an air gap at the observability side, we had. mixing experts this audit function, your credit your cash, and I also tried to align each of our breakout groups with with this level so governance seem to be concerned with that observability piece was more towards the production side. reversing our model, are we in a position where we've got to cut the main lines and turn this thing off because it's not doing what it should? I think is a fair question. Tools and pipelines seem to land more in that middle or solo space. I was really glad to see that y'all ended up with observability at the end of your flow. That was really encouraging. I had that in mind. notebook we didn't swap those just popped out organically so like slipped out there David strategy and architecture those two groups really got more zoomed into the social side of that the technical side which is awesome I'm into all the associated technical stuff I thought that was great. I took architecture all the way and live quarters corpus data and rules of engagement. And that's in line with thinking we can ship security and resiliency left in our value streams is like a four dots Bennett and yeah, that data strategy. Why is the best with this model phase because that's really where there's an opportunity to fine tune your model.
+
+Unknown Speaker  12:42  
+Objection. Love it. I'll take it.
+
+Speaker 2  12:49  
+Let's say when he had a degree in the industry, is that just are you saying those small each of those individual steps? or is that just your highlight showing what each of us are
+
+Speaker 1  13:01  
+just trying to do? on right. Yeah, there were those breakout groups aligned with this value stream in terms of how customer facing it is and how far left towards development and earlier in the process. So we were starting an LLM Application Project Greenfield.
+
+Speaker 1  14:06  
+This is where we're going to move more into testing, and it's good to have more staging pre production activities that we're doing the sanity check, is this model in the vector store. Given this third party data getting us the result we're looking for, broadly speaking, and then you really hit that production, and the governance concerns will be observability. However we caching this.
+
+Speaker 1  14:37  
+That bottom line that you had on your diagram is that there's pretty much a one to one relation to these steps in your I think you're testing for parts of the two that you find for work. So it's like, how would you incidence this all lined up this plane, but
+
+Speaker 3  14:56  
+I would just say, governance is more of a cross cutting thing. You know, it's about ensuring that you're following your rules of engagement. You know, like everything you're doing at every stage, you want some evidence that you're following those practices.
+
+Unknown Speaker  15:09  
+That's truly cross cutting.
+
+Unknown Speaker  15:12  
+I would agree with that. So
+
+Speaker 2  15:15  
+I would say to a lot about Watch now, but there's, I think they're adding more of there's going to be more than just a large language model on these things to just serve generative AI. So I don't know the right word for it. But right now, but there's obviously Ellen's are a big proponent of it, but there are other elements that are a part of this generative AI thing
+
+Unknown Speaker  15:43  
+as well is the kind of code you sort of mildly feel uncomfortable calling. feel comfortable. Because there's no better way to destroy
+
+Unknown Speaker  15:57  
+Xerox and Kleenex. Yeah.
+
+Unknown Speaker  16:00  
+I mean,
+
+Speaker 2  16:02  
+curiosities. And some like Janae I would really like to sip li su to you all the LM is a small language models of large ones is there is disruption in ai ai. As a conceptual abstraction. I might ask God, I don't know why, but I feel like I feel like
+
+Unknown Speaker  16:24  
+I think it's a more broader term right? Because I have like supervised learning, unsupervised learning and I think in this generative AI type scenario in its inferencing it is a combination of large language models and people at some of the new product projects that are coming out, we kind of spoke about this at dinner last night with like, Project Gemini that's coming out of Google. It's a combination of large language models. But they're moving, expanding past the reinforcement, learning human feedback, and training the last mile with adversarial, right, like GaNS and things of that nature. And I think that pattern is going to expand on what we know as sort of the foundational elements with these other types of fine tuning to output these generative AI so I think there is something to be said for the generative AI but I don't know the right word and I think I shifted
+
+Speaker 1  17:20  
+into AI broadly speaking, and the point being from the cloud value stream to this one, the bottleneck is moved from CPU and memory to IO three. So we were talking a little bit about data gravity yesterday. We can scale horizontally and vertically and address a lot of that, but if you live in terabytes of data around, you're going to end up with a huge cloud bill and it's going to be slow. You end up with red lock issues that compute because just how processors work. And what we're starting to see is how can we shift compute with containerization to where the data is instead. So if I've got all my West Coast data in Pacific Northwest and all my East Coast stuff in Virginia, it is cheaper for me to move containers around to different regions and try to pipe that data and replicate it. It's going to be much more expensive
+
+Speaker 4  18:19  
+and it doesn't matter point is what you just said desire this the analyst group last week. Big time guys talking about what we've seen is GPT stuff opened up Pandora's box. And now all this now everybody before it was just a small group of people so like right now, sort of GPT l seems to be in the community. And I confirm the next wave is coming with all the stuff. We don't even know they're gonna be hybrids at all. So I think you're right, we just got to be cautious about you know, like if we're going to start to 16 this group and saying, be cautious about either calling Alan and say for the purposes of because it's premature to actually come up with another word for the industry probably going to do it. It's that kind of what you
+
+Speaker 2  19:15  
+were thinking. ESPN, right, absolutely. Like, I don't know. I think it's a good place to start for sure. No. But at some point, that will be a more encompassing thing. It's whether it's Gen AI or something like that. It's just gonna like I feel for some reason, looking at sunlight and trying to find out referential data. If you like, we go through like Ellen's have started this but John is your man if you like generative AI and optimate I just know the term but I don't know the background of the terms and they do. But I feel like generative AI can be that that buzzword gets extended to a bunch of stuff because like Ellen's a subset of generative AI is for small models and so all this stuff if we're gonna if we're gonna put something out there I feel like this could be a
+
+Speaker 4  20:02  
+worthwhile conversation. This again that go into a well man, like totally unqualified, or about their point of views I kept getting is you he was transcript Transformers or NACA. Right. So like, like this is all way so I don't know what the answer is other than like, I'm okay with just talking about a language but
+
+Speaker 5  20:27  
+I think if you're talking about our lens, you are missing all imaging videos. Yep. Right. Yeah. That was actually the opener in January, was much more, you know, not the breakout to the public, but that was the breakthrough of generated thing. And then you know, models like runway and more
+
+Unknown Speaker  21:08  
+I think we get coffee. So I definitely don't
+
+Speaker 2  21:13  
+want to like spend an hour on the day. So like, for me, I just posted an interesting data point. Generative AI was actually tons and we talked about some of the status of source but this
+
+Speaker 5  21:32  
+is also a generative model, but the cost of the training was very high. Right. So, like what one thing you wanted to achieve and I think that's the commodity that we're like, having these models without too much of active instructions, review like new content. So that's for me that
+
+Speaker 6  21:55  
+we're seeing an evolution of mixtures, capabilities and things like that. So like, you've got LLM plots, and this is the question between supervised and unsupervised learning. Could you make unsupervised learning better by adding or augmenting or taking a step with some of those things? That that what is that? Yes, that's not happening.
+
+Speaker 4  22:19  
+That's the point that I heard. That's the point that Joseph can make. Yeah. Sir, come up with but I mean, Jeremiah, I
+
+Unknown Speaker  22:34  
+really covered No, it was not like
+
+Speaker 2  22:39  
+a good constraint on this one. I'm reading through this network here. The creative power generative AI comes from a specific type of neural network called generative adversarial network mga n, which is proposed by a good fellow in 2014. So like, as you start to think I think there's a point here like the block isn't to a term made mistake that
+
+Speaker 6  22:56  
+I feel like what we're talking about more about blended division or something like that. Yeah. We're actually talking about when you talk about operationalizing AI, you're talking about that, that ability to blend and reflect, solve problems. We're not talking about you're talking about jet AI. They are so like, if you look at like abstracts and things like that, we're really talking about these are building blocks. And what you're actually talking about when we talk about operationalizing AI is to solve problems. And I feel like maybe our beats off the name. It's operational.
+
+Unknown Speaker  23:36  
+Yeah, I was gonna say maybe it's just because that seems to cover everything.
+
+Unknown Speaker  23:42  
+It's not aiops I know.
+
+Unknown Speaker  23:48  
+Like, I don't want to know a lot of times
+
+Speaker 7  23:51  
+we can sit on it, but I think it's good for us to say you know what?
+
+Unknown Speaker  23:57  
+This conversation is
+
+Speaker 6  24:00  
+probably the most important conversation we get down which is what are we? Because we're not a we're not a bunch of gin a IVs we're not talking about how the models work. We're talking about what you can do and how we can tweak it but bear with me.
+
+Speaker 1  24:18  
+I like where you're going with that the AI for operational AI because I am of the opinion, I can still get a lot done with MapReduce than like more classic. And I'm interested in that threshold is working is that a really big differentiator that makes sense to invest in this stuff and build the operational capabilities around because the fact that I have vector store, this probably makes it a I value. And point I'd need to remix this for a broader audience,
+
+Speaker 6  24:53  
+operational AI tools and what he was showing us because he's like, I'm comparing models. I'm comparing like, that comparison track is actually valuable and I was like watching your talk. Yes, yes, I do this already, but I do it like such a yucky way and he's like a beautiful and I'm always blamed for I feel like what you're actually trying to get to is how to make AI more valuable. And that's why I feel like we haven't yet
+
+Unknown Speaker  25:24  
+last time proposed why we I think we
+
+Speaker 6  25:28  
+have to kind of you know, instead of track for chocolate. We were gonna still
+
+Unknown Speaker  25:33  
+move that we're gonna spend a half I think
+
+Speaker 6  25:37  
+I think we are actually moving. But the reason why I think we actually have to terminate as to what we all are doing here. This is what we're doing here is Jenny I have fun. We're doing Oh AI we're actually more off talking about some news. We're trying to actually build value
+
+Unknown Speaker  25:59  
+with this thing together.
+
+Speaker 6  26:00  
+What's the roadmap for building value with AI? is actually what we're gonna put together it's gonna make it so people could not have to do this for themselves is super
+
+Speaker 2  26:11  
+Right. Like you guys are saying something that just if I heard him privately for the first time, oh, AI, we're talking about operationalizing AI and talking about oh, AI. So I feel like this could be a proposed term as we're going through it and like this conversation. I think we need to coordinate. Yeah. But like this could be an interesting outcome of like, this is like a talk track of, you know, as we will focus on this week is judging what we need to get to actually
+
+Speaker 7  26:39  
+I agree with, so everybody's brought really good points to the table right now. I do think we need to put a pin in it. Yeah, because we're not going to solve it right. Now. However, I'm wondering if this is becomes a conversation that we take outside this group like this is what we're thinking about it is anybody else right? Are there others in the field others that we want to talk to who might be able to expand it not? Go ahead?
+
+Speaker 8  27:00  
+Know what it was the cloud when it was DevOps, like you know, everybody, always wants to do what is it conversation and like, spokesman should never really always run around in circles, eventually all figured out. And it was different than what we would have said the first time we all got together. It's like it's useful to bring out but you shouldn't expect to get any kind of resolution. I really excited
+
+Colin McNamara  27:24  
+to build some stuff. You know, it just Patrick and I were like, what do we call this? Who cares this like what are we trying to do?
+
+Speaker 1  27:34  
+Good question. We're actually doing really well on time this is going and like that's you got like five minutes, right? Like a whole new set of maps. This is Laurie that got pulled together out of the LLM Gen. Ai open space we did in Chicago. Joseph he kind of blew up I was they were on this vector refresh where we're putting everything in our vector store. And then we got to get sample data from our private data and then sanitize it. ship that off to our model. To keep everything secure, you end up with that churn. So this whole vector refresh thing I'm throwing out now at all, I think super small specific use cases it might be convenient to do that. But I think larger scale production and longer term projects it's a bad idea. It's gonna get to Benza. I've got zero shot learning is like a target condition and then it was sort of a goal we're looking for. Is that zero shots working great as it drifts in you get into few shots and like a lot of shots that it's like this. This model is not sound anymore. My Data shifted too much underneath me. You really need to retract the whole system. GPUs made an appearance. But this map needs work like this is already stale. Which is good feedback. whispers been sorry, I
+
+Speaker 8  29:04  
+was producing monolithic models and foundational models making sure terminology is foundational models like a model you can get a model you can write yourself in monolithic or complete open AI or as
+
+Speaker 1  29:16  
+is tunable. Model mekanik is like open AI or barbed
+
+Unknown Speaker  29:21  
+wire. There's an API with
+
+Unknown Speaker  29:25  
+this kind of training terminology, Joseph so crazy, that that we will use sync with the industry. The term of art foundational models are always two tunable models.
+
+Speaker 3  29:44  
+Zero shot learning is visible, I would have thought if it's zero shot, sort of make the model less visible. It's working as intended. You don't have to worry about you know,
+
+Speaker 1  29:53  
+a customer perspective. And we talked about like the product engineering stuff a little bit. But the expectation is that I'm going to ask that GBT question is immediately going to give me the right answer. But there's no iteration or cycling or massaging with it, is where the expectation is, for a lot of consumers that don't understand all the extraction.
+
+Speaker 3  30:13  
+It's so what is visible meaning is
+
+Speaker 1  30:18  
+visible to your end user. So you can describe it as a target condition and we can put more on there. That's the one that sort of came out of the Chicago conversation that we really want to there's a sense of pride when your system ends up doing very shoddy. Well, that is sort of seems to be like a high watermark and the quality, how sustainable it is. I think is another question. And it's very contextual. Unlike other goals, we want this stuff in that upper left hand corner like customers are looking for. Outside as Arusha.
+
+Speaker 4  30:54  
+You've been doing that before we did yesterday? Yeah, that was
+
+Speaker 5  30:58  
+make it to finish off the learning discussion. I think from a customer perspective, yes is typing themselves that probably have to learn it feels like from an engineering perspective. It's like my rap like every product will have that as the first thing they add on internally to a shop learning, right? So that's why it's a little bit confusing. Like you put it there for the end consumer, for the customer. But a lot of the times, they will never get to see this is just the API call you enter something you upload a document and they'll never seen certain short learning. So that's why basically the product already like you know, the maps and stuff here Chicago
+
+Speaker 4  31:45  
+Okay, all the stuff you did yesterday. I had this conversation Monday. Go I'm sorry time now if you have to map from yesterday. That's it.
+
+Speaker 5  32:01  
+So one thing I missed there is code part so you know, often you will hear kind of around the LLM it's about feeding yellow alarms and so on. Right. So that's that's where you get into find you. The whole industry up until now was not finding tuning the models. I mean, the engineers kind of building it, not the data scientists they will do fine tuning and it would still be in that space, but I feel that their whole like prompting land chain middleware and so on. I can't put it directly into data integration. It's more of a
+
+Unknown Speaker  32:48  
+another like, profit a step almost. And I'm going to show you this
+
+Speaker 2  33:00  
+is an image that was just included in this search console. Is it kind of like that governance, it's a little bit more overarching because you're tying these things together.
+
+Unknown Speaker  33:12  
+I'm gonna put it up here, because
+
+Speaker 5  33:15  
+most people will never do the fine tuning they will do the rag or anything like you know, but their character just using the model as commodity and building big inflation. So much call this instead of being a AI in science or data science, they call it like as AI engineering, uncoupling all these things, the integration right together. So that's that's another term people have been using for big kind of show that we don't need to do today, data science, but we're basically
+
+Speaker 2  33:43  
+here. They're coming up with a term to identify like you said, it's like data science. It's like there's this thing these data scientists do. We take the outputs and
+
+Speaker 5  33:52  
+we are not like deep in the ball. They're just using API's or whatever the model is on there. And this the other thing, it also is a little bit of, like a sequential thing, and I'm not sure like refactor stories. The first thing in the model is the first question that confused on that this looks like a sequence.
+
+Speaker 1  34:17  
+Yeah. And then the thought is if we're starting Greenfield that they tell me is a platform engineer. We got an agent and I team Scott up. I'm not going to be worried about the observability piece. At the end of it. We're just customer facing initially it's going to be more DevOps centric work. They're going to need a vector store, they're going to need another models. Is it monolithic? Are we trying to fine tune it? And your point, like what are their problems? Do they got main chain setup? I think that this interpolated extra process step is like a good call. metric that's very useful.
+
+Colin McNamara  34:57  
+Okay, can I comment on one thing, and I observed this from my own discussions when I was growing up? I've been using the word length chain to describe I'm using a tool but there are many other programming languages implementations that accomplish that. And I might have been a little bit rude when I was like, who cares? I'm sorry. Let's go build stuff. But the what is what is it sort of not? Not not to focus on terminology but is there a Is there is there a word that describes lane changes? There are other things that do lane change as to like, what does that match one step back.
+
+Speaker 6  35:40  
+We're talking about creating value and mixing different types of concepts within AI to get there because Jannat AI is a abstract component part, meaning it's a building block, like if you were to go into Amazon, they started with storage, network and compute. With AI you kind of have the same building blocks and what we're seeing with things like laying chain and others is, how could you take a little bit of the things that you need to create the outcomes that you have?
+
+Colin McNamara  36:14  
+So what's this building block? Like, what's the generic term for that building blocks, not the overall thing, but like just that one thing is? Yeah, and I
+
+Speaker 6  36:23  
+think, to some extent, LinkedIn is sort of a pipeline.
+
+Speaker 1  36:28  
+It's like a, it's almost like a connector, like it's between the model in your data integration, because as you were saying, using link chains, it's been about whether or not a language model
+
+Speaker 7  36:42  
+integration framework, a framework, that's how it refers to itself,
+
+Speaker 6  36:45  
+but it came about an acronym. It came about because people realize that open AI and chat GPT and those things had constraints. And so they've extended the constraints. Effectively, I have a great way to hack using that component part within a broader
+
+Colin McNamara  37:08  
+pulse printing a bunch of a bunch of code that you can create your own on your own and presenting in a reasonable fashion that you can consume as a library.
+
+Speaker 6  37:14  
+But no one ever I don't know anyone could ever conceive that you would mix and blend different types of AI necessarily
+
+Speaker 3  37:23  
+research communities that combine different types of AI and solve problems for like, Yeah, I
+
+Speaker 6  37:29  
+agree with you, but I don't think they've explained it. I think like chain is
+
+Speaker 3  37:33  
+is sort of I don't know the first but it's sort of like a very effective way to do that sort of production of our so I guess in some more, it's a more targeted industry. It's more targeted at usability. You know, it's flexible in a way, you know, like, researchers who have been doing this it's like, wow, all right. So they get three different models and their data pipeline and, you know, do the data cleansing and analysis and everything
+
+Speaker 7  37:59  
+but in my mind, this is orchestration. It seems like we're, I understand that if I'm looking for what I'm going to call this solution like chain is allows me to orchestrate across multiple different types of models and provide whatever other interpretation, interpolation, integration, whatever I had to do in between, to get to that full chain that you're talking about. So
+
+Speaker 8  38:22  
+this is the it's an abstraction on a bunch of base application code that you need to create applications. So it's like a it's like an actual, like, it's like, it is much stuff you have to do here. So
+
+Unknown Speaker  38:32  
+we call it middleware,
+
+Unknown Speaker  38:35  
+middleware, orchestration middleware.
+
+Speaker 8  38:39  
+We build features with it. You could use Lane chain, but instead you just got a bunch pals Python, right. It's like a we don't really want to specialize but if you're, you know, want to step into it, or you want some is more of a, you know, kind of user friendly, I would say actually blank and less robust, or whatever. You can they built it for like a large scale production disaster. They have these sort of training data, so they just write the code directly. Don't even like check the link chain is great for prototyping for for smaller work group type applications, like reuse company like like an attribute for this in here and put that in there and get them right. So it's really apps application.
+
+Speaker 5  39:19  
+But if you're thinking the equivalent of DevOps, having infrastructure as code, Chef and Puppet as a tool to kind of do a lot of this stuff. I would say like, you know, if you think about the AI engineer, what's in their toolbox, that that that's their kind of native language that they're kind of expressing something. So like what does it make it is it orchestration is like you know, I think
+
+Speaker 6  39:47  
+you're seeing a move this challenge and I agree with you that people are doing have to look at like, your their expression of metrics, deep metrics, and specific building blocks, there's starting with how you assemble into valued blocks. And I think that's why I think what we're talking about is suddenly different and I'm not even sure we're talking about from a technical perspective.
+
+Speaker 4  40:12  
+I'm gonna just ask this question, are we getting it off? course because most important thing is dress you.
+
+Unknown Speaker  40:24  
+Drive. I mean, I think there's I think there's a valuable kind of
+
+Unknown Speaker  40:29  
+what is the outcome you're gonna focus on? Do we still do the breakout sheet? Yeah, this could promote time. Last but effective. We're
+
+Unknown Speaker  40:42  
+about 10 minutes over with this. Yeah, you were.
+
+Unknown Speaker  40:47  
+And Bill had a suggestion on the slack. Yeah, that's why I wanted
+
+Speaker 4  40:49  
+to get Phillip started. His proposal. Yeah. What do you
+
+Speaker 7  40:55  
+think we will catch up? Catch up, we'll be fine. It's all it's all you Bill. Every year. Your proposal good for those of us who haven't read it
+
+Speaker 2  41:13  
+everybody, if you're on Slack, you read it in the general I'll just give you a real quick
+
+Unknown Speaker  41:22  
+from Matt's facilitating a conversation but what? Thank y'all for jumping in and saying stuff. We're gonna We're not that quiet
+
+Speaker 7  41:41  
+it is a it is a bit of a you know, going back to your word choice, whether it's I think of orchestration, because I think 100
+
+Unknown Speaker  41:47  
+aware
+
+Speaker 7  41:49  
+hearken back to flashbacks, terrible flashbacks to celebrate. But to an extent, my mind, is that going to evaluate the outcome to take those steps forward? that's mind blowing. I do think it behooves us to, to start to think about because we're not talking about what you see on TV. We're not talking about just interacting with Word.
+
+Unknown Speaker  42:21  
+Challenges. Confusion, faces
+
+Unknown Speaker  42:27  
+my friend getting plus plus
+
+Unknown Speaker  42:36  
+better that's much
+
+Unknown Speaker  42:36  
+better
+
+Speaker 2  42:45  
+then maybe I'll suffer just a walk there. Hopefully, you all can see it. So this is they're just this is actually sort of, you can
+
+Colin McNamara  42:54  
+drag it to the side. I can drag this highlight over the boundary on the
+
+Speaker 2  43:00  
+Aerie go, oh, yeah, you'll be able to hook it back. Okay. It's possible. Alright, so, actually, I've already had some feedback for David this morning, the use case so I'll go with this at a high level and incorporate the feedback at the end. But the idea is we're talking about a deliverable what I saw yesterday is like two notions, one guides to get the industry helping them but also get in the interact. But then I also saw a lot of people that are interested in actually building something. And so as I sat here, and I just was looking at routines, I was thinking last time this morning, like go on, we actually have all the pieces that we can put together with what Joses provided as a basis and then hitting on the concerns and so, really, why deliverable ecosummit It needs to be cohesive. And if it's well done, this is this is my assertion. It's well done. We have an end to end approach that technical and most importantly, non technical because a lot of technical first non technical people can reference as their gold standard to include as their aspects as they begin their journey. So in my mind is we're going to talk to a lot of people talk to folks that will take this but they need to bring a non tech along, right. So when a company says hey, business case. So the company says hey, we want to do this, they can basically go to whatever we call the output of this AND like look at what they did, you can take and without the words foundation, I'm always taking good specifies that any company can take what we do, and they can start to build something for themselves. Simpler, exact example. And so the golden and be delivered to two things practical guidance and a reference I put in parenthesis partial we have not a lot of time. And so we have to really figure out we want to actually get fully done versus what we want to sort of
+
+Unknown Speaker  44:41  
+start our MVP and then we can have a backlog afterwards.
+
+Speaker 2  44:44  
+Exactly. And specialized in the foundation. For a model use case. And so basically, I'd say here's the objectives one, I just basically took the use case presented by team for sort of the bullshitting the bottoms of recording. Damon gave some really good feedback this morning. If we were to do this, we don't have really a lot of data to work from on that. So one thing we could do is and he brought into a multimodal perspective was like we're in a place that has a lot of video. And so what could you do with a lot of videos. So that's one possible use case. But the idea is we have a clear business use case that can be understandable by other people. And that was the ideas I wrote this is I think about that type of concept. Anybody can relate to that in a price. Second mistake, Joseph referenced it gram and extended to account for architecture, non representative aspects of team three. And then here's where guidance can be written. So as you start thinking about some of the takedown stuff, so is there anything in there that we need to extend and how do we provide guidance and more understanding of that? And then third, is pick a commonly open set of tools and then a pipeline from team to using security safety resilience concept from Team One. So team one and figure out what aspects and also the technology so for example, for trying to figure out can we get to the private data from the model, that kind of stuff, and then team to have stitches together and then I thought about it because everybody's gonna look like this and like, Okay, we're going to invest a million dollars to get this done. And I put my business hat on like, hold on a second. How do you just get started? So I personally hate maturity models. It's gonna
+
+Speaker 7  46:10  
+say I, if we can call it something else and index a health guy, something that maturity models seeing the 990 95 now,
+
+Speaker 2  46:19  
+so take the cause of death. I use it because I know that the fundamental rights, chapter seven, automating government was in automating automation at Google. They have five steps to automation, their whole precipice, you don't have to get the five you can get to three and be okay. Yeah, but basically they show an evolution from just doing it hitting, you know,
+
+Speaker 7  46:37  
+I want us to be very cognizant of this weight, that maturity models carry. So we get to not go for that because I'm hoping that as they're starting to go and grow, they're going to waver back and forth. They're going to do things right, they're gonna backslide, they're going to make mistakes. And that's okay. We want to give them again, back to where I draw so they can continuously improve.
+
+Speaker 2  46:58  
+Because yeah, I think we're on the same spot there. And the problem I hate maturity models is like, you know, my diatribe is like most mature today may not be mature tomorrow. And so like that goalposts always changes so but the idea there is can we give them a thing that says if you're gonna get started, here's what like five can look like, but you don't need to be at five years one to two to three to four. So that was my disposal as I sit here when I think we have all everything to do it. One thing that he did say is I called the teams out. This is not more of a hate team wanting to do that work. Really, it's just a team has basically been like responsible for for county for shepherding the idea what they're doing as opposed to actually do the Now it may naturally be that the individual teams do the work. Yeah, so that was my proposal there and then have it demonstrable, practical, practical as a baseline, practice. Questions, comments, concerns?
+
+Speaker 1  47:56  
+I'm confused about Team One, Team Two, Team Three versus architecture.
+
+Speaker 7  48:01  
+Like oh, well, we yesterday we have just four buckets, I think about that. Pockets. And so that when he was calling out to wanting to He wasn't like, making us go around, like in gym class. It was literally going back to how we broke up yesterday.
+
+Unknown Speaker  48:17  
+You didn't finish reading the architecture. Yeah, so I think he's trying to go from the
+
+Unknown Speaker  48:32  
+US those burns instead of the wanting to
+
+Unknown Speaker  48:38  
+last wanted to take
+
+Unknown Speaker  48:41  
+before we agree on this
+
+Unknown Speaker  48:43  
+tour,
+
+Speaker 7  48:46  
+where we agree on I want to walk away from here with actionable things I want to I want to walk I personally want to walk out of here which notes I'm gonna walk out here with pictures. COVID mentioned Sun Moon stars, right. So I think and I think we all do, that's why we are all here this week. Why don't we talk about not the outcomes yet, but let's talk about the four boxes, the fourth buckets that we landed on, because I know yesterday I felt well the solid is went into and as we had our two hour conversation, kind of wavered a little bit here and there. I'd like to revisit that just for a moment and see did we miss something do we need to bring something else in? Before we go here? I do want us to walk away from with practical guidance and reference implementations and architectures and all those things. But are we missing buckets? Good question, and I'm not gonna answer it to ask you to answer.
+
+Speaker 1  49:43  
+The one Patrick backfiring off of my flow diagram that prompts languaging middleware piece did not have accounted for it would be the fifth one that surfaced. Yeah, there was a sign across those two I think it weren't separation. That's another view. You made the high margin. Do you agree or disagree?
+
+Unknown Speaker  50:21  
+The question is missing and wondering which
+
+Speaker 7  50:26  
+one is more important that belongs or does the value chain orchestration
+
+Speaker 3  50:31  
+really put in an architecture, right? It lets you it's a flexible, easy to use method for prototyping different architectures testing about so it's sort of a technology you might use,
+
+Speaker 4  50:43  
+but you could actually wait a little bit. So I'm going to talk about three things I wanted to to really try a good day. Just the idea of really breaking out the heart can have a muscle. So this is going to challenge all the stored data from meta data to put in an index of equities to have the chance to take some examples because that was sort of my imaginary tenure for this but I think that plays really well to Chris's point, especially. As part of that use. Shell Shocked by the mechanism to help you here with the breakout, the anatomy, what am I doing with these anatomy? Okay, show it or like key show somebody historic. As an industry, we'll explain you can take an app code. Any sort of
+
+Unknown Speaker  51:48  
+artifact let's just
+
+Unknown Speaker  51:51  
+see. Like what the day looks like for a couple of months people did text
+
+Speaker 4  52:10  
+anyway, so before I'm saying as part of what he's talking about, it shouldn't go on architecture. I think what I'm going to show you today and I'm
+
+Unknown Speaker  52:26  
+still working on all of these things, so I'm still taking it all but I love taking all these directions because it's just so many different things. It's like a puzzle humans Right. Can make we have edges out of it right and this piece puzzle pieces still trying to translate.
+
+Speaker 7  52:59  
+30 now created just readable by the four big buckets that they seem like they're I like your analogy that we've gotten corner pieces of this company. That's like the 500 piece puzzle, not the 5000 piece puzzle. We got that and we're building the edges around us and slowly getting something in the center.
+
+Speaker 6  53:32  
+All right, when people are researching AI stuff. Does anybody know if like the vendor model out there? What kind of model vendor model like market Oh,
+
+Speaker 3  53:52  
+show that on my slide. So the ones that I know about but is that like comprehensive like a gardener? I man,
+
+Unknown Speaker  54:00  
+market space. market space things exist? Right?
+
+Speaker 6  54:05  
+What the spaces are because people are doing things and they're starting to do more things you could buy. And
+
+Speaker 4  54:16  
+there's a number of them posted. Like this person's version but what
+
+Unknown Speaker  54:20  
+are the most useful things being able to find it?
+
+Unknown Speaker  54:23  
+Yeah, we could we could definitely do like 10 shows.
+
+Unknown Speaker  54:25  
+That gives you a sense of where we might have played everything
+
+Speaker 6  54:37  
+because usually what happens is somebody goes and doesn't want and it describes tomorrow market, meaning people know how to actually work into
+
+Unknown Speaker  54:48  
+like I said, everyone has their own spin this is
+
+Speaker 6  54:50  
+so I'll give an example. The reason why this comes up is because every day I have to go talk to people about cybersecurity. And when you go talk to them, or do you mean reconnaissance, attack surface discovery attack, surface management, external attacker, and so they all mean the same thing. But because the whatever took the time to really define out the spaces that things kind of got cataloged into and when something new came up every day to spend the time doing that. We've got this constantly moving market map, if you will, that doesn't have edges to it's like this sort of boundless frame.
+
+Speaker 7  55:30  
+If you think about the CNN, right they have their periodic that is driven by market changes now so if not the DevOps periodic one that was fine I forget who did it originally. You know, the one I'm talking about to DevOps periodic table I don't remember who made that originally but then cn CF to have also has a flavor that that has grown tremendously that is including so if we go down something that's closer to that it becomes living instead of a single infographic every week because
+
+Speaker 6  56:06  
+I'm saying so sapphire ventures and this other events and so like what's happening is people are trying to explain the faith because they're trying to explain the value.
+
+Speaker 7  56:18  
+But in this consortium or none of us are trying to own us. We're trying to help the market. I think you've hit on something that might become exceptionally valuable artifact from this group.
+
+Speaker 10  56:31  
+of quick question, because I heard where are we talking about a consortium? Yeah,
+
+Unknown Speaker  56:37  
+I mean, let's not. I use that term all the time.
+
+Unknown Speaker  56:42  
+I know he's allergic to that. Okay, I just want to make sure
+
+Speaker 7  56:51  
+what what is a kinder gentler word? That means that we are loosely bound together and trying to get shut down
+
+Unknown Speaker  56:57  
+by a market absent
+
+Speaker 10  57:03  
+for lunch, I would like five minutes 10 minutes to talk about.
+
+Unknown Speaker  57:12  
+Right now, we're talking about now.
+
+Colin McNamara  57:15  
+Oh, no, I'm not trying to think it's actually relevant. So deep deep bullshitting. Bombs. Bombs up reporting. Robin, what's happening on the loading dock? What's happening in formulation? What's happening with my supply chain coming in? Damon, what's happening with my software software developers what's happening with my call center? Right what's happening with this team right now? Okay. You know, I really do believe Bill, that that's a solid is achievable. It's specific, it's measurable, and it's something that we can accomplish and tying it down with the tools available is right now and it's something that we can focus on building.
+
+Speaker 8  57:56  
+That is like we don't have any of that like I don't have access to much call data reports or ever, but Alan's got a ton of people. Right. So for today to work on today. Yeah. Talking about going through, you know, how you deal with the metadata, like what do we get we said we have all this content. You know, it starts with video. Form examples of it. Yep. Well, welcome. We, we we build that through this pipeline. And we actually show people as like a lab scenario like look, you know, here's, like Lucky get somewhere fast because, and also we have a real business to support right? This is like hey, we've actually asked Alan to do it. Work versus like, the bottoms reporting thing. Like, we don't have like a head of sales on speed dial. Yes. It's all his data, or data to show them you know, like, I mean, or like, like, I'm helping a government procurement sort of idea, right. So we have all that data, but we do have videos.
+
+Colin McNamara  58:54  
+We do and we have we have we have a stream of we're practicing value creation. Where we're Chris, you're you're mapping start to do visualization on to it. We have there's a pipeline in the middle. We have we have the opportunity to play with agents to establish you know, interact with this introduce entire streams to one of the yeah, there's there's something that we can walk we can actually get some work done quickly.
+
+Unknown Speaker  59:29  
+Abandoning the full project
+
+Speaker 7  59:30  
+No, no, not at all. Okay, so let's let's make sure we're all in agreement to the parent fantastic. Just trying to drive us forward because I think we already have it. So we agree with before break the breakdown that we have now we said we need to add in the length chain concept. So we're going to talk about it in the architecture pieces. We're going to look for like guidance. About what that chain, whatever the new word is for the pipeline piece. We need to consider that be something that you involve this week, or does that become something that comes after the MVP?
+
+Colin McNamara  59:57  
+I would suspect that we have put together a really quick the other hack hack to MVP that in the simplest terms possible let's take some inputs, right inputs, being video, audio, crate, crate texture, answers out of that, let's use let's use our, our code, whichever one, let's use our API middleware and start going to start trying to use that term. And it doesn't have to be one language it can be whatever is appropriate to create the summaries to create to start creating sequential chains of like because there's topics right we can create summarize of each of the topical areas we can we can chain them together like okay, where what are all the questions that got exact came out of here. Where are the overlaps between the two? There's a lot of what I'm really curious and interested in kind of the emergent behavior because we have we have like Master Work shoppers around here, right? And we have master technologists and we have master mappers. And like, Okay, well what's going to come out of this as we play
+
+Unknown Speaker  1:00:56  
+that's cool Mr. content
+
+Unknown Speaker  1:00:58  
+by Oh we got master content right there.
+
+Speaker 10  1:01:01  
+That's I'm gonna hijack this. So here's the deal. I'm not a communist. I'm a capitalist. This little thing here is costing me a lot of money. I'm doing it for a reason not because I love John Willis. But no, I do. I love John was but the idea here is that something's going to come out of this, that somehow tax Trump will be able to monetize and recoup investment and make money and work with all of these great people. Or new great people that are here. Right? I learned a lot of lessons doing devops.com the first time this man ever wrote me while years ago, 11 years ago, 10 whatever it was 10 years ago. I was heartbroken because he just like Gouda, to come down and go do rather than DevOps. Yeah, it's It's my little thing. But when I looked at David knows this too. He was part of it the first time I met him and the first time and then John. Right. And Andrew still he probably
+
+Speaker 10  1:02:17  
+I looked at DevOps and it was very clear. Patrick didn't want a consortium. He didn't want the manifesto that she wrote in def set and we know where I came from security. Didn't didn't have the manifesto that she had in dev sec. Ops. As a matter of fact, it was very clear. We didn't want a manifesto in DevOps, it was going to it was going to like free flow it was going to it was going to evolve into what it was meant to be not be constrained by by group of people trying to find Yeah, right. Yeah. So it was easy for me to come in is devops.com. And I just asked everybody to read it. Let's make a big tag. And let's let everybody put their stuff in and we'll see what comes out of it.
+
+Colin McNamara  1:03:04  
+What I think what I'm hearing from from, from your perspective, a set of principles for evaluation of what's happening. And what's really interesting, there's many there's so many things that are interesting exploring too. It's like how can we, how can you how can y'all log in with us and commit those principles down? In human written in English? And that's one of the things that the business user aspect that I've been enjoying so much power is, how can we all get together? Okay, incredibly focused on that like, Okay, well, well, let's just, let's start right. So
+
+Speaker 10  1:03:36  
+12 years ago, DevOpsDays was was the place to go do that because we didn't have you didn't have as much online collaboration as you do now, let's say Yeah, right. So that was that was one of the cool things about DevOps days you would have people like you guys, and whoever else wanted to come in, and it was free. There was always a birds of a feather. There was always coffee talk there was you know, there was all in addition to the like, official tracks, that was the unofficial tracks and places where communication and that kind of growth happened. So let's learn some lessons from that but also understand where we are now. In communication and content and delivery and distribution. Right. I still think there's a place for DevOps days around AI ops, operational AI, whatever you want to call it, but we do
+
+Unknown Speaker  1:04:29  
+meetups that are happening across the US right now are off the chain.
+
+Speaker 10  1:04:32  
+But the problem with meetups, I mean I was surprised some people Yes, I did a roundtable yesterday, Mitchell and I would tricentis and some other folks on on on ai, ai and software development. We end the highest level of engagement we've ever had on a racket. I made 170 we'd subtract some people register projects, how many people show up, and we had something like 500 comments from 170 people. Usually in a webinar 90% of the people they don't even have them to tell. They're not even paying attention, then 500 interactions that tells you something people want to know. Now they're gonna look to this group is meters because these guys are leaders, your thought leaders use your thought leaders in this area. It's a question of, you know, like the focus as lead follow up get out of the way. Want to leave than we come up with it has to be inclusive. It has to be Rusev. It has to incorporate these meetups. I don't know if meetups are the way to go. Or do you want to do a formal DevOps days kind of organization but do it incorporated so no one gets sued and everything else in
+
+Speaker 7  1:05:50  
+the meetups is only as evident because people are just so there's so much we're like spending a lot of time trying to get finished.
+
+Unknown Speaker  1:06:10  
+No, no. So here's what we're not doing.
+
+Speaker 6  1:06:23  
+Right? You want it so the problem is, when we get to a point where we hacked then we can have the argument. That's right, that's
+
+Unknown Speaker  1:06:39  
+reading the room, people document it. And like
+
+Speaker 10  1:06:42  
+right so good luck to your hacking. I think first you got to find what you got. I think you find somebody else to work with.
+
+Unknown Speaker  1:06:51  
+All right. On that I actually have to go through the work alright. It's a pleasure having you here.
+
+Unknown Speaker  1:07:01  
+Alright, we're back again and tightline is your suggestion to continue with what
+
+Speaker 8  1:07:14  
+I'd like to do the data, the data, the data, the data, folks, and I find folks that are in the same vein, which is like a verge those efforts, which use the video stuff will be my strong priority. Right now. Yes, you the videos is like the metadata we're going to find like we can actually focus on building a reproducible example. Yes. Let's just do that. And then maybe the other effort is okay, like how do you how do you come up with a broader discussion framework, like in the DevOps world we started with, so we started camps, right? Just like, what do we have to talk about? It was conversation so we had no other thing. And so that's what we do. Right in the middle and we've got something that
+
+Speaker 7  1:08:11  
+we're all in violent agreement and it's pretty close but a little bit more. So I'm gonna Are we are we agreed the pipeline we're gonna murder in terms of people rallying in a single room. Right now the pipeline team and the data team.
+
+Speaker 4  1:08:28  
+The only caveat is really good. I can just break off with that. I want to build that the breakdown and that's going to take to solve that solves a lot of my problems. I'm not going to have his time as exclusively. I think it's a valuable exercise to take a video transcript and spread the layers that produce a lot of value if justice okay with that, like meaning you just split off and do that. Is that okay, so that was the original.
+
+Speaker 8  1:09:07  
+Let's just take the pipeline and at least like the data people, right, let's just get together and let's make that our data. Let's go and try to
+
+Speaker 4  1:09:15  
+but that's gonna take fabrication and effort because like we all sit and try to do all that
+
+Unknown Speaker  1:09:26  
+the video I'm sending is like, that's what I wanted to do yesterday.
+
+Speaker 7  1:09:34  
+We are just swirling around. Everybody do me a favor right now stand up. It's a UAP you know, do you ideas looking for some aliens. Let something sit back down. That's fun. Breathing for a second. So we get back at it. We need to just rally organize our work today. What I heard was end to end pipeline are people in agreement that we're gonna build some kind of we're gonna build something we're gonna have a cap on it. We're gonna use video as the example. Out is your idea. merge with what Colin has been talking about, does it merge or doesn't say stay separate?
+
+Speaker 4  1:10:17  
+Again, my idea was what we had originally yesterday morning choice. Let's break down data strategy from the layers from metadata to index chunking to the tokenization so we can understand what's going to walk in a piece of video and use or take his tools, create our own version. of it, and credit open source but our own version of anybody can lay in any video. It's really a transcript.
+
+Unknown Speaker  1:10:44  
+From a column, it says,
+
+Speaker 5  1:10:46  
+Okay, that's awesome. Yeah. So we need to do it. Right. Because we want to make something useful. We need to get that I don't
+
+Speaker 4  1:10:53  
+think we have to we can show coordinate but I don't think we all have to get in because I think
+
+Unknown Speaker  1:10:59  
+we're gonna finish that tries to
+
+Speaker 7  1:11:01  
+find what that MTP looks like very quickly, and then people can peel off to do
+
+Unknown Speaker  1:11:07  
+long as I'm in sync with you to be able to save a few minutes for Shannon but they'll get on down.
+
+Speaker 1  1:11:13  
+All right, I am probably going off on a limb like me and Colin his talk yesterday I was going to try to get some of your text based language stuff just running on my laptop reproducible for me and Jeff had discussed something similar in terms of like looking at benchmarking this stuff between local development but that things the crowd on the video, which I think it was gonna be in, breaks it into more of a base case general audiences example is what I'm hoping to do.
+
+Speaker 7  1:11:47  
+So I'm hearing that what we proposed earlier an hour ago is still slightly differently verbalized. John is going to grow I'm sorry Connie Joel? One of my best pieces you guys are gonna you guys are gonna break up there also needs to be coordination with the Colin Colin Are you raising your hand to leave your posse of people?
+
+Unknown Speaker  1:12:15  
+Oh, Toledo. I'll participate with them
+
+Speaker 7  1:12:20  
+in the room and say how's it going? And absolutely, absolutely. All right. So we've got we've got tools, we've got data strategy, architecture and licensing safety.
+
+Speaker 2  1:12:32  
+So I don't want to speak to Steve so definitely do it. But I think what he's telling the data, somebody that there's stuff that we can be doing independent because regardless of what the data where it comes from, some of the security to see DNR and stuff that is independent of the data so we can be working on you know, what needs to do that what it means to govern what I mean, so I'll stop right there if you have, I'm pointing at you but I don't want to like
+
+Speaker 3  1:12:55  
+ya know, I think I'm interested in jumping in a bit on hacking on this use case. Like, one thing I think would be really cool is new topic discovery, right? Like if you have a set of images and you've got the transcripts, like can we extract you know, clustering at a time from a topic so maybe that's something I'll take on, like, do some work on that and then and then once I think once we built out sort of skeleton of this project and we can we can look back and say okay, how would we govern? That's right, the pipeline setup, what tools would we put in place, but it's a little early for that. So my goal was packing and then
+
+Unknown Speaker  1:13:27  
+probably close tomorrow. We got to the end of the pipeline so you're good
+
+Unknown Speaker  1:13:46  
+just start right. Yeah, it's not perfect because it's like
+
+Unknown Speaker  1:13:52  
+really picks and shovels. Right. And
+
+Speaker 3  1:13:54  
+I meant that sort of what is it that we have a wire and how can our valve value as Shannon talks about?
+
+Speaker 2  1:14:00  
+The goal is to put a framework together where we can get you there in a safe way, and was suddenly hardware guardrails, not rigid guardrails. But hey, we tried this before. You can try it as well and experiment but these are
+
+Unknown Speaker  1:14:14  
+some other barriers and non standards or recommendations.
+
+Speaker 2  1:14:20  
+Yeah. And it's, it informs you and gives you intuition on the roads that we went down if you want to go down and please, right but these are some areas that have worked for us real quick. Because
+
+Speaker 7  1:14:32  
+you can sit down and you want to work on stuff. I mean we're talking about what the physical outcome of this looks like. Now, I heard Alan talk I don't know where Alan said is exactly on monetizing this. I know you're taking videos and other things are going to happen. Given chatting about how do we get how do we take this physically take the electronic assets that come out of today and propagate them out. What we chatted about briefly yesterday, and I'd like to just figure out if folks are interested in this is having that good mentality that we're using repository for minimum CD we actually maintain the everything that way we have there are no WordPress sites, anything like that. It's literally get up with a Hugo transformation on its own now it's monkey simple. In some case. Probably, we leverage that and we have our folks who are in the maintainers, right, this becomes a maintainer group, not a consortium but a maintainer group that we can provide some guidance so that as we see new information coming in, we can engage with the conversation guide the conversation, we're gonna have some really wacky stuff that comes in that we think, not a good idea, let's table that that PR isn't getting approved. At this point. It gets table. We're gonna have other things where we're like, holy
+
+Unknown Speaker  1:15:51  
+crap,
+
+Speaker 7  1:15:53  
+this is fantastic. We're going to spin this off. People come for from what we do, they can create their own corporate version of it. Do what they want with it. putting that out there on
+
+Unknown Speaker  1:16:02  
+the floor. What do you guys think?
+
+Speaker 7  1:16:05  
+In terms of a to give it that? All right, so we'll aim for something that we can continuously continuous integration of information. All right. Everybody get a drink. We're gonna break up into rooms but I don't think we've assigned rooms or anything. Sure was just the same as yesterday. Except data and data
+
+Unknown Speaker  1:16:37  
+Yeah.
+
+Unknown Speaker  1:16:49  
+Yes
+
+Unknown Speaker  1:16:57  
+might have been the textbook
+
+Speaker 9  1:17:00  
+and you see I have some private repos I've been putting my stuff into Sorry, I've been
+
+Unknown Speaker  1:17:11  
+mutual. Don't I'm just trying to get reproduced.
+
+Unknown Speaker  1:17:18  
+Yeah, absolutely.
+
+Speaker 1  1:17:19  
+You got a repo that like, you think whatever might run on my laptop, like, oh, yeah, get up and kicking. Yeah, and there's
+
+Unknown Speaker  1:17:29  
+a classroom. Let me take you through.
+
+Unknown Speaker  1:17:33  
+And I'm gonna ask the same thing, but I think I'm going down
+
+Colin McNamara  1:17:35  
+reproducibility, I have this learning link chain.
+
+Potential Call of Duty for sorry if I was there, earlier on. Try not to. Sometimes my like press too salty ops guy comes out. I really appreciate
+
+Speaker 7  1:18:14  
+some really nasty language. She tells you where to go. If you're super
+
+Colin McNamara  1:18:23  
+direct. So there you go. Aaron, easiest, I get frustrated and I get the anxiety sometimes I'm not having enough time to meet the goal rolling out
+
+Unknown Speaker  1:18:38  
+what I used
+
+Unknown Speaker  1:18:47  
+good to cover this morning, but it took a lot more time than I learned. I learned a bit you still want me to win. Okay. I want to go through a conversation I would really like
+
+Colin McNamara  1:19:19  
+to I do I do. Try to multitask. I'm not doing a good job at
+

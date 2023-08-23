@@ -1,0 +1,1826 @@
+Speaker 1  0:00  
+We work with the enterprise, really important. Like what is what are we going to say about this coming out here then like, I think we're going to do this again, too. So and I want to make sure we keep an ongoing conversation and whatever vehicle works. What a couple more things. Right now, the agenda is sort of like and it's gone, like within the last 24 hours, I'd probably change my mind four times. Partially because of this gentleman here. But I think we're going to start off with probably all morning around some slide presentation to just put together because when I was talking to me yesterday at breakfast, I'm like, Oh, my God. This is such a comprehensive overview of what's going on. This would be a great sort of framework start get everybody on the same page, beat the same light. In fact, Chris, are you on? Whoa, was like we really needed the ability to have a common language. So at first I was like, can you do 30 minutes? I'm like 30 minutes with this practice, don't get to work. At least started doing some q&a. And then I realized one of the other things what I want to encourage this isn't Joseph show just an unwanted universe of shows. So if there's a point in his presentation, where you want to just say, Hey, can I say something about what I learned? I encourage that. So as he goes to the slides, like if there you've got to experience all your questions, as many questions as we can, and we have to go all the way to lunch, which is the session. But if you have a particular set of experience on something in that area, and there's a slide where I know I'm going to if Shannon doesn't stand up I'm gonna make I'm gonna lift her chair. It's read to you just so, so yeah, please, you know, like, I don't, I know you all. I don't have to tell you a choice to sort of speak up. So probably go to the morning with just a great conversation. And then the plan as plans go, you're gonna like it could change by lunchtime will probably be to right around lunch or up lunches, or an open spaces style of where people can propose ideas to stand up and say, Hey, I got an idea. I'm gonna work on this thing. Is anybody interested? We'll put it on the board. And we'll sticking and then we'll probably depending on the size, I mean, it might be 10 odd years, but like, the votes will probably wind up with the size of a four or five. And then for the rest of the week, there's different as for different breakout rooms, so probably for for breakout rooms and then go to meetings. And then the only thing I want to try to use every beginning morning was to kind of like we do DevOps enterprise summit that a genius Robins in there. Like we do meetups, so we just constantly be letting everybody know like, this is what we learn. So we've tried to do this. I've traveled anybody that we help. And I'm going to play so the sharper students estimate is one of the greatest hackathon monitors that I've ever met. And what he does just goes around and he basically like if you're waiting for your guru to stock our Oh, I know Colin knows how to do that. Now bring him over. And I just sort of circle around the groups and just like what are you guys working on? Well, yeah, what's your status? You got a Roblox and I'll just sit in and listen and execute it again. All this can change after lunch. So with that, I'm gonna introduce my new good friend. We've known each other since the first DevOps enterprise. He's got an incredible presentation. He doesn't want to be his show. Don't make it his show. But he's got a great baseline for us to watch Josephine sorry. Great audio
+
+Speaker 2  4:29  
+morning, everyone. I'm Josephine X. I represent a company called Enterprise vision technologies. I've worked with some of you in the past. Damon and Alex like our today's 2014 from 15 timeframe. Just happy to be here and yeah, I mean, I'm the director of innovation and creativity.
+
+Speaker 1  4:53  
+So let's go around. Let's just go by the order of actually this battle you want to introduce, just introduce yourself. I'm interested in
+
+Speaker 3  5:03  
+everybody's building this amount of people were looking for but I'm currently with nobody has a flashlight today. So I'm you're interested around kind of operationalizing AI who downside I didn't have any opportunity to talk with Patrick and gentlemen were in Amsterdam. Having my little bonus I had this concept and working around the software mechanics. And so by us as I look at writ large and industry technicians are more like mechanics, showing mechanics for mechanic to hear Java engineer, Angular, React engineer. And so there's this there's this sort of mechanics mindset. And as we start getting into AI and some deep technical stuff, how do we start bridging in and making this more usable and accessible to technical non technical people? So that's sort of the the concept of digging up and says I'm here today just here to work with everybody and provide soft mechanics find head on.
+
+Speaker 4  6:06  
+Alex, nice to meet you all have been working with John and Damon and Patrick and a few others here for many, many years. It's a privilege to be here, obviously I wanted to say that was pretty exciting. I've had a few brushes with AI in my career, and every time it didn't work out. But I've been very interested in how it impacts kind of the classic people process technology. There's a very broad discussion that we have here at different levels, how it impacts nations, how technology stacks, how it impacts how we manage those things together. So I'm open to conversations about all those things. So.
+
+Speaker 5  7:01  
+Alright, so I'm Alex Chen. I'm the CTO and co founder of HIPAA concepts. Yeah, I'm really interested in gender AI. And really what I'm most interested in is, I'll think about model do you need something like DevOps, like how much data do you need and how good of the data does it need to be to get good results? My background is mostly in automation of all the various things. So
+
+Speaker 6  7:37  
+I'm Steven Miguel. I'm Director of Product Innovation at Sona type, and I'm really excited to be here. I mean, I've been part of the DevOps group and community there for several years now. And what I love about this group is, you know, yeah, there's this sort of shared origin story in terms of the DevOps space, but everyone's just really passionate about technology and learning and you know, moving to the next thing and then becoming familiar with that and then seeing how we can contribute there and so I'm really excited to be exploring AI here with this group. I'm primarily interested right now in the security and privacy aspects of these large language models. You know, I think there's two sort of worst case scenarios here like one is, everyone rushes to deploy this and you know, there's some big data incidents and leakage instead, because of that bore. Everyone's so risk averse, they don't know, you know, how to quantify risk for these models. And so that, you know, they don't get leverage to the extent that they can and you don't see you don't see the value, at least at large enterprises, right, where it does tend to be more risk averse and so really want to get better at quantifying those risks and thinking about them and reasoning through that and you know, sharing best practices and so forth, but applying these models so that we can balance you know, value. And
+
+Speaker 7  8:52  
+as Alan said, I'm CTO with text frog. I also founded our endless business tech strong research about four years ago, and I remember today, my background is really product creator, primarily most products in the security space, but also build networks and run it organizations and I kind of get to do a little bit of all of that today, which is the best of everything. Maybe sometimes, not always the best of everything, but not it's a pleasure to be here. And it's great to meet some people I have known enough to get to know other folks I've known for a long time. So
+
+Speaker 8  9:26  
+yeah, hi, I'm Damon Edwards. I met a lot of people in this room. But back in my old DevOps consulting days, Alex and I ran a consulting company, Jonathan, desperate little bit in that. We worked on basically large IT operations problems. We met Patrick's crazy thing called DevOps. And it was really fun to be a part of that. That whole rise. Now it's I started a software company called Run deck, so that they're there. And Alex, was, until and until recently, and I think the excitement about general AI is really, you know, this idea of there's all this latent computing power in the world, right, and we have a way to unlock a lot of that through this linguistic layer that we can put on top of it. I think. It's reminds me that early days of the web, right, mighty even the early days of DevOps, right couldn't really define what exactly it is. We knew something cool, some great stuff was going to come out of this. So my biggest interest is around operationalizing stuff, right? So how do we actually leverage it to solve real business problems? I'm fascinated by the lower level, you know, technology, the models, whatnot, but I realized, you know, you got to specialize somewhere and I think, how do you build on top of that to good things is what I'm really interested in.
+
+Speaker 9  10:50  
+Hey, I'm Chris quarry, err, my backgrounds in mathematics. enumerative combinatorics be specific. Got into DevOps that was a gateway to complexity science for me. So I organized DevOpsDays Atlanta. also organize the only map camp in North America if you're familiar with Wardley mapping, also deep into Value Stream Mapping. work as a consultant for a firm called Inspire I live in. They tagged me into a hackathon project that they did internally to get it production alized ended up at DevOpsDays Chicago for the global organizers Summit, pitch to open space on platform engineering and one on platforms for LLM which is how I bumped into John there and ended up here a couple weeks later. So really, the same the same patterns are the DevOps, your individual practitioner, you can use your credit card and just go sign up for this stuff, but how do we pull it in to a fortune 500 safely and where's that threshold between classic AI and what is the real differentiator with the generative AI underneath all this is really the spot I'm trying to zoom in on so again, honored to be here. So charmed life. Glad to see some familiar faces and I look forward to seeing what we figured out this week.
+
+Colin McNamara  12:21  
+My name is Colin McNamara. Okay, cool. Thanks. My name is Colin McNamara. I spend most of my time as a partner at always cool brands, other parts of my time collaborating with people around here in other places. My main focus in with with generative AI and what's coming on now is using it to drive narrative driven business, right. It's being able to take some of the things that I've learned in the hyperscale world, especially in hyper scale operations and use these tools to increase communication to increase quality. And specifically in my current world, to be able to increase quality across a distributed supply chain. I have this kind of vision in my head and I'm curious where it develops, where the consumers and how they consume their goods, that these tools will bring a level of transparency to the to the things that they drink and what they put in their bodies and in their with their families. I'm hoping here that I can learn more and collaborate with you.
+
+Unknown Speaker  13:24  
+Just perfect.
+
+Speaker 10  13:27  
+My name is Patrick ball. And I just love learning. Anytime there's something new. I'm really trying to understand the impact on what it does. After I don't know how many years of DevOps, I was very bored with DevOps, to be honest. And one of the things I always do is also trying to change my role and what I do, and I kind of was running out of that, and I wanted to get into the data science, but I didn't feel like the data science yet. And played around with video automation during COVID because I hated presenting myself and I wanted to automate myself like that. So I got into video and generative AI in that space. I thought nobody was listening and then boom, the world. And yeah, it's just been excited to learn and all the possibilities of what worked, what doesn't. At the same time, I'm VP engineering at Shoebat. We're also rolling out generative AI things because we're a sales content management system. And so also happy to share the learnings and the pings and all of the stuff we had there. So yeah, it's like all the layers interesting. Bringing it on
+
+Speaker 11  14:52  
+I think my money is working gold. My story's a lot like Patrick's and John's is actually within two days of talking to them. I talked to John probably for me four or five months ago because this is the most exciting thing ever. And then Patrick and I got in the same we got on there. This is the most exciting thing ever. But my background and then a lot of you for a long time is venture backed startups, cloud computing, things like that. And about eight months ago now I stepped down and CEO of my company was trigger mash and we did cloud integration. Because I was sort of burnout and as been chatting up came on the screen and then I realized I was such a lousy student and she had to generate when I was young, that I was gonna play catch up and as I get older, I'm a great student. I'm taking notes. I'm writing books just for the fun of like learning. And I'm like, Who is this guy? But I write a newsletter called The artificially intelligent enterprise. On substack. I have a consulting agency while I tried to figure out what I do when I grew up, which think I already grew up. I probably never figure it out, but I'm really happy to be here. It's really great to see. I've known Damon and Alex for 15 years, Patrick and John place to that as well. And looking forward to knowing all of you until the end and then we're done. Get back to be the degenerate that doesn't work
+
+Speaker 12  16:34  
+for this week. Hi, my name is Robin demon. I have known a lot of you legends for a long time or at least known about you. I'm a huge fan. Really excited to be here. My specific interest is a little bit closer to how this impacts cyber physical systems and and I specifically work mostly with different government agencies, government groups, they want to do all of these things, but they usually tend to be about 10 steps behind because of just a whole variety of things that get in the way. So I really want to focus on how we leverage all of the coolness of generative AI how it can support cyber physical systems and then furthermore, how we can support some of the really cool systems that different government agencies are building.
+
+Speaker 13  17:35  
+Everybody, trace, Ben, let's say I work with the MITRE Corporation. I come out of a group within the MITRE Corporation called the advanced software innovation lab. I don't know what that really means, other than on a software architect and I focus on digital transformation, not big DT but small VT. How can we apply process like culture changes, how do we help people and how we apply the technology. So getting after DevStack ops principles and agility and all of the buzzwords but making the buzzwords real. First of all, I am absolutely humbled to be in this room. I have to say that and I've been nervous for days and said, You know what, these people are going to be in a room together. So guys, this is incredible humbled and very honored to be with you all today. There are so many things that are bursting at the seams on that with my work at with mitre, I primarily am focusing the DOD. That's a big double down for about two decades since I focused on a single area. I've always been very horizontal in my roles, but the momentum that the army specific to adopt change the support of the vice and the undersecretary of the army. They realize we've got to change and we've got to change. Generative AI is going to play a key role in that not just for the end users, but how do we apply it to the SDLC, which kind of takes me to where I'm really interested. I want to look at a generative AI for the SDLC. So how do I build better software the entire gamut from this? It applies, but we also have to understand the security concerns. So we talked about the SDLC for the models themselves, how do we secure them? How do we test them? How do we validate them? That takes me to my third area of big concern, which is security, security of the models but also how can we improve security using the models? So again, tons of things that I'm interested in today, I feel like a kid in a candy store already, but just really excited to be here
+
+Speaker 14  19:42  
+I am Chevrolet it's Jeff Sherman. I love to say I've been in this industry for over 30 years. There's no job done. Software developers security. Most people know me as the industry disrupter started DevStack ops, and I'm here because I've been using a IML for about a decade. Now. I have been working in corporate environments and small environments. Super excited about LM and generative AI hoping to see and actually some level of security built in from the start but I want to fix that again too. And when John said hey, I want to go do this. I was like, absolutely. I could not imagine not being here with all these amazing people and having the opportunity to work for humble as well. A great group and super excited about spending time with Bill and hopefully we get to do it for more than
+
+Unknown Speaker  20:48  
+some very sad it's just
+
+Unknown Speaker  20:52  
+it's funny. Most people are really busy, right? So if you send them an email
+
+Speaker 1  20:58  
+expect maybe later that day or so, essentially, together. 15 minutes later, I get a call from the class be excited. That's pretty awesome. I credit Joseph to show man the startup.
+
+Speaker 2  21:19  
+Yeah, so cool. We have some slides here and again, John said please make this interactive. I think we spent five or six hours yesterday two hours 45 minutes.
+
+Speaker 1  21:38  
+I mean, what are they also decided when we get the lunchtime we can vote like that.
+
+Speaker 2  21:50  
+And so just quickly about our the company I work with, we always kind of start with why our company is really trying to enrich the human experience, which I think it sounds like a lot of people are on that same journey. And with that we try to understand like everybody, sort of our customers wide, which I just agree with Brian and then we try to make that our why and then try to solve those challenges by bringing people in services and technologies. And the bottom left to see there. Every system is perfectly designed to get the results that desert Deming. And so that's why we have to continuously improve. That's why I'm so excited about some of the stuff to share today because hopefully we can work together to continuously improve some of these thoughts that we all have that like with generative AI I think we've all like different kind of herded in this room. We have different things like we're locking down we can't do anything right now this is scaring us right? There's all this data we don't realize trained on what all these capabilities we're not doing anything to other organizations that are like we're all in everybody get your own opening Hi account, you know, just go crazy to other organizations that are forming these governing bodies and and sort of the concept of a chief AI officer and that every company needs a chief AI officer now, but and many people have said this right security is a must right compliance auditability and I don't have to probably remind everybody, all the like lawsuits and everything that are coming out daily on the data that the underlying components like he's been trained on so crazy stuff for assault. There will be some terms that I'm gonna make some assumptions on for everybody. Sort of training, embedding and coding and decoding sort of token limits training model grammars, prompt engineering prompt injection, model, fine tuning along with Laura, and reinforcement learning with human feedback. We have details on all of these if you want to go you can go as deep as you want, within reason, but I'm gonna make some assumptions that you guys understand most of these terms.
+
+Speaker 1  23:50  
+And the key point is that, you know, instead of wasting our time debating what the term means, let's just agree that there's so much to the foundation. So there were all sorts of people the same way. So this is a good way for us to have a conversation.
+
+Speaker 2  24:14  
+Thank you for that. And then sort of our point of view I think what resonates with a lot of folks here is the outcomes, what's sort of the end state that our enterprises are trying to reach, and really start there and work our way backwards to where we're at. And as John indicated, there's some terms that we're throwing out we're kind of throwing out this concept of a monolithic large language model, versus sort of a foundational model. And the the thing that we were talking about yesterday is like a monolithic model is a model that, that they don't allow you to train and give you an API to kind of interact with it, but you can then take your corpus of data and fine tune that model to your heart's content. Whereas with the foundational models, you can take a foundational model, you can do Laura or to Laura, all sorts of things to fine tune it to a specific task. That task may be small in scope, or you may want to generalize it to other tasks, but that's kind of the sort of the definition we're throwing around and again, we want everybody's feedback.
+
+Speaker 1  25:13  
+You know, as somebody who's been teaching and training for many, many years, if there was a word he uses that you don't know, his chances are
+
+Unknown Speaker  25:24  
+either, so just go ahead.
+
+Speaker 2  25:28  
+Yeah, and so again, with the monolithic MLMs we feel like that it's a good place to start. You open a eyes of the world and tropics of the world. They're a great place to start and many people may move down that road for a long periods of time, but there may be data where you don't want that data round tripping up to Microsoft or Google or whomever, you may, by regulation have to keep that in your data center, right? You can't let it leave your four walls. So for us, it's really again, focusing on those capabilities, but we do believe that these sort of ensemble of fine tuned foundational models will become a lot of the production use cases that that we will you know that our industry will help DevStack ops if you will into production. And started with that that last mile of integrations is key again, integrating in with your existing operation to sustain DevStack ops pipelines. is key. And then you really have to have, again, you want to get a lot of feedback. We have kept sort of across accounts pipeline to take these things again, from the dead test world into the staging world and into the production world. And we're gonna share some high levels of architectures on how we think but this is the hope is, is that we can beat this thing up over the next few days and have something that we can all use and gain some consensus on. I'll pause here for
+
+Speaker 11  26:54  
+or you can just curiosity or as you were hypothesis that enterprises when training their models that fine tuning is going to be good enough. Where will there be like for let's just not say you're sort of saying these longtail like, very specific ones, like fine tuning is good enough versus like what they did with like a balloon burst up tea were there. Yeah.
+
+Speaker 2  27:22  
+interesting use case. Because I you know, I don't know what they were they released it yet. And maybe they have but they definitely built it. But they were scared because some of the provenance of the underlying data they didn't want to I do believe that a lot of early people with a lot of money burning a hole in their pocket had gone out and bought a GPU GPUs and like, we're gonna build this model from scratch, right? I don't know. One, if the business cases will. Some of them definitely will. from scratch. But because of the commercially viable foundational models and the flood of those are coming out, I think it might be a lot of people might start there. And then they determined that these foundational models, they can't audit them enough or the data that went into them. And provenance may then opt in for building their own. But I think this foundational model is going to lower the bar for people to figure that out.
+
+Speaker 13  28:15  
+And get to that point. I think, regardless, we're going to make the same kind of architectural trade off decisions, right is should I own my own model? Should I build it from scratch? Leveraging a foundational model should I be using what somebody else has? I think we're gonna see across some enterprises, a mix of all of those, each one of them have a different business purpose and a different outcome, to your point about outcomes. So this is one of those. It depends. And we have to do the trade offs and I think one of the conversations this week might be after getting after some of those trade offs to have a better idea what they might be looking, because I am seeing people invest a lot of money and models that they don't understand why the money burning.
+
+Speaker 3  28:58  
+I didn't get to see like five or six things. Exactly. If you look at sort of like take a off just like technology is right now. A lot of companies are in this extension. So it's in my inability to extend another view that I think is AI comes in a bit. It runs the spec spectrum out from technical non technical people. Like it hadn't been clear guidance there. So people have learned that I think that's going to be as you as you were talking about, it's just part of the mind as you're watching is this how do you extend that? What does it mean to extends? And then to your point, at what precipice do you build versus what precipice to buy? And then those other sort of considerations? The idea tends to stick to that all over the place soon. I feel like that's just a common operating model.
+
+Speaker 13  29:44  
+point made earlier. We're not going to stop the conversation. Except we can get the beginning of the conversation started. And we start to get others and industry involved in the conversation because the important part of the trade offs is
+
+Speaker 10  29:57  
+wanting to add is a lot of people believe when they look at chat GPT to one model, and they're going to train or two. I think what we see in reality is that it's going to be a lot of models, right? For example, I only recently found out there's a term called Small language model. Yes. Right. Which is kind of like when you mix that together with the large model, it's kind of gives you another way of flexibility. Because of the of the training and the fine tuning, right? It's getting the examples like adapting this and then sometimes the model gets worse, right? Because it gets tuned to you. And so it's gonna be a mixture of this for that for that and kind of that sort of lesson. In the beginning everybody feels like oh, one LM it's kind of like my my things kind of lesson wrong. And that's why it will never end and make it your own.
+
+Speaker 13  30:55  
+Right in there. Also. We're at the point where chatting to you just send that off to the side. It's a big thing that made a big splash that opened up and democratize the whole idea of AI to the world. That's right. We already know that you can't train for let's say a specific software area, based on what I'm looking at. I need to do with Microsoft did we're looking at get up. We'll talk about that later. That's good. We need to be training on on bodies of knowledge. I actually believe that there's probably room for us to think about jumpstarting different domains models for different domains, whereas experts, it can be having those consortium so this one is around Python. This one is around a particular language or a particular domain space.
+
+Speaker 11  31:44  
+I'd be curious just this week to understand the security aspect of it because it's the first time we've had like, these are open models. So we know what the weights are. We want the parameters but how does security people who can see it, audit something with 40 billion parameters and weights and stuff that is still essentially a black box so
+
+Speaker 1  32:06  
+it's up to you keep practicing but he's got a great slide.
+
+Unknown Speaker  32:10  
+Okay, cool. I just throwing it out. Like that's the
+
+Speaker 1  32:13  
+potential blueprint. Yeah, initial discussion.
+
+Speaker 2  32:22  
+All right. So we'll take a again, please jump in. Just gonna take a high level view of the last 90 days of announcements and this is just a fraction of the
+
+Unknown Speaker  32:36  
+presentation.
+
+Speaker 2  32:39  
+Right, but you know, I'll start at the top left and go to the right and please people jump in, like Palantir at the top left, right for release their AIP and sort of that whole government Trump
+
+Unknown Speaker  32:51  
+he's a little bit personally old guys, but
+
+Unknown Speaker  32:57  
+I don't know if it'll.
+
+Speaker 2  32:59  
+Thanks. So again, starting here on the left, right, the AIP platform was released from Palantir. I'm sure many of you guys know Palantir. Right. They have a lot of government contracts and things of that nature. So they released this March timeframe and then similar timeframe h2o dot AI, which I'll demonstrate some of their capabilities open source project. If you guys are interested, you know, jump on the discord and we can all chat because I'm on every frequently and they have to h2o GPT and are listed in addition to h2o lm which is an LM studio for training. I'm going to demo. One maybe both of those if anyone wants to I won't demo today right now, but I have them up and running, but I want to be respectful of time. But again, they're open source community that focuses on that. Ai, they've been around for a long time. So we'll talk about them but they released these two products, which are all open source service now and in video obviously made a bunch of partnerships on GPUs for their CMDB event management, incident management, all of that ITSM space, along with hugging face and ServiceNow and the release of start code or foundational model Databricks This is from their sort of pine cone Summit, which I know that a few of you are there. This is sort of their model and if you look at what Databricks is saying right first day acquired mosaic released in 2013, V model for 1.3 billion. And then after that they kind of talked about that they're talking about fully governance right linear try tracking, integration with vector stores, being able to release open source build and train your own foundation models, LM evaluation gateways and model features. So they're, they're expanding and part of their unit catalog for this which is exciting, along with their acquisition of abt 30. D is the mosaic, which we were running before they were they acquired. Obviously cohere, and tropics announcements with AWS and cohere. Like when they first started, they were actually sitting on Google and they had asked us to help them migrate into clouds, then they kind of went silent. For about three weeks after that, they announced this partnership with AWS. So they're offering both embeddings and foundational models, along with obviously, Azure and open AI as models and then obviously, the llama models so
+
+Speaker 1  35:33  
+so one of the things I asked yesterday in the session was a really good question. So we recorded the audio. But I wanted to know what he thought was like what's the sort of skinny What should I do? You
+
+Unknown Speaker  35:54  
+might remember it was about Facebook.
+
+Speaker 2  35:56  
+Oh, yeah. Yeah. Right. So I mean, Facebook, as people may not know it, right. But they've kind of hired some really, really good the original AI folks like the folks that created digits, and they have sessions on at NYU that they've been doing for energy based models and a lot of work they've actually been doing a ton of work in, in this space, but it's just kind of been behind the scenes, if you will, and everybody obviously knows chest T but the models that they released are all commercially viable. And so on a seven B 13. D, there is a 30 million parameter model, but they didn't release it because of hallucinations and quality. So they released a 70 billion parameter model. I have several of the llama models running my lab which I'll show you guys but I think the key there is is that that commercial viability. So if you're planning on building a company, up to 700 million users, you can use those foundational models and train them to your heart's content. A lot of people are talking about so I think two things. Microsoft obviously partnered with open AI but there's a lot of issues with what those models were trained on. Now they're also partnering with folks like Facebook on the foundational models that to your point the the weights and the provenance of data is all going public so people can look at that and opt in to see if Hey, my use case you're legally etc etc. Can can use this model because the data that is trained on is super important.
+
+Speaker 10  37:34  
+We've been working with AWS on our integration. So what's interesting, there are approaches that are almost like a catalog that you can choose from top you put here career that have their own background, but you just select the models that you want or bring your own. So you have the same API across that you use but it's immediately in your VPC in your account of protected zone. And they haven't exposed this yet, but you can see in the documentation that they allow you to put that fine tuning layer on top of their models already. So that for us was one of the reasons why we say no, it's customer only. It's very contained in the VPC and it's extendable with our own models and then kind of do the training. If you want to do that. I just wanted to call that out.
+
+Unknown Speaker  38:25  
+Size it was very accessible. The ability to go with him is tremendous. I think that's
+
+Speaker 1  38:35  
+an interesting question to what we're going to developing to do everything I need to do at this point, but structure. I think there'll be some discussion that there won't be just one but like what is especially the doubt, like other ones. Fit are
+
+Speaker 3  39:10  
+seen in every conversation that we had in RSA around security versus or like, how could you build in a way that it's you know, not gonna bastardize your words but the concept
+
+Speaker 3  39:26  
+I'm not going to ask you this concept just works. Like he showed me the question I asked, there's just one front, why do I have to have all these different environments? Like, why does what's running under the hood, have to matter to me as the person that's building testing training, as I started thinking about that level, and so I used to overuse the word geeks this week because I started the the idea of tech geeks and Adobe if we're pushing this more towards the dopamine, Deeks, then there's this layer of AWS versus whatever kind go and grow, whatever it may be, like, that's just more to put on the plate to understand. So the broader question I'm asking myself is actually how do you properly extract or obfuscate is the proper term, but how do you do it in such that there's two clear goals one, those details they don't they're not mired in those details, but to this relation, and we're talking about RSA, your biggest thing is like, you know, you can't push like, why can't you just start building secure software from time to time? Like why isn't these things take into consideration?
+
+Speaker 14  40:31  
+So down all the terms I mean, honestly, an LLM for cybersecurity, you know, at least get you a little bit of a barrier to entry for
+
+Speaker 13  40:42  
+this bigger problem. So we're we are still continuing to hold on security. Right and if you look at just do a little exercise and look at the OWASP Top 10.
+
+Unknown Speaker  40:55  
+How many tokens are in cybersecurity domain, right?
+
+Speaker 13  40:58  
+So the point being is that we're not educating folks, we're not tracking back far enough. We're trying to test it in we're trying to audit it in that's the big fallacy. Secure design secure and absolutely secure the beginning like there's a whole area there that we haven't tapped into
+
+Speaker 3  41:16  
+in future conversation. So here's a funny little tangent safety versus security action, visionary talking about this and it came from a conversation I had with judo one Sisa studio cyberdefense features missiles vs. Code strikes. I'll leave that right there. But it was a very interesting conversation, because it was set up on an airplane flying through right. They can handle bird strikes with airplanes, not going to try to protect against missiles meeting on safety or security and the overloading for security as especially as you're thinking around yellow NS abstractions obfuscations like where are where's the bifurcation between safety ie merge strikes and then security
+
+Speaker 9  41:58  
+and that all comes down to risk profile, like it's two sides of the same coin on like your risk surface or threat surface depending on how you want to chalk it up. But this is really we ran into the same concerns bringing cloud in the large orgs but this is why I'm pushing platform for LLM that there's a walled garden within an organization where a lot of this is abstracted out and they don't clean platform like in a perfect world. They don't know where their code is running. They commit to source control and they get a link, here's your endpoint. And it's permeable enough that they can come in and see how the sausage is getting made if they're really interested. But it's to your point, like you can't know all the things like It's literally impossible to expect a developer to be on top of all the security, what model they're running, what Cloud they're not going to be an expert on all this stuff. Legal Tech is a thing.
+
+Speaker 14  43:01  
+Yeah, and the reality is, AI is gonna help us to simplify it actually works. So the question is, how do we get back to a place where folks can if they need to, or want to, but we've, we've got so many complicated domains at this point, we have words that mean the same thing duplicated and differentiated, ad nauseam, honestly, and I feel like at this point, there's so many duplicate words out there that we've actually gotten to the point where it doesn't help any
+
+Unknown Speaker  43:38  
+AI is gonna fix the duplication.
+
+Unknown Speaker  43:41  
+Put the hands in the savior of the AI
+
+Speaker 14  43:45  
+when you start talking about words that all mean the same thing. History Well, right now they actually do. Create a new point like I'm sorry reconnaissance and attack surface management.
+
+Colin McNamara  44:02  
+Cool Shannon era you bring up the unique terms now HLM interprets them differently trained on different terms in my mind, it brings up is something that that you mentioned tracing, in that the different LMS for different use cases, and you know, I think back in the hyperscale world and then all of a sudden bumped into the space. We all have that codecs are what these three letter acronyms are. And that's all in the confluence or the wikis and that's all in the incident management and taking it's really interesting to me to think like okay, in an apple in a use case of application like in DOD, full of three letter acronyms full of special words, not only how does one take a LM ER model trained externally and patch that internally to for that use case. But then like, what what security vectors does that open up? You know what, what type of new prompt injection can be done by using a different acronym,
+
+Speaker 14  45:01  
+the MLMs that are going to be privatized? If you think about it, they're all going to use some of our experience some of our knowledge, right? And so now all of a sudden, I can go to work for a company and part of that board, if you will, and you're going to be part of their own forever. It's interesting from that perspective, to think about, you know, to your point then, or video about things like the word security, the word safety, what are we really trying to get to and I think it's, you know, about value actually, what value are we trying to instill? Because risk is they talked about it as a cyber insurance values a whole different problem, right? And I think it is now as a resilience. I think a lot of those words now co merging into actually trying to create resilient, you know, customer advantage in our products and capabilities. And even the word security for me lately has been less and less I hate to say it. Yeah, I know. It's gonna be interesting, but I will say the word resilience is a very interesting thing because it brings us all together. And then at the same time, it's delicate balance because I think ultimately and I've been saying this for like, a couple years now, software trust, like do you trust all the products on your laptop? Do you trust all the stuff on your phone? You know, if you've gone and started looking at which, you know, where does this get made and who's making it and some of those questions right because supply chain, and I think it goes back to and I love worldly Minnesota we have so in love with Barbie now. So I didn't even know that Vamp camp. Oh my gosh. And yeah, and I think was, you know, really maps, one of the things. It was like 10 years ago, where we met for DevStack ops. What did they predict? We predicted that most software was going to move into a record state at some point. Closer to the customers are going to snap it. And then we did one recently around AI, and what was that going to mean? It's really interesting to see that a customer just isn't going to care as much about all of the things they're gonna care about. How am I leveraging AI to do everything for me because that's going to be their interface going forward. And I think that's the the most interesting piece of doing a world map on this is what is the customer going to care about, you know, the customers we care about? We care about, hey, I want to use something from a group of people that represents the best knowledge around my specific domain. And if it's flawed, I'm gonna have to have a way to tune that flaw out. And the reality is when you looked at generative AI and Chad GPT coming in and all these things, they trained it on a bunch of papers, it jumped data, and you're getting things out of it that are more junky than you'd like right? So most nations have all this stuff, but if you put good data in and you put real experience and real information in place, they become super valuable to the point where I actually think there's gonna be a next generation of you know, value, it's gonna get created from these and now all of a sudden, and the best experts in the world are going to be on the hunt.
+
+Unknown Speaker  48:09  
+It's gonna be the people.
+
+Speaker 1  48:13  
+I want everybody but I want to tell you something I've been working for many years and he knows like, I got my and I love more than happy to But Chris, if you're having coffee with him, Starbucks will start welding.
+
+Unknown Speaker  48:27  
+Like if you want one of the guys and that's your cat
+
+Unknown Speaker  48:32  
+look at him and he'll bath the same thing.
+
+Speaker 1  48:40  
+Let's get to the real heavy with this some heavy lifting stuff that people are talking about here.
+
+Speaker 6  48:45  
+Yeah, I just wanted one more thing on this topic. Like, I think one really valuable thing we could potentially do this week is map some of these terms traditional terms. On to sort of their equivalents for AI and so like the safety and security topic, like in my mind, the differentiator is threat models, right? So like safety, you have a sort of non deterministic threat model like random things happen, you know, there's some probability of a bird strike you got to protect against that. Security is more about an adversarial threat model. You know, where there's intelligent actor making sure then so like on the AI side, you know, things like BIAs are more, you know, the safety model, right, you know, if the model being used as intended, but not behaving, you know, in an appropriate way, whereas things like data exfiltration attacks, you know, training data exfiltration attacks, as you know, are sort of more security, you mentioned resilience, and there's sort of robustness notions in AI that maybe are related to that. So anyway, just throwing that out there.
+
+Speaker 14  49:44  
+I think all the differentiating to me birds, an adversary in person, snapper, sorry. So something for the adversary, it's going to get in first place. It's a it's a destructive capability to your value creation. It's an adversary right. So to me, the more we can simplify, I think the better AI is going to actually get because we'll all be having commonality to the terms of we're actually getting to, I think the word, the word stuff, insecurity. It's just gotten to the point where we are all talking past each other and that's actually to an adversaries advantage. And so I'm really curious about what we come up with this week to Yeah, I'm getting
+
+Speaker 13  50:27  
+to your point about adversary the turnout. We are in agreement on that because I don't think that adversary
+
+Unknown Speaker  50:33  
+is
+
+Speaker 13  50:35  
+thinking of it as any disruption because an adversary to to get those
+
+Speaker 9  50:43  
+answers worked out the whole blameless post incident review situation that are we building safe to fail systems, where people it's okay for them to make make mistakes and stop questioning like that they do it on purpose or not, like move away from the ad hominem to be like, how do we make it impossible for them to screw it up like that again?
+
+Speaker 1  51:03  
+So that's a knowledge building was having told me, I don't envy your job. This would be great, but I like your idea of what that could be an outcome. Back Yeah, that's literally love that so again, closing so let's get into some of the heavier stuff. This is our conversation. Before we got into the crazy stuff.
+
+Unknown Speaker  51:37  
+You get one intervention for figuring
+
+Unknown Speaker  51:48  
+out avoid
+
+Speaker 2  51:59  
+so yeah, again, you're gonna have your own show. As you can see here in the center, there's been a lot of white guys talking about stacks and architectures that are coming out. This one was released in June and it's already kind of deprecated. So things are moving super quickly. Right. And with that sort of was, it was yeah, it was released in June. And then there's an LM option that was released as well. But again, thanks have advanced in the last 30 days, 30 days seems like a lifetime 60 days. But we've kind of put together this and we were kind of kicking this around yesterday. This is for everybody to give us feedback on please, as a community but we kind of have broken this down into some major hierarchical levels. But again, this is something for us all to talk about. At the top layer of this sort of generic aiops architecture. We have what a lot of folks have been calling a retrieval augmented generation with the vector stores where people are taking a corpus of data, and they're chunking that data up based on whatever it may be, if it's images, there's different strategies if there's, you know, sentences or paragraphs or things of that nature, breaking up these pieces of data that are elements of data into bite sized chunks and storing them into a vector space. And a lot of folks have probably heard of pine cone and some of the others will go over many of the vector storage but this is an area where a lot of folks are starting right now to deal with hallucinations to try to create some sort of utility on how the large language models are responding and giving them grounding in those things. But at the same time to take it from just a question answer into something that can be stitched together into other multiple tasks. We really need to have sort of metadata and things of that nature to be able to relate to those things. So that can be so that retagging sort of case IDs events, routing, customer IDs, industry codes, relevance associated with semantic search and sourcing of the documents. Dig
+
+Speaker 1  54:13  
+deeper into those right now. The sort of trend is to eliminate hallucinations or possibly protect data is to sign everything and go back to data storage. So the one on the way, like one discussion we had yesterday, this idea that you might have a more static version of your corpus of data. It could be a really your SOPs or your sort of governance. Rules or whatever. And that would be different than the fine tuning levels that you do. Right. So that right, like I said, right, because the question count was yesterday. Well, I'm flagging JIRA stuff. But the idea that you might want to create this sort of, I won't say static, but it's a set of data that is governing whatever it is, like maybe even it could be like how you do TerraForm but it's all just like the database but it could be think of it as more and it's this is all just like learning something else that you want everybody's feedback on this imagine that's more of a sort of corpus. Were static definitions. That should have found the way you like maybe style
+
+Speaker 14  55:24  
+Yeah, the way that organizations are dealing with their data is of building a catalog. Okay? And then they talked about things like data lineage, or an example of a company that focuses on value creation in those areas. If you go to a company, capability inside of a company, you're gonna get to what's the data of the company? Data inventory or catalog? And then, you know, in that way, you're going to also have a bunch of knowledge breakouts and a lot of features rather than a tunnel where it's like, okay, I don't think it's as fast as what I see here in this
+
+Speaker 1  56:02  
+particular Yeah, because that's just the first layer so on and
+
+Speaker 14  56:05  
+I think it's great that I'm just saying that I think the place that I would place it where
+
+Speaker 9  56:12  
+we were yesterday, we were discussing it was more schema than raw data like day to day. We got to describe it as like the rules on the top of the box like rules. of engagement. And those are going to shift less frequently, then, like your daily throughput info. And not only that, does it? It's it's a more robust approach to this from a solution perspective, but I think it ends up cutting your operational expense to because you're not having to refresh as often and you're not going to get drift. If something unique emerges from data, you know, like a zero day comes out. Like you've got process around that but it's not the same rock in the pond from like an incident response perspective.
+
+Unknown Speaker  57:04  
+So then I broken a little bit. Yeah,
+
+Speaker 14  57:05  
+I know. I have a question. What are the goals that drive? Because that would tell me this is like I think it goes like what are the business goals or the value goals of the model first, and then you kind of flesh out because then you'd actually have like the framework or like boundaries for how you put together
+
+Unknown Speaker  57:33  
+goals and principles.
+
+Speaker 2  57:35  
+Outcome and why that you can probably keep her on together. Right? I think this is more of what the picks and shovels are, versus
+
+Speaker 14  57:45  
+just come from those goals at top and I don't know if this is what this is where I think companies right now are still trying to figure out what their goals are, so they can get to something of value. And I think we're I think one of the things I'd love to see coming out of this is we could at least have a rough draft of it.
+
+Speaker 1  58:05  
+And I think you'd be goes through all the way that she's wired. I think that great compensation. If you possess this was his sort of first one you can enjoy using. So yeah, so if you can sort of walk through the whole thing interjected just important for exactly database but I think it's because
+
+Speaker 13  58:31  
+I'm gonna take and pass the data catalog. One thing that we're working on and assists with the DoD is data mesh concepts. And we're actually looking at data volumes and started conversation about well, but there's there is some merit to this and considering that you're you're talking about all the data is distributed and you're not going to pull your data, you're not going to pull it all into into a single spot. I gotta tell you that I start playing soccer when I first heard it too, but the goal behind Oh, I think it's great. Going back to understand right, the goal behind it is to understand if your data is truly distributed if you're not bringing all of your data and dumped in one spot How can make it out of data. And so having a product definition, right, so data products, data, consumers and creators, how do we then understand the lineage? It's no different than talking about an API contract. It's no different than any of the other contracts or documents that we're putting out. So it would it includes things like how stale is it? How often is it updated? What's its originating source? And at that is that that that AI bomb or that database has been created by the data producer? So there's a lot of things that are happening in that space that probably makes sense for us to tap on. You have on board somewhere so we don't lose space? For the process
+
+Speaker 4  59:41  
+aspect of architecture, which is the SDLC around data and where the source of some of it's never going to go. Right. There's a lot of relational data that's sitting on Sybase database, it's never going to leave that and then how do you serve that up to this pipeline? And that is I think the ball in
+
+Unknown Speaker  1:00:01  
+the shadows. Would you put your transactional data in?
+
+Speaker 9  1:00:06  
+See in a lot of that is in this integration space more than where the vector store is? And like from a target condition perspective, which we did discuss yesterday. Target condition of a generate a VI is zero shot learning.
+
+Speaker 1  1:00:24  
+Just put it through this slide to have the conversation, I think, but let's
+
+Speaker 13  1:00:29  
+put 100 and put a pin in it. Yeah, let's hear out this one I've been training on what's the business value how do I get to my fundamental goals and principles?
+
+Unknown Speaker  1:00:39  
+And only so that we can rationalize whether or not we have
+
+Unknown Speaker  1:00:44  
+I think I can share?
+
+Speaker 10  1:00:48  
+Like maybe a few things that was gonna be LLM routing, to be picking the one. So that is probably your caching layer writing layer. We'll put that. I've seen people doing a B testing. So it's kind of like the analytics side, maybe that's a little bit closer to like a monitoring, but it's actually more like the analytics to see whether they liked the prompt and kind of the human to the cover. Sorry, yeah, so
+
+Unknown Speaker  1:01:15  
+he's gonna cover that. Oh, sorry.
+
+Unknown Speaker  1:01:17  
+You wanted to have to just
+
+Unknown Speaker  1:01:22  
+shut up. No need to apologize. This is why we're all here.
+
+Speaker 2  1:01:30  
+So maybe I'll step back to a couple of use cases that our customers are sharing, and then we'll move on quickly. So we have and I mean, Daymond and Alex and I've worked for some of our clients. We're only focused on like fortune one, which is a big customer down to like fortune 202 50. So like, the large retailer in Bentonville and then kind of down which they are a large customer, and then a lot of banks. Right. So, like in pharma. One of the things they want to do is that they have like people who are not technical salespeople, but they need to know about the medications. So they want to take a series of corpus of data that's in the language of a salesperson so that they don't have to reach out to a clinician in order to understand the ins and outs of a specific medication internally, right. So for training those things, the same pharmaceutical company wants to publish chatbots on these medications so that the community can interact with them or ask questions about these medications from a chatbot versus having to, you know, interact with people they can ask all these questions, and then you have like financial industry you have people like the folks that that do your FICO scores and things of that nature, are wanting to put out a chatbots for to teach you how to improve your FICO score, to how to do education on savings and financial elements like external use cases. to that. And then the same thing many organizations we've seen are taking their wiki and Confluence and trying to make it easier for people who are doing operations to identify the standard operating procedures to be able to search through a ticket comes in or event comes in, and they need to figure out how to do something and how they can quickly navigate through their internal corpus.
+
+Speaker 14  1:03:22  
+So what I heard from a goal perspective for usage or value is simplification. As a mainstay
+
+Unknown Speaker  1:03:33  
+back to the budget just finished.
+
+Speaker 2  1:03:37  
+Yeah, yeah. So I mean, a lot of use cases and yes, and that will be advancing those and I have a slide talking about some of that, but But yeah, I'll keep moving. So forgive me, John. So at this high level, a lot of folks are looking at retrieval augmented generation and how to work with a vector store. Most database companies are going to release a vector type. If they don't already have one, you're going to see all of your traditional database companies released. So moving from that down to this integration lifecycle component here on the right, this is where sort of your line chain kind of is filling in now has kind of this enterprise integration, but it's not. It's really just open source, right? But it's kind of the best we've got right now, where as you have a corpus of data and you have a fine tuned model, but you have, let's say real time data sources like if I wanted to have as natural language and executive to say, who's my top customer for the last hour, right? They may want to be able to just to ask that and how to generate SQL and pull in who the last the biggest customer was for the last hour or two hours. And then maybe they want to call them and thank them right from a CEO perspective or executive perspective. So that's an example in real time where you want to access that data from an LLM. You don't want to query or call somebody to build your report. You can just do it with natural language and have that interacting with your various API's and URLs as long as they're sort of whitelisted interacting with your Source Control, right, get interacting with your ticketing system. With JIRA, again, we can use confidence, etc in your CMDBs for events and incidents and things of that nature. So these are all plus more integrations that we believe will become PII and will become areas where companies are going to inject the security components, where let's say it's a it's got an ad associated with all these interactions. So if you're asking it, and there's data that it's supposed to, can pull in, right legally, or they're locked or whatever, that it won't respond right or only give them access to the things that they can interact with, but we believe this will be a big part of this journey, right, this enterprise integration. So kind of moving from there into the end. Any questions before I move on?
+
+Speaker 6  1:05:56  
+Well, you mentioned sort of this as access control role. Can you say a little bit more about how
+
+Speaker 2  1:06:05  
+well it's just one element? I think at the end, I'll summarize where all of the access control elements kind of come in. This is definitely one of them. The vector stores are definitely one of them drive the provenance of the data coming in and as you described, once the data is there validating that, okay, this data came in and we checked it for PII and all these constraints, but we need to have an ongoing thing with this vector stores to make sure that it didn't come in somehow data didn't come in. So now more of it is tokenized or some securities around what data sitting inside of the vector stores. And then at the end, which I'll get to in this bottom, which John is pushing me to get to is the sort of this concept of an agent and critic which comes from generative adversarial networks where you have sort of a feed forward network, which is your last mile where people are prompted checking you or the large language models from a mixture of experts or a single LM is spitting out data that you've got this critic that can come into town and say, Hey, we don't respond in that fashion. Right. So there's a sort of emerging thought process of feed forward including some of these things
+
+Speaker 10  1:07:06  
+to add to your customer. If you would put all the data you have in your wiki, you would train your model all that data is available, right? It's like every ad as the exes but the trick here is if people ask, like DLM something. There's the lookup that's happening in the data source as that user so they will only get access to the relevant data. To kind of do their suggestions or so for that there is an access control that is done in real time by the existing underlying systems. So it doesn't have to be put in the model. Sorry. But I think that's just get into the game answer a lot of the questions on this one so you were on pieces.
+
+Speaker 2  1:08:01  
+Okay, let's go. So, but I want to make sure because some of the things to your point that we're throwing out are not in common terms. So starting here with Pepe instinct. So let's say we have a fine tuned model or foundational model that integrates in with our enterprise integrations and maybe pulling documents out of the vector store that again, we'll assume for now that everything is secure. We'll assume that for now. So we can kind of move forward. But again, conversely, conversations to have there. So we can then we can either get it hit an API with a monolith, or we can work with the foundational model to potentially fine tune that on the data as Patrick indicated. So if we have a foundational model over here, and we'll go through a number of those the goal would be let's say for doing question answers that we can take a corpus of data that has been validated and provenance set up in our vector dB, we can use that as a data source. We can also use the question answers coming in in our cache down here at our bottom element here or we can use our large language models to generate these questions are pairs one stripe pairs to fine tune right and then pass through this, this data governance block here, which probably includes everything if you will, but we're making sure that that data is clean, making sure that it's secure understanding the provenance of that data cleaning it and structuring so that it can be trained in tune. And then taking the foundational model, training that model validating it and then red teaming it to make sure that it fits within the confines of of what our organization believes should be the parameters of security so that it's not hallucinating and things of that nature, then taking that 5g model, splitting it into production, including in our integration integration, in addition to including it with our retrieval, hog, manage generation for people to potentially do their individual corpuses of data or public corpuses of data that we can then transform into specific use cases. I'll pause there before I go to the last block. So and then from there, and this operational lifecycle, as we talked about, starting with caching, if we're paying by the token to Microsoft or anthropic, and we've got, again, the use case of anything that's public facing, there's probably going to be a lot of frequently asked questions or similar questions that we were going to ask. We don't want that round tripping and using that tokens for our bill on Microsoft or anthropic or whomever we also don't want that going back to our foundational models or fine tuned models back in our data center or wasting our GPU resources. So the concept of putting a cache on the front end of these with some sort of something maybe like a tick token does for there's also GPT cash or some other sort of projects doing this to determine what the time to live is for these question, answer pairs. We also want to be able to audit those pairs. So when people are asking something and it's responding, we want to make sure that we're keeping track in real time of every question answer, and, again, utilizing that for for auditing purposes. We also there's a concept of mixture of experts was Patrick, I think you were alluding to earlier the GPT core paper that was released, they announced through a leak that there were actually 16 models and underneath GPT four, and these these models have been sort of turned on a very similar corpus of data for a portion of their training, and then each of whom has received specific training on different areas and that's how they're able to pass like the medical exam versus the legal exam versus the accounting and auditing. So there's a mixture of experts that have been trained there and sort of a feed forward network which you will probably have a mobile touch on a little bit here. But there may be a mixture of experts that again, is is responding back. Let's say it's baseball as an example. You've got first base and pitcher and outfielder and catcher might have a coach that's an expert at each one of those. When the question comes in, right, it's embedded into vector space and to semantic space like oh, this questions about drills for first base, well then that expert would get a higher weighting and a soft max and then it's responsible coming through to the user.
+
+Speaker 11  1:12:04  
+Did you say GPT? Cache? Was that like the project from zyliss? Or was that like a general?
+
+Speaker 2  1:12:10  
+I think it's general but it is a project okay. I was curious about LLM cache but LLM hash okay as a generic term. Okay. Right. And LM like gating as a general generic term for routing and routing exists throughout this this whole architecture, right? Not just at the end state but but in this scenario, kind of moving through that mixture of experts into optics to the concept of a critic. So in this critic scenario, again, this is from generative adversarial networks and there's a project that Google released called Genesis. Gemini. I don't know if you guys have seen Project Gemini, you should look at it. So before MLMs and for attention is all we need came out. There was a lot of work in adversarial networks, right? And you guys are familiar with it because like AlphaGo and playing chess and all these things where they take these AI and fight them out and a million different games and at the end of it, they really know sort of everything about it. So in that training mechanism, there's the concept of a critic and an agent and discriminator, right, that are attempting to validate what's who's lying and who's telling the truth. So in this scenario is the concept of just a critic that as the agents are responding or mixture of experts are responding, you have this critic in a feed forward that is hallucinating or someone's trying to prompt inject or is releasing PII. It's kind of your last mile to protect against these hallucinations. Again, it needs to be integrated throughout from the beginning, but there also needs to be this case at the end. And this is again, just an area for conversation about this credit. Obviously, then, throughout this whole thing external to this, like tracking, logging, monitoring for all of the things that we're talking
+
+Speaker 10  1:14:01  
+about, go ahead and so on the cache and one important reason why you want to do that is latency. Because that kills kind of user waiting for the answer of what you usually think that's the one question round trip. Here reality. You The Ask an answer, you ask it to verify you ask it another so it multiplies multiple latencies. So that's one of the reasons why you won't have that caching as well. And the other thing on audit, you kind of put it very much on the security and the critic, but there is another thing if you ask the model generate this in a JSON format. It's not always gonna do this because it's sometimes the JSON is not valid. So you have a validator chain or kind of like a forcing output thing, which is not really per se a critic, but kind of like, you know, check again, you know, you made a mistake or something.
+
+Unknown Speaker  1:14:59  
+Transport Layer, going from one representation to another,
+
+Speaker 10  1:15:04  
+sometimes just needs to correct you asked like the output in JSON, and it's not JSON, please check that it's JSON because it didn't parse.
+
+Unknown Speaker  1:15:12  
+You can even run it through winter at that point. Yeah.
+
+Speaker 10  1:15:16  
+Yes, but it's kind of like there's a kind of a forcing structure layer,
+
+Unknown Speaker  1:15:20  
+as well.
+
+Speaker 8  1:15:24  
+Question about the caching. I know these products exist, but haven't actually looked at them. How cashable is this data? I think a lot of people are using this for you know, they want the personalized response. They want the you know, they wanted to it's not as simple as like, you know, return me this database record over and over and over again, somebody cash it right. How cashable or how smart is the cash and how cash flow is this are these kinds of responses
+
+Colin McNamara  1:15:51  
+I saw a example from Harrison over at length chain where he implemented a caching layer in between the link chain code and the vector database. So there's caching on multiple levels like presentation layer in the web interface, right. We're caching the request in I saw that that released last last week of caching from that caching embeddings. Right. It's putting embeddings in a vector,
+
+Unknown Speaker  1:16:17  
+the vector database, right.
+
+Speaker 10  1:16:19  
+Okay. Yeah. So instead of doing the exact I do a query and it's a response Yeah. So in GPT cache as as the project you can say, if the question is Similarly, using the embedding, it just return returns the same result. So it doesn't have to be the exact match. So even if it's another language, truly beddings it could return the same thing from the cache. So the caching embeddings layer basically, well, you know, that's one of the options either it's exact or it's more like, Oh, it sounds like this is a similar thing like this. So I'm already using different cash. But personalization is like in any case, that that's a tricky thing, because it has been generated with your data. But even then, it's worth too while if you're going back to that age, or doing that query again, that's how
+
+Speaker 2  1:17:08  
+do you find it depends on who's using it. The public's using it, you got 15 million people jumping into this, let's say it's a frequently asked questions about a specific topic. And that scenario, I think your cash ratio might be very high. And again, you don't want to be hitting like in this scenario. We have, like I've got these are four L M Street foundational models and Eygpt three here, when I'm executing this query against these these large language models with the same parameters, like I'm using tokens, but I'm also using resources like CPU resources, networking resources. I'm hitting a database like a vector store. I'm wearing this this day to be able to build the context window. So I want to be to your point of cognizant about round trip times and latency but I also want to be efficient in my use of my internal resources in my data center or my Cloud account, or the tokens that I'm requesting back and forth from sort of a monolithic model.
+
+Unknown Speaker  1:18:03  
+Are you thinking about
+
+Speaker 2  1:18:11  
+like my tuning on, questions and answers that you're asking,
+
+Speaker 14  1:18:14  
+or saying like so I'm gonna use your model and I'm gonna tune in, am I having cents causes concern? Because right now, if I come to your site, and I want to use it, I have to actually go through all these cookies and concerns. privacy notice right? To be able to interact with an application that's not a yes. Yeah, and right now, there's a lot of legal consternation I actually anticipate consent for use or consent or adding knowledge to is something which should be considered
+
+Speaker 2  1:18:53  
+as policy right. I think most people are looking at from a policy perspective right now. Because they're like, we're gonna like if you look at, like the utility companies like that we're working with internal to their organization, they put a policy out and either you opt in for the policy or not, but and then to your point, externally, I mean, that's going to be again, a ball of wax on how people are opting in to sing
+
+Unknown Speaker  1:19:15  
+concerning prom time.
+
+Unknown Speaker  1:19:20  
+Right before how
+
+Speaker 14  1:19:24  
+much have I been trained? The reason I'm asking is I don't see a consent yet. I think it's actually a structure of the future in a way that we leave it out. Now. We're gonna have a lot of pain.
+
+Unknown Speaker  1:19:40  
+You could put that in there UX UI,
+
+Unknown Speaker  1:19:43  
+actually, okay, perfect. So just never taught me.
+
+Speaker 3  1:19:51  
+This And so Mark, the conversation that we're having, Steve, some conversations you're having, and you're talking about consent, and I'm trying to get the word
+
+Speaker 14  1:19:59  
+it came forward from the statements earlier about access control, is that so I think it's really cool. That you're thinking access control, but I'm taking thing just those people that are interacting with this and the potential later for LLS be talking to LLM? There's still going to be consent somewhere with the data itself.
+
+Unknown Speaker  1:20:19  
+Good personal life.
+
+Unknown Speaker  1:20:20  
+Exactly. Yeah. Yeah. And I'm like, okay,
+
+Speaker 10  1:20:23  
+with our system, you don't need to have the concept. There's no different from what the existing is right?
+
+Unknown Speaker  1:20:28  
+That's only because our laws haven't caught up with
+
+Speaker 10  1:20:32  
+the way of the solution. If you're not fine tuning your model, you're just using the augmented it you're not giving away any data. You're not sharing it with any other video others you're using your own data, and I don't see any difference with the current concept.
+
+Speaker 14  1:20:48  
+Not not disagreeing on personal models. I'm talking about for the larger enterprise. Terms and Conditions typically face even how it's going to affect employees and some of the things because what he's got right now, if this is a personal model that helps me to understand a little bit more but if it's starting to focus on like, the enterprise those things I do think it's been part of the enterprise so
+
+Unknown Speaker  1:21:18  
+where would you integrate into this?
+
+Unknown Speaker  1:21:21  
+It's outside it's a bit in the Lair outside
+
+Unknown Speaker  1:21:25  
+Ron's gonna go on this one. So
+
+Speaker 14  1:21:27  
+we're talking about access controls, being baked into results because that means you're gonna have to force the model itself to start to a Cognizant cognizant of the access admin consent as part of
+
+Speaker 3  1:21:46  
+our session together I literally treat yourself last night so the conversation I was I like I've done the whole phone thing because actually, as I was trying to build models shouldn't have to have that type of ending. I think there's a layer,
+
+Speaker 14  1:21:57  
+that census data that if you're going out to transactional data, transactional data does already carrying some level consent, but I think that consent is going to go deeper. I don't think they're going to be able to like just give away your data anymore. I think knowledge is going to either become part of your PLI or it's not. That's the question. We
+
+Speaker 4  1:22:19  
+start to support functional roles in an organization. That's basically what this is, right? You're abstracting partners. So to live on
+
+Unknown Speaker  1:22:27  
+this model, you're creating durability long term,
+
+Unknown Speaker  1:22:30  
+does that mean like granted license is key based
+
+Speaker 14  1:22:35  
+on licensing because consent is about giving something away, but as their licensing associated with and that's what I mean, some of the legal
+
+Speaker 8  1:22:43  
+should also be clear, too, and there's two clear sides. One of them is your customer interaction. And the other you're talking about is internal usage, right. Your employee employee employees
+
+Speaker 14  1:22:56  
+are starting to narrow down on what's the difference? Well,
+
+Speaker 8  1:23:00  
+I mean, there's a legally there's a big difference like forget the technology evolves, right one of them there's a huge legal difference, which is one is your customers consenting to use your your service, right? What's your going to do with their with their data? And the other is more like what Alex is talking about, which is as an employee, what is what is a work product? What's a work for hire, right? So if I write a bunch of documents for my company, and it's my thinking, it's my thought process, right? It's a lot different than saying, Well, okay, you know, if I contribute, I'm using a service. I'm using a social network, or I'm using Patreon using Page duty, right? Everything I put into that, it's like, well, I'm doing this to you know, to help my company I have to have a data privacy guard, you have data privacy rules around that, and use the service, I have to basically understand what I need to use the service and what you can do with what I'm giving you. That's kind of a classic. The sort of the new any other application. What's different on the employee side is now we're saying that could I take all of these documents I've written, right, my product management role? Could they now abstract those into a virtual, Damon? Right? And then now keep that in perpetuity? Right. That's a whole different
+
+Unknown Speaker  1:24:15  
+view, our customer employee, and
+
+Unknown Speaker  1:24:21  
+I mean, there's different
+
+Unknown Speaker  1:24:23  
+models themselves. Like there's, there's nuance
+
+Speaker 8  1:24:27  
+to be doing to like so like, we're not training, you know, like, we don't use external services. That are going to retain any of the prompts for customer training.
+
+Unknown Speaker  1:24:42  
+Slash terminated brake, running to finish this, like I don't want to stop.
+
+Speaker 2  1:24:49  
+A good conversation. A serious conversation, like this, but like, no limbs and where these hack vectors are going to come at us. It's going to be completely different. So it's a huge and serious topic, right? There's our security and safety like personal safety. And we're talking about breakfast like, you know, right now you get a text message or an email someone's phishing you but what happens when they use an LLM to track my conversations that we're having and really come at you it's it's a serious
+
+Colin McNamara  1:25:24  
+thing, right. I was gonna say to the conversation have at least gotten Mexico right.
+
+Speaker 7  1:25:34  
+And friends, I was down there was on strike right now. She's on strike because the studios are basically stealing their likeness attempting. Microsoft is coming out right?
+
+Colin McNamara  1:25:53  
+If I'm architecting that service My goal is how many Oh 365 training and as the top 20 Customers party on it's really to steal the digital identities of my workers. And so to create to move from Ai assisted worker to autonomous AI work on some point. Yes, absolutely. That's my goal as a personal
+
+Unknown Speaker  1:26:23  
+person to create long time.
+
+Unknown Speaker  1:26:26  
+I'm going to tell you, I
+
+Speaker 14  1:26:30  
+think some of the trafficking going towards a licensing
+
+Unknown Speaker  1:26:40  
+Corporation. point because your software coming from the software becomes part of what we do and how does it work and so
+
+Unknown Speaker  1:26:58  
+it's really fast.
+
+Unknown Speaker  1:27:02  
+California right.
+
+Unknown Speaker  1:27:16  
+To the AI
+
+Unknown Speaker  1:27:25  
+you can see
+
+Speaker 15  1:27:33  
+exactly these this picture group right over here,
+
+Speaker 14  1:27:37  
+you it let's just say you're using I don't know some product that uses AI. As an assistant,
+
+Unknown Speaker  1:27:44  
+I just did I created a logo.
+
+Speaker 14  1:27:47  
+So now, the question is, if you've got a copyright that can somebody undo your copy of that image by simply tweaking a few pixels, because according to the law, I just saw come out. answer those. Yes. So now that's licensing,
+
+Unknown Speaker  1:28:04  
+which, which which law because copyright
+
+Speaker 14  1:28:08  
+just came out with a litigation that said we cannot count it was this week it was aI generated image. And what's problematic about that is there's other styles like user
+
+Speaker 14  1:28:24  
+friendly or whatever. Is there some aspect of that image? Because I no longer have access to it right. In other words, it could actually be taken out of that image. And then somebody tweaks what I was doing, and they actually copy right down, and now you're actually distributing the value of what that word was once upon a time, and it becomes really interesting. Especially, like, you start to say, Well, what what is the aspect of what human intervention is on that particular image? Like, it's really an interesting piece of the puzzle because I don't think the courts really figure that out. I anticipate that that particular judge is gonna do a zillion times and the only way they're really the only thing that I can see feature wise, that they actually have an answer for this on is image licensing. And I think if that's the case, there's a whole bunch of companies that have actually done damage to their AI implementation because of the retraining, not one of those spaces was well, and you're talking about
+
+Speaker 13  1:29:29  
+specifically, the copyright was that it was an image that was created, an AI was created. They tried to copyright the AI having created Yes, right. Not that they have no human.
+
+Unknown Speaker  1:29:39  
+So no, think about it.
+
+Speaker 14  1:29:40  
+No, and then it came out and you know, actually, if a human manipulates but my understanding is only the parts that were human manipulations can be copied.
+
+Unknown Speaker  1:29:48  
+Now. That's what I'm agreeing to.
+
+Speaker 14  1:29:52  
+Enroll now, if I go into you, tricking him into copyright. I can take your image and I can manipulate the purpose you actually have copyright for and called the grounds, which could be very small. isn't really the same thing. It it says five fundamental chords,
+
+Unknown Speaker  1:30:09  
+you can you really prefer it,
+
+Unknown Speaker  1:30:13  
+but it's a reverse that is,
+
+Speaker 15  1:30:15  
+so I truly created them. You change that color from orange to burn.
+
+Speaker 3  1:30:20  
+This is like MC and MC and review was FCDAO when you get your music
+
+Speaker 16  1:30:28  
+but under pressure what's
+
+Unknown Speaker  1:30:40  
+seems like it's different to like Dun dun dun next door who yeah that's what I
+
+Unknown Speaker  1:30:51  
+figured people were just I think both
+
+Unknown Speaker  1:30:59  
+all and so everything was fundamentally
+
+Unknown Speaker  1:31:08  
+yours
+
+Unknown Speaker  1:31:16  
+Musk is
+
+Unknown Speaker  1:31:23  
+crazy yeah
+
+Speaker 7  1:31:35  
+pretty big so I'm gonna do the users themselves consume the conversation, their rights and use themselves are. I think of myself as a user sort of kind of be hypothetical here.
+
+Colin McNamara  1:31:50  
+Myself, even right now, so I have my otter transcribing slot I have so using otter as one agent to assist
+
+Unknown Speaker  1:32:07  
+you use discord
+
+Speaker 7  1:32:09  
+along with make sure our Slack channels and as well as chat JpT to create my prompts on answers in there. So there's I have supplied information, the channel
+
+Unknown Speaker  1:32:27  
+also, like my cheat codes you get
+
+Unknown Speaker  1:32:31  
+for the for
+
+Unknown Speaker  1:32:34  
+the party, party
+
+Speaker 7  1:32:37  
+or every single flow of information coming to basically no fucking governance at all
+
+Speaker 3  1:32:50  
+based on our conversations around a verifiable architecture, but you need to source data to verify it and then see you take this off of the model too know it has to happen at the end of the year called an authorization privacy layer that has a series of rules called privacy predicates that term and based upon the source and the target. So the source where it comes to the hardware is basically somebody requested to train it. They get
+
+Unknown Speaker  1:33:25  
+paid to have you come across the
+
+Unknown Speaker  1:33:28  
+constitutional AI. Now
+
+Colin McNamara  1:33:31  
+there's a let me let me find the link for you and I'll post this a Slack channel I think so. Yeah. Hit one as well. Sitting right there. Yeah, my eyes like when I was a kid, I could look at the tiny screen and have all these things and so
+
+Unknown Speaker  1:33:48  
+I brought my daughter.
+
+Unknown Speaker  1:33:49  
+Yeah, it's okay to travel.
+
+Speaker 17  1:33:51  
+Yeah. You're the only one in the room can we get the interview from your Oh, I'd love to Yeah, absolutely. That's.
+
+Speaker 3  1:34:12  
+Pretty busy. So nice. Yeah, it's like very close up.
+
+Unknown Speaker  1:34:20  
+The laptop monitor because
+
+Speaker 3  1:34:24  
+I have one from like five or six years ago that was the biggest problems like between the back and this one. Like you can tell like the quality of the streets or differences. These are
+
+Unknown Speaker  1:34:38  
+Yeah, looks like the colors.
+
+Unknown Speaker  1:34:42  
+Is the resolution good? It's actually handsome.
+
+Unknown Speaker  1:34:47  
+So it's not like watching movies, but if I need a second screen type and so it's nice to have a second screen just to put something up there for that reference.
+
+Unknown Speaker  1:35:06  
+verifiable?
+
+Speaker 3  1:35:08  
+Yeah, so the idea is to get rid of the constant Trust. Trust and just trust a subject that you trust by trust. And then the question is, how do you how can you want how can you deterministically quantify trust identity, that's a big problem to solve. So really, it was verified to verify that
+
+Speaker 3  1:35:32  
+I can determine the rules or what I need to verify those so that's what I was basically going through and saying okay how can I allow it is like there's two aspects in this model uses data. And then there's also the person have access to this data.
+
+Speaker 3  1:36:06  
+So here we are walking through some chicken scratch your sources your data a PDF, document, whatever
+
+Unknown Speaker  1:36:17  
+the target Demolish.
+
+Speaker 3  1:36:21  
+And then you have a pregnancy. So this target can have a list of privacy, training,
+
+Unknown Speaker  1:36:29  
+questions and a source of access this target person, use this source.
+
+Speaker 3  1:36:40  
+Gas for the app from all your source data. Then you have the verification. It's going through sorry, it's the source. So the source is the winner
+
+Unknown Speaker  1:36:59  
+about to set a stack of quarters.
+
+Speaker 3  1:37:04  
+That basically says okay, the LM, somebody says and says here, he always needs to train. It goes through the data leaks. Because for example, this could be a political model. So basically build a practice that will be based upon data sources like Google Docs, who owns these different types of data qualifiers. And that's it. There's really just a fairly simple way. And so the yeah so and then also the system suddenly
+
+Speaker 3  1:37:46  
+started to take place for this isn't even signed, sort of assertion, that sort of assertions around us. So now you're starting to look but it's like these and so that was as far as like dry money. Because the model doesn't, like validates so signature verification transparency,
+
+Unknown Speaker  1:38:22  
+because it consistently
+
+Unknown Speaker  1:38:23  
+does more.
+
+Speaker 6  1:38:30  
+Yeah, well, and in terms of goals, like you need some some enforcement point. Yes, right. So like some sort of network proxy or something like that. Yeah, because like, I I have access to, you know, my virtual and being part of the organization. And, you know, maybe they don't want me to train a model so that I can view those locally. And so I went down and my team
+
+Unknown Speaker  1:39:12  
+tried to understand our concept. Starting to do that. I think they're the kind of copying, there wasn't like a Change
+
+Unknown Speaker  1:39:44  
+All right, we're gonna go around
+
+Unknown Speaker  1:39:44  
+workflow. Operations.
+
+Unknown Speaker  1:39:54  
+I think the other approach is
+
+Unknown Speaker  1:39:57  
+to tie it back to the
+
+Unknown Speaker  1:40:01  
+thing where like, I'm enjoying
+
+Unknown Speaker  1:40:02  
+Alright, yeah, like It's amazing
+
+Unknown Speaker  1:40:15  
+all right, but
+
+Unknown Speaker  1:40:21  
+it's never gonna do that. Next you know? This is goes
+
+Speaker 3  1:40:31  
+I think this slideshow just sitting here taking notes. Okay.
+
+Unknown Speaker  1:40:44  
+Completed probably just went in and add I sent you a document today
+
+Speaker 1  1:40:59  
+it was like things that come up mentioned this last time
+
+Unknown Speaker  1:41:15  
+I got it done. Okay. All right.
+
+Unknown Speaker  1:41:22  
+Ultimately, we're kind of that mean big time. I mean, long term, but I feel like there's an economy of that. So what does that mean? But it is important. He talked about he talked about what is the what is that? Investment?
+
+Speaker 8  1:41:50  
+Decisions. Stations. Documents, narrative, narrative, narrative. And tower like Shane's right starting to order level team level three level two, you get this ultimate stack
+
+Unknown Speaker  1:42:22  
+right, yeah.
+
+Unknown Speaker  1:42:29  
+reading too much into what you expect to watch
+
+Unknown Speaker  1:42:41  
+you know, it's it's, it's a completion it's not like the origin but I do yourself on the boss right there because I'm going to challenge you. All right.
+
+Unknown Speaker  1:43:11  
+So sales summary. I've gotten data, the size and shape of data and I just like walking around with it
+
+Speaker 8  1:43:44  
+right and then I can summarize I know what your forecast looks like. She's now I have to do the
+
+Unknown Speaker  1:44:01  
+translation. I hope so. I would say at least, you know, that
+
+Speaker 18  1:44:20  
+he was really
+
+Unknown Speaker  1:44:25  
+good. down that is a
+
+Unknown Speaker  1:44:40  
+great
+
+Unknown Speaker  1:44:48  
+just kind of get a look at this amazingly similar
+
+Unknown Speaker  1:44:51  
+situation, but like at least feel restrained. So sometimes inquiry and in like there's a doctor's report document. Go and generate inquiries and additional letters. Trigger
+
+Unknown Speaker  1:45:21  
+triggers, expose less.
+
+Unknown Speaker  1:45:30  
+layers is against like
+
+Unknown Speaker  1:45:31  
+a real
+
+Unknown Speaker  1:45:39  
+presentation.
+
+Speaker 3  1:45:41  
+This presentation is yours to privacy organization begins by targeting source and target data in a second one is to kill a person of your chosen somebody up versus the use of force. So it's getting students to just
+
+Unknown Speaker  1:46:10  
+get started than they are to the answers to the
+
+Unknown Speaker  1:46:22  
+first weekend going to do the demo now. So
+
+Speaker 2  1:46:34  
+yeah, thank you, everybody. So I'm going to there's going to be a couple of demos that we're going to show. We're going to show a model based off environment which I've shared with you that includes some foundational models and monolithic model 3.5 We're going to do some examples of triple admin and Federation. If you're not familiar with that, I'll show it this way. The slide on it will be exercising fine comb along with chroma chain demos, along with the Rama models, factory models and again, just a quick amount of time pretty quickly. If you're not familiar with retrieval, oxygenated generation, this is kind of the new buzzword that's coming about for vector stores where you can take a corpus of data and you can split that data leveraging a set of embeddings there's a leaderboard for embeddings that you can look up on hugging face and it's based on weather classification, clustering, ranking, retrieval, etc, etc. whatever data you go whenever you're wanting to, you're wanting to embed it in your choosing your record store and be aware that not all of them are general purpose and when you and be aware of that the embeddings and dimensions and things of that nature affect your throughput latency calculation on how to scale out for both those latency and throughput calculations. So in this scenario, also just embeddings another one embeddings there's a lot of like, recursive text embeddings you guys are probably used to but the embedding strategy is important because the way that it breaks things up into sentences and words and the token limits and things of that nature are very important. There's also through length chain, multiple ways of retrieving the data stuff. Refined MapReduce Makary right we can talk about all those things and how they impact your retrieval automatic generation. The basic concept though, is I embed things into a vector store based on whatever my outcome is going to be. Again, the data that's going in here should be cleaned and secured before it gets here and we should have a way to audit it once it's in here. And then as my query comes in, it actually does uses the same embedding strategy and then executes. It could be cosine similarity or nearest neighbor search to find out what the correct answers or context are.
+
+Unknown Speaker  1:48:52  
+I didn't want to interrupt I was gonna let you
+
+Unknown Speaker  1:48:54  
+finish that sentence.
+
+Unknown Speaker  1:48:58  
+You don't see this everybody.
+
+Speaker 2  1:49:02  
+So again, and again with your query and context, this is where we're building our profit engineering. In a context learning we talk a lot about zero shot, one shot a few shot in context learning and dependent on the model. We'll talk more about the models. If you have a smaller model, it may need some few shot learning so that it responds to you it doesn't hallucinate whereas a general purpose model making new things for a shot
+
+Speaker 1  1:49:31  
+was interesting essence. I've been building a lot of trust from the database. And even MongoDB, which is interesting story. But I didn't realize you know, sort of naively like everything in this world. For me is like a just sort of the hello world of academics, you go out and you'll have like, an awkward talking. This is like the process of taking your data chunking and splitting it and then sort of fusing the embeddings that he's talking about. And so, you know, me and Colin work and like he was just sort of like the example of like 100 by 25 fluffers. And you always catch a sentence when he was talking about yesterday, like I didn't realize there were like all these other strategies, which then sends, like you can do sentence base or paragraph based or even sort of tokenizer of native bass. So there's a whole slew of these interesting patterns there. And then that plays into some of the performance stock and showing up how are you gonna like it like, as sort of a precursor this slide is then what? How do you want to tokenize that as a start, so this is layering optimization strategy. Like, I usually know that will completely existed other than just slamming data here.
+
+Colin McNamara  1:50:53  
+Oh, yeah. And one thing I saw recently, from was team started to use markdown for inputs outputs, and then leveraging the the structured headings as as a break point for the retrievers using that using the I guess the metadata of the document and natively to structures,
+
+Speaker 1  1:51:13  
+sentences or paragraphs. It's all just your code. If you look in the source code, it's just a loop of checking and carry out the code in the way you want. A lot of us have just been cutting pasting other people's examples, but two columns point like there's an example of somebody I'll just look at each one says tubes and industries that are now chunky that the whole shocking strategy knows. A lot of possibilities for optimization. So
+
+Speaker 2  1:51:44  
+if you go to Huggy Face, right, they store all the different giving you details on the image dimensions and things of that nature. And if you're going into let's say, pine cone, there's some tutorials and strategies on how to scale out and scale up and protect your vector stores. And then there's just a whole set of I won't get into all of them, but I'll just kind of throw this a little bit of a NASCAR because it's part of this sort of Bake Off scenario. Where in this vector database space, we have our traditional players like Google, we have mediate MILVUS. If you haven't seen the Novus architecture, you should check it out. It has a I did image Yeah, it has a Kubernetes operator so you can plug it in as, as an operator inside of Kubernetes. And it's meant to deal with last mile vector stores where you have your indexes along with your metadata and all of these sort of elements, but in the background, it's got sort of this Kafka broker and pulsar to be able to deal with things in more real time. So it's an open source project, you can check them out. And
+
+Speaker 1  1:52:49  
+one of the things interesting too, I've got a problem trying to understand what's the right mixture of metadata. That's why I think Mongo is very interesting. And that's by definition, great Mongo objects. All your metadata is in the JSON document. And then they have like another attribute which is embedded, but like in this example, use Pepsi D. For the metadata, right? And other people are writing or like in this example, teacher soldiers, so it is a nice discussion about it doesn't make sense to put the metadata in every case in the embeddings work itself. So thinking about how to use or especially reading about operationalizing incident. The use case that I've been thinking a lot about is let's say that it is magical world. Some corporations and like maybe I want to from the LMS question like what incidents chatting work on last month, that were P ones P two and four, just give me Monday to Friday and dealt with security or resilience then and so that's, at least from my experience, it's like a hard thing to sort of get out of the sort of natural filtering of the bottles like a top cake. Or even pine cone has a super filter, but you're filtering against the actual soil of the nearest neighbor or the structure of this is. So the more the more logical way is, take all that metadata out and put it somewhere else. So I can say give me all the embeddings and this again, why Mongo but I think everybody's gonna have their own version of that. But with the micro examples, I'm going to slice through all the document objects using this. There's an index to give you all those matters. And then I'm just going to sort of build up a collection of a bunch of embeddings. And now I'm asking a question of all the incidents, all the descriptions of everything in this case, the challenge
+
+Speaker 14  1:54:51  
+isn't this one I started so I was schema.org Does I mean it's not for legacy information. Go forward. Seems like the place that I'm seeing some traction lately. tag
+
+Speaker 3  1:55:09  
+in the scheme has been around for that's like the world optimist, dance index Google. I mean, that seems like
+
+Speaker 14  1:55:16  
+that was part of our scraping process was to get it all. Basically. They tell you that it'll help you with your index. So they brought us to it. It's actually got
+
+Speaker 1  1:55:33  
+to actually fill up I hadn't thought about that, but like that fits well. I mean, what I was trying to do is work with Alan's position to handle these videos and transcripts and thinking like how if I put all these videos in one place, that's gonna be nonsense. Yeah. So then I started to take that data, like who was the host? Who were you know, who was the participants? What's their background? I need to separate that out. So any, any sort of model that
+
+Speaker 4  1:55:59  
+kind of like the auto web, where you had all these different?
+
+Speaker 14  1:56:03  
+It's just, if you look at the players that basically started it was like Google, Microsoft, Yandex, and like, some of the index and index thing and now lamps are pretty important for each other.
+
+Speaker 2  1:56:16  
+You will demonstrate some of that, again, it's homegrown, but it's more for demonstration purposes about like, users and users. That are logging in and opting in for their own task, your PDF or question answers. And then other users that are power users that own a corpus of data, want to cleanse it so that it can be used for public consumption, and then to your point, how the chunking strategy is validating those chunks, editing those chunks, being able to summarize those chunks have metadata associated with accessing those chunks and be able to add tags and generate tags automatically as the data is ingested. So we'll demo some some of that. I do want to power through just a couple more foundational slides to give some intuition on how the Jin aiops architecture builds on some of the other architectures that are out there. Again, this one was talked about by Alex for interceding for us lives. It does have some good components on pipelines and vector databases, you should check this out the orchestration components, the API CLM cash components and API's, I think it does a good job. I don't think it takes into consideration this cross account thing that we're talking about from promoting data from dev test QA to stage, which I think is what I'm hoping one of the outcomes of these conversations will be on some ways that we can talk about doing that. And then there's another one that's an LLM pop box pipeline, which I think is good. But I my critique on this is I think it's too close to ml ops. And the reason why I say that is it's really talking about a lot of the things for the beginning steps of provenance, which are super important. But traditionally, what I've seen with data scientists is right now they'll build a model. And they'll go through the same financial bias checking and all of these validations and they'll publish that model that metrics associated with that particular model. And then they'll release it and then the DevOps teams will work that into its production use the data scientists are very rarely involved at that point in production analyzing the very front end of this model, once it's been sort of, you know, according to oil sort of blessed or sentiment analysis or whether it's going to give you a loan or not. I think this particular model focuses more on that. Whereas I believe that the data scientists are now going to have to have more of a dual role and ops because of this hallucination problem that we're talking about. Because your traditional ops folks are not are not going to be able to know why this thing is hallucinating. There's going to have to be some feedback loop but the data scientists on all the things that you talked about is the data. What do we do with data, we get a request to remove somebody's data from all of our data and we got to do that. That's going to be a pretty in depth thing that's going to have to go throughout the pipeline. But we have to be concerned with what I want to share this. Please take a look at the hopeless with this. This architecture that we kind of took some things that weren't there and kind of added to it. But again, this is everybody please redline this. We also do have some larger talks that I don't want to get into now because we're gonna get into the demo that starts with the beginning white paper attention is all you need. This breaks down the whole GPT training process, the encoding the embedding multi headed Attention, attention, tokens, token limits the cost what GBT three when it was open source, the data that was trained on reinforcement learning with you and feedback, some all of these sort of contexts, the cost of these things, what we're talking about prompt injection and white papers on how they've sort of been able to exfiltrate data. This is produced in June. So there's a lot of cool
+
+Speaker 1  1:59:46  
+stuff when I do that. Just I'm posting all the stuff in the slides.
+
+Speaker 2  1:59:54  
+And so then sort of a final thing. Sorry, forgive me a final thing is, is that, again, when GPT four, it was late, it's using sort of a mixture of experts. A lot of papers started coming about and I think a lot of people have talked about, well, how does my know my LM is going to be trained on this case or that case or that's best fit for my purpose. And this was again released in June and it has the NPT models and some of the other models but as you can see here, like whichever models did best on this use case, you can see that none of them were the clear differentiator. So the thought process is that you will be able to take a model and fine tune it for your case your use case that will be better. It's like you have the general purpose jack of all trades, master of none, but you will be able to take the foundational model and training specifically for your use case. And if it's only for that limited use case, you may not need a 70 billion parameter model which generalizes to everything you may give us a 7 billion model parameter or 13 billion product model parameter with some Laura or fine tuning on the front of it. So this is just sort of intuition on that. Thoughts before I just jump into sort of our demos to questions. So the first demo I'll do is this sort of retrieval augmented generation and the thought would be that I'm planning on open sourcing this and this is some stuff that you and I were talking about early days for some of his work. So in this scenario, there's a couple of personas. And across the top here, these are areas that we're building out obviously first, we're talking about document question answer. There's a lot of this is I just call it image generation, but it's not really an image generation. It's image to text text to image, image to video, etc, etc. Utility integration where the once we have a document QA that can respond consistently and we're sure that this thing is locked down. Then we want to be able to take it and allow it to be in utility so we can stitch it together with other MLMs that we also trust to have been multi step cast agents that can actually do full jobs versus individual tasks. And then based on hyper personalization, tune in for their specific user, that user is an executive. We're talking about collaboration, and they're stealing emails, document summarization, great author and operations and they're dealing with tickets and events, making it so that they're receiving real time information that's relevant to them to gain that sort of business value for hyper personalized agents. These are areas that industry is talking about. I haven't seen full end to end like value streams that have been automated utilizing this technology and it's something that we're talking about
+
+Speaker 4  2:02:25  
+just context, which is exactly how this system will correspond to one of those diagrams.
+
+Speaker 2  2:02:35  
+It is really the work here that we will demonstrate is this top area for retrieval, augmented generation, and then taking these foundational models and giving you sort of a full stack view of what it takes to run a foundational model. I do have a laboratory that I've just recently stood up for training. So if folks want to work on a dataset and train a model, I've got some tool used and we can throw some data at potentially fine tune. So this particular piece in here, this area down here is something that, again, I want a lot of feedback on but I won't be demoing and I don't have any other code together other than basic mixture of experts that we'll be demoing because I'll have four different large language models that are each exposing an API to have a central aggregator of those API's. And then that scenario is where you could put a feed forward gating scenario. So we do have some of that because it also would expose an API from that point. So you could chain these things together, but we're gonna primarily be demoing this top piece with tags which we'll talk about particular individuals having their personal vector stores and being able to make a public vector store with data that has been approved. And so we'll demonstrate some of those things. But yeah, that's primarily what he's going to show. So, with that, I'll just kind of come over to this. This is just an initial and again, this is high level demo, but this is a basic, this is using chat. GPT GPT 3.5 In our Azure
+
+Unknown Speaker  2:04:16  
+trust me, it's
+
+Unknown Speaker  2:04:20  
+what's this? What's this?
+
+Unknown Speaker  2:04:21  
+Is this a? Is this a?
+
+Speaker 8  2:04:23  
+Is this a neural interface you built or is this something you an open source thing you've wrapped or what is what are we what you're
+
+Speaker 2  2:04:29  
+showing here? is me and my team has built from scratch. The LLVM front end is open source that we've adapted, and it's h2o GPT, which you guys should all take a look at and join the discord and LM studio, which I just recently you have stood up and if folks want to be able to train a model, maybe that will be a breakout that can help me figure out how to use this LM studio. But yeah, this interface that I'm showing here, this is all code that we've written and plans open source. So this excites you guys, we can use Python, flask. And this other interface here, which is another thing you might be interested in is great, yo, if you haven't, you might want to check it out. It's a Python library. So it's all Python. You don't need to know any CSS or any of that. So this interface along with hugging faces built in radio, and so you should definitely check that out. That extra questionnaire I've got and then I would also I'll just show a couple more things. For calm context. Got here's my Azure opening. So two things. If you haven't looked at hugging face, you should go check out our database. It has a leaderboard of all the largest line items on this leaderboard. It's not just a leaderboard, it's so that you can grab these foundational models and run them yourself. Right so you can if you have a cloud environment, right and or you have GPUs or CPUs, and if you have a Mac, you can run the G ml models are tuned for M one and two. So you can run these models using the shared memory on your Mac. And they do inference really well that the graphical user interfaces are lacking. But But yeah, you can run on these models. So in this scenario part of our demo, I am using a model off of hugging face.
+
+Unknown Speaker  2:06:37  
+Actually, three, all
+
+Speaker 2  2:06:38  
+three of the models that I'm demonstrating are base. But in this scenario, I noticed this interface this is all radio, but you can come in here for any let's just say I'll just grab the block here. And I'm just pretty famous for quantizing models. Does anybody everybody familiar with quantization? quantization is when the models are released. There's 16 bit floating point numbers for each of the individual nodes and tokens when you quantize that you it hasn't really looked through the ones that aren't as important and concatenates those eight bit or four bit and
+
+Colin McNamara  2:07:18  
+how does that relate to the earlier discussion about using different embeddings and lighter weight embeddings there's like a quantitative embedding that's referenced from that.
+
+Speaker 2  2:07:29  
+I would say the quantization is usually we use that for testing because we don't want to use GPU resources. There's going to be a little bit of a degradation but then when you put the vector store on top of it, that's supposed to fine tune that. So it should allow you to measure testing and know if you need zero shot because it may not work in a quantized version, then you may need to do one shot or a few shot in context learning with a quantize model because the quality will be a little bit
+
+Colin McNamara  2:07:53  
+lower. So we'll use that like as an earlier stage of a pipeline. So
+
+Speaker 2  2:07:58  
+we're taking it around and we're testing it and we just want to be able to run it in our lab and sandbox. The quantize versions are great because they don't require as much GPU resources, but as you push closer to production, you will definitely probably want to use the 16 bit models for higher quality so you won't lose
+
+Speaker 10  2:08:15  
+like your deaf experience. What's that local deaf experience? run everything on my laptop and that will be embeddings that did it on the plane, just continuing the wind just running on the laptop.
+
+Speaker 2  2:08:29  
+A lot of people will want to run. So yeah, and I challenge everybody to start being able to run your own foundational model. But in the next week or two I don't have a promise to the demo. Obviously, the thought processes here is hey, I want to bake off a large language model and then the next thing is is once I've baked it off and fine tuned it and made sure it's good I want to put it into production, which is I think the big challenge for us right as DedSec ops practitioners is how do we take this model and promote it securely from you know, a loose dev environment sandbox all the way to customer facing in the right way? In this scenario talks about like hey, if I'm using coherer, anthropic on AWS and sage maker, as you indicated, maybe I want to bake that off with the data bricks. Cloud, which they you know, again, they haven't been teaser to be in they're a big player in the space associated with trust and provenance, etc. They've kind of built those tools in or if I'm looking at looking at the open source community, like h2o dot AI, which some people definitely if they're running this local might want to do for their own personal use, but they have production support cloud as well. And then again, obviously the Azure open AI and open AI in general and and then one final thought is that again, as we have these four large language models, and they're aggregated into the centerpiece, think of it as a again, a feed forward where I can have four experts one of them trained on a particular task, then a soft max or another ill on here that waits and or takes the information from the previous ones validates if it's, according to our policy, the right thing to respond to and then spitting that out. Sort of with that, we'll jump over just a quick demo here. So this is sort of the environment. There's a breakdown in the lab. So I have two physical machines that are running in here. These physical machines as you can see here, this is running llama seven V here, this is running. This is the inferencing the front end, and then we have a llama 13 V and the Falcon seven V model is running here and you can see up expose the API this term, and I can share with you how to set this up. There's on the discord there some issues that have been raised. I wrote one for Windows and LM studio on how to if you have Windows box, you have a GPU and you want to do some training. You can run it on Windows now. This is just the inferencing piece, which I think they have done pretty good but the online studio anybody's interested. It'd be great for us to be able to regular people who have PCs, but haven't up a lot of training. Really quickly get it up and running so you can get some models. But with that, right. Coming back to this demo, these are as you can see GPT 3.5 which is my conditioner, and I have my llama 13 D model. I have my Falcon seven yeah the UK and then llama seven year and in this one I'll just regenerate the response but I want to show you like temperature, top P top gate all the settings that are important like temperature is how I can mathematically describe it. But basically how creative Do you want it to be? Right? If your temperature is very low, it's going to take the primary answer and that's what you're going to get. Whereas if your temperature is set higher, it's going to change the weighting on that soft max. So the some of these other answers that were more creative may come in, you're out with it. But the thought process is here is that we locked down as far as our experiments, all the parameters for these models, and then we ask it a question. So in this scenario here, I'm just going to I have just regenerating this sustained question. For the sake of conversation, as you can see here GPT three is quickly out of the game, right because it's got every resource known to man but these other three here are running and you know my laboratory you can see here the GPU resources that are using the network that they're using, right the memory that they're consuming, and you can see how they actually execute on these. And you can use this as why we kind of call it full stack AI like if I want to run a model, and I have you know 15 different large language models that are securing all these things or making sure that it's not hallucinating all those scenarios, what was it going to actually take me for cloud costs or to run these things in my data center from all the traditional things we talked about compute and storage network, etc, etc. And so kind of moving back over to the demo. You can see it's Oh, yeah, so if finished and responded so if we look at financial literacy can be defined as the knowledge and understanding concepts practice that enabling the digital so obviously, catching the teeth gives us a good answer here. The other model is financial literacy is the ability to understand that very similar here and this is coming out of a 7 billion parameter model. This is not a trillion parameter model. So in simple question answering Do I really need to pay by the token times 50 million customers to GPT or can I stand up a couple of GPUs in my lab? Make sure that this thing is locked down on its question answering and have it teach people about financial literacy? And these are the questions that financial institutions are doing non PII. Good exposure response for Yeah, so this is doing a reverse semantic search. We're looking to the algorithm but it's the same thing as Facebook's AI similarity search to see how closely related the response was to the question. And this is out of band of all the large lines. So it's not using a large language box to rate themselves. It's opposed processing of looking at how to respond to an initiative question and doing similarities on that and then coming up with a statistical reference. But the interesting thing on that is, notice catching the T based on this statistical measurement. It didn't respond as good as some of the other models according to this. So it's interesting, maybe a 7 million or 13 Linear parameter might be just fine. I don't have to give Microsoft forever.
+
+Speaker 10  2:14:44  
+But it depends on how you posed the question. Like you already alluded to asking the right way to that model, because they had a different kind of input. So that's, it's not the exact compare but I want to also highlight that this there was in the press GPT, three TPD for all of us that it was getting different results, is one of the big pain point is how do you actually keep this test? So you wrote your app was working well with that model? Tomorrow, there's a new version. It's not like they're looking at binary compatibility, like, like semantic versioning or something. So all these things are like anecdotal testing, and then quantifying whether the results are correct or not. That's kind of a big challenge right now. And so you know, we live to one model two models, but now you see everybody trying to figure out because the manual labor of kind of working through what the model wants, it's just very costly.
+
+Speaker 2  2:15:48  
+Yeah, it's not as statistical and to your point, the measuring stick as long as it's kind of quantitative and equal throughout all the players, and hopefully it's statistically wrong or right, consistently, but to your point, we've got to figure out multiple mechanisms on how to rate these things. And there could be multiple rating systems on this. How closely did this align to our policy? Or I should have missed this or missed.
+
+Unknown Speaker  2:16:15  
+There's a couple of players or two, where there's actually some emerging.
+
+Speaker 10  2:16:23  
+Everybody they share some more. That's one of the bigger problems because it's possible.
+
+Speaker 8  2:16:28  
+Well, I mean, the harder part is not just the model, right? It's also offered layers of prompt engineering that come along with that, and then like the interpretation of that prompt engineering, so you might change the prompt, and that'll cause something or the underlying model changes. Prompt doesn't change, but you try to change over differently. And so, like, that is a big issue, which is the draft, I guess we'd call it Yeah, you know, like, and people complain about this now with like, Chachi Beatty, right? They're like, Ah, it's getting worse. It's like, is this fourth just what you did before it doesn't work the same? It's like when that's all it's a it's a subjective.
+
+Colin McNamara  2:17:06  
+Well as a subject that could be object and there's objective tools out there right now, but it'd be the same thing wrapped into a back end API that stuffing a bunch of different bunch of different models. You don't know unless you can measure it.
+
+Speaker 8  2:17:18  
+Like John were talking about this about like, about the writing. It's like just not it didn't like a couple of tools you're using your book writing whatever. You feel like it used to give you a crisper answer. In probably like from a you know, English correct, you know, grading thing. It's probably all correct was giving you back, it just didn't feel as good
+
+Speaker 1  2:17:37  
+smell so I've been so I started using this stuff. markets like me see this thing called Jasper showed it to me. First thing I did is they wrote me a paragraph. This is like what I want in my life. It
+
+Unknown Speaker  2:18:00  
+was nonsense.
+
+Speaker 1  2:18:05  
+And then I tried to figure out like, what was the use case for this and I started doing things like Mark Register. Like I wanted to try to like show I said, Give me like a story about eight pages of that lesson. Give me a story about my burgers. And I noticed like the third sentence it started like it was weird stuff like it knew he got a PhD somewhere in the UK. But in so we guessed that it was a Cambridge, but it wasn't going to try it. And so I started realizing over research this nonsense. And so I started using a lot of the enhancements for writing word too often, and I've gotten so used to emails and everything. And I'm hearing all this and maybe I've been suffering from this sort of bias but I'm hearing all this sort of heart as entation keeps getting wider. But I have noticed these little tools like Word to they used to now send like a paragraph you see an extent that particular I mean, I have no scientific data, but it seems like those tools that had been using this stuff, the last few years were pretty precise. And now they're getting very slow to quality and trying to give me a lot more verbose and I didn't know if that correlated with like this conversation about the
+
+Speaker 11  2:19:25  
+models. I think that it keeps assimilating data and early adopters were using very good clean data. And now those like me are putting in our bad grammar and review. And the way it's degrading, it's just like, it's still it's still trying to like learn, but it's not learning preferences. It's learning stylistically, yeah. And all of a sudden, everybody sounds like a Yogi Berra
+
+Speaker 8  2:19:56  
+that. Well, I mean, it was brought up was that that's the there's a subjectiveness to it, right? Like in some of the things we do. It's easy to build unit testers test in general functions and say this is these are writers are wrong. But there you get this thing, word, factor combinations Do you start to drift into or from a user perspective? It doesn't, the quality degrades, but you would never programmatically catch that right? Because it probably is proper English oil and it's just not as it's just it's just doesn't smell doesn't feel right. Right. So how do you how do you test for that without a bunch of humans, but humans testing?
+
+Speaker 2  2:20:29  
+I think to your point, we're trying to do reinforcement learning but human feedback, right. And I think you made a great point earlier, about, like, opting in like they're using your prompts. Right to fine tune it. And those, those fine tuning mechanisms may be making it drift. But in this scenario, that again, it's the same sort of thought process. We can use these interactions with our user community to fine tune our models. There's some questions that we have to answer on how we're going to do that. Also, again, we can use our vector stores for data to fine tune these models. But this is a whole thing about what you're talking about and on how do we validate those things? I think the good thing is, is that we do have a lot more tooling with semantic searches that really understand at least try to, at a high level understand what I'm asking and what the response is. So with all these tools that we have, it's going to be again, hopefully they're wrong consistently or right consistently. So statistically, we can narrow in on some sort of control group on is this thing doing a good job. So you guys saw that this is interesting. If you guys want us I can have a BAP guide. I can help anybody set these things. Have all the code to set it up on your local workstation or in your cloud provider however you want. So feel free if that's something you want to do, we can do that. This is next. This next thing is again, retrieval augmented generation and our thought processes here is to try to take the simplest use case possible. I have and then kind of expand on I have a user who wants to has access to data, who I want to log who wants to log in. And then because of we're assuming that that user has access to the data they're putting into the system, right? They can ask questions about that data. And have that feedback loop with themselves right to make their lives easier. So in this scenario, I've grabbed the PDF, and it's this is using chroma. And so it's created a chroma vector store in a vacuum. I can show you how it's chunking it up and it's reading through the sentences and organizing appropriately putting it in a vector store. And then loading it into a chrome database. Then I can I can ask this document. I know the source of the document. I can ask a question. So describe. I don't even know what this document is. I just pulled it off
+
+Speaker 2  2:23:02  
+yeah, this is a chat PDF for your own docs. This is run while you're at your house and not have to do European yes to whatever company and like as let's say you're a medical company and you're making a product. There's a medical ask PDF. To Merck and Amgen and all these companies really want that company knowing what their scientists are researching. And it's kind of like, what was the top document review today? Like on the front of it, right. So they're really I think, to your optimum point, you really know what you've just your executives, your people are using this thing. Yeah, so in this scenario I'm using currently, it's called grounded QA or fast QA we'll see how this responds but it's just the difference between stuff right and or refined. So in this scenario, based on input and document describes, research editing investigates prompt injection risks for real world L M integration match, right? So it breaks down. Exactly so I can do a cat PDF on my own with my own corpus of data that is running in my facility in my home. And this is kind of a, let's say, the most secure if you want me to, because this is NERC CIP, or something where data cannot be exfiltrated. As long as the people had that data, and it was air gapped, you could run and use these tools. And provide this to people in a safe way.
+
+Speaker 1  2:24:23  
+bike or SAS and most of the negatives in Chrome, it is not a scientist running for too long, you cannot urge but the point being in the right mind is to grow really, really good.
+
+Unknown Speaker  2:24:44  
+I run every Friday I
+
+Speaker 1  2:24:48  
+search search API and I'm gonna call this Sunday guy find all the news. And then I take those those what I found links turned into PDFs. And now I basically do a summary of links and of course yeah, that's like the only reason I have a human invention, the middle so make sure that you like that stuff. And but the nice thing about that Chrome is beautiful. Because I don't have to set up an index. I don't have a set of keys for it just installed and one of the things done it's all right, but like piko Mongo would be like if you want to give a demo. I will show that one was like a fundamental like I started the rest of this as if that's a risk. But the but in that case, now I'm permanent store index, and I can walk down to the extent that I trust them to lock in. But then now, like if I wanted to create the Sunday, maybe I put my book and like ask questions against
+
+Unknown Speaker  2:26:01  
+that's what I was just asked. Yeah, Tracy,
+
+Unknown Speaker  2:26:03  
+I'm like, can we do
+
+Speaker 1  2:26:04  
+you can do the question is like, how do you want to? How do you want to manage it? Do you want to do a one to one shot, one shot two, but like a one shot? Like go ahead and take care of how to do it if you swipe your LinkedIn I've been running summaries book book reviews. Yeah, I can show you all that stuff. But if I want to keep a permanent copy, then I probably want to create like some excellent
+
+Unknown Speaker  2:26:34  
+master class from text.
+
+Speaker 10  2:26:38  
+One of the things that maybe like came late to me is that under the hood, the only thing it's sending is a promise. Right? So like I always got like, saying like, okay, embeddings left, right, and it's doing some magic and I'm not really understanding what goes over the wire. But if it was helpful for me to understand what goes over the wire is like you will check like what you would type into church EPD. The first problem would be use the following pieces of content to answer the question at the end. If you don't know the answer, just say you don't know. Don't try to make up the answer. So that's the first prompt. So if you would do this manually in chat gbta, this is the question you will be asked. Then you put the chunks and let's say, you know, this is the relevant information, the ones that you looked up in your database that are relevant. So here's a piece of text. Here's a piece of text that we've identified that is related. So by the embedding of what we looked up in the database, so you stuffed that in that's kind of like in the prompt, and then you put the question at the end. So there's no more magic to it that going over the wire to your LLM. But for me, it was a little bit like what's going on all about so it wasn't until I saw actually complete prom going over the wire
+
+Speaker 1  2:27:57  
+a whole nother beast where you can actually change functions. Like those the example that I started when I was learning it, like, what's the weather in Boston, right? And so like, Yeah, well, I was talking to Angela What's the weather in Boston? What chores for example, different light chain functions. So the same thing is I would set up a guy called function to weather.com. And so when I ask a question link chain does this sort of magical boundary and say, I'm going to call this API call first, get the temperature down, call HTTP five. Terrible four. Put that in the buffer. Say the weather isn't the answer.
+
+Colin McNamara  2:28:44  
+But one thing I really like about that structure, is that not only can you do like a single sequential chain that you're describing there, where I have Patrick's prompt template where you told the AI how it's supposed to behave, and maybe you put in how you'd like to take information in and out. And then in a simple sequential chain function or description you could have Okay, run this chain, which is my prompt and then take, hold the location out there and then put this into a second prompt, prompt, pull this out. And then there's this notion of and there's a data formatting discussion that happened earlier in our discussions today, where you can have the LLM inspect, the text is pulling from either the LM on the back end, but also you each of those steps in the chain can reference its own independent vector store. So to tie into justice earlier earlier discussion, or earlier earlier examples of different embeddings for different tools. So you can effectively run books and how we would interact, connecting the chain to different LMS to different vector stores to different embedding types. And it's really, really intuitive. Sorry, from that. I drink coffee. So
+
+Unknown Speaker  2:29:59  
+I take the data from the incident.
+
+Unknown Speaker  2:30:01  
+Yes. The
+
+Speaker 1  2:30:04  
+code to check about JIRA tickets with Yes. And then I think after that into some rules of labor policy or like some of the damage didn't show industry policy like kimbos You literally code and it's really quite easy to sort of set up those kinds of lead chains. Again, this whole mixture if you haven't, how do you create your indexes, each index becomes its own
+
+Colin McNamara  2:30:31  
+fragment in tying this back to operationalizing AI, if I think back to my life and reliability engineering, right where you're looking at some 10s of sometimes 10s of 1000s of customers
+
+I'm sorry to it took me six months to get my first day off. Yeah, running ops. at that scale, it was a pain. But at the end of the day, every hour, every minute of outage counts to people, they're moving boxes in a warehouse that can't get access to their systems to office work or to to HR HR workers that are trying that or they're trying to do reviews. In this notion of I have a series of run books I have teams that are distributed might have a war room that's that split up or breaking into network breaking systems. We're breaking the application big breaking compliance and security and the ability to go through the role that an incident manager would play or incident management team would play and to be able to chain up the the the ingestion and dissemination of information in a way that saves outage minutes right that gets those workers back back to work or in the case of the modern warfighter. You know brings that kill chain back on line. Right. And maybe saves lives or takes up the
+
+Unknown Speaker  2:31:54  
+meantime to Innocence as well.
+
+Speaker 7  2:31:56  
+Yes, get me off the call and go to sleep.
+
+Speaker 2  2:32:03  
+So I'll finish this. Sorry. I'll finish this off with the next. Just again, we're talking about the first atomic unit of a user that's got documents they want to summarize right to the next sort of atomic unit of a person who's administering a dataset it owns a data set and wants to take that data say and curate it in a way that let's say internally, it can be used for public summarization. So that's like the second use case. So this is a user with administrative roles that wants to be able to create a more permanent vector store wants to be able to load data into that vector store wants to be able to tag it, summarize it, use it and then publish it into a community that that people where people can use it. So that's kind of this scenario here, where I can manage an existing index, right? I can choose a specific index, I can create an index right? I can then once I've created a new index, I have several indexes that I own, I own these two. But if I go to Pine Cone says you can find them in the back end. If I go to Python, you can see I have multiple indexes that this user doesn't have rights to view those indexes right. These are owned by other users or they're not public. Access, indexes for people. So for me as this user, I only have access to these these particular record stores as an administrator so I can add documents, take documents and add metadata and things of that nature. So I'll look through in this scenario I can get like an absurd documents. I can look at the info, the vector stores that I haven't seen any documents or vectors in it, when they were created when they were last modified. Any categories I can add metadata to associated with this as a compliance or with this is whatever it who owes Who is this? What is this categorized stash and then from here, I can add data to that corpus if I'd like to. And then once I've added data to that corpus, I can then manage that and I can manage it in this scenario. This is just like thought process. This code again, we can use the novel it's just the intuition for everybody to think about how they're going to manage these documents at scale. So in this scenario, I have all of these documents, which are there's 100 different transcripts in this, but I can then as I'm embedding those chunks, I have audit capability. For every chunk I can bring up I can tag an individual chunk, I can edit each individual chunk and validate it. I can run an auditing process, but it wouldn't take a minute to show it
+
+Speaker 1  2:34:40  
+to me, but I really wish there were times when I actually had to write code. You'd have to do then that goes back to like, do you want it to be a sentence? Paragraph? Do you want to
+
+Speaker 19  2:34:56  
+put your own life in check for
+
+Unknown Speaker  2:35:07  
+that the shipper?
+
+Speaker 10  2:35:27  
+Meanwhile, he's setting up like one of the things we do is while we're, for example, ingesting documents, as we were doing our traditional content management system, and our search indexes, like for example, open search can calculate the embeddings while you're uploading, and you can no so do the tagging immediately. So the traditional content systems are just making it easier for you while you're storing your data to meanly do that stuff. So you can do it on the site if you want it. But it makes sense while you're processing the whole dark, making all the variations that you do it in flight there. So that's why you see the traditional stores kind of growing towards the vectors towards the vector store is becoming a store there as
+
+Speaker 2  2:36:13  
+well. So I'll go over it. The one that we were using earlier, is sort of our own version of aspedia. Right? And it has its origin which is flask and then it has
+
+Unknown Speaker  2:36:26  
+some Can you triple s plus people syndrome I'm totally
+
+Unknown Speaker  2:36:34  
+gonna sit around like kindergarten my car don't
+
+Unknown Speaker  2:36:39  
+need more AI nor glasses
+
+Unknown Speaker  2:36:48  
+my problem is like
+
+Unknown Speaker  2:36:49  
+six or squinting 45
+
+Unknown Speaker  2:36:55  
+fiction, just like it was like
+
+Unknown Speaker  2:37:09  
+we were
+
+Speaker 2  2:37:10  
+working with some other documents as PDF, but that processing coding on Android. And this is just some basic code for template. As you can see here, this function is associated with our advantage process. So I grabbed whichever documents I'm personally loading and you saw that user update so I could pull in a corpus of data or one document or multiple documents or a whole book. And it's going to read through this right and you can see the chunks and then I also have metadata in here. And in this particular scenario for every document. It's going to break up the content and the metadata that you put into it. So we're grabbing we're grabbing and potentially auto generating submitted data for you so when things are coming in, we have some metadata, which I showed before. All right, we have our source information, our chunk and our text. Obviously, our source is going to be super important because we want to be able to have metadata of what the source is and have that source document along with the sources identifiers in the vector store as well. But we can quickly search on chunks on sources on text outside of using the vector store right with just our regular display. Right.
+
+Speaker 1  2:38:17  
+Examples will just be really dirty the Hello World ones can just tap like every 100 bytes. They don't have a 20 by buffer to make sure you always catch up. So this is like a real poor person's way of doing like I just wanted to pay to
+
+Unknown Speaker  2:38:32  
+try it. Yeah, try
+
+Speaker 1  2:38:33  
+to grab 100 bikes and then add a sort of make sure there's always 20 on each side so that it never like never, never hooks up but most likely just kind of sent away to like what he's doing.
+
+Speaker 2  2:38:48  
+Yeah, I mean, this makes it a little easier, but you're better coding. There is a thing, recursive text splitter that you want to look up and dependent on the trunk size that you select, right and the overlap, which many of you guys have probably seen dependent on these parameters is it's going to chunk through your data, but based on the size it's going to try it's got some regular expressions where it's going to say, if it's let's say 500 it'll try to grab the page first, or then I'm trying to read the paragraph first, or then I'll try to grab the sentence first. So this number is important, right? Because if it's 250 you might not have any paragraphs that are at 250. Right? So then you're gonna get sentences and small blocks of words that are embedded right? And this is important on your retrieval and your q&a because your nearest neighbor search, if you've got that set to one or two, and your Trump's are smaller, you only get one or two sentences, right? Whereas if you've got let's say 500 or 1000, and you get one or two, you may actually get some good responses. But this goes back to what Patrick talked about with your context. And you got to be very cognizant of your pushing data into the context window with that. There's only so much that these large language models could play with. Yeah, yeah, that's exactly what that's what Docs is doing. It's grabbing the document that you're splitting it up into chunks, and then it's telling you how many chunks is successfully processed, and it's particularly on chain.
+
+Speaker 1  2:40:19  
+There's an interesting metaphor here, I think, which is this whole thing that sort of like I was just cheating up until yesterday, but you really have to think about your chunking strategy. And is like he showed a little bit of a zipper protect token, token Tech Tip token, and like, how is that going to be broken up into embeddings? And so the one thing that your data will didn't do one of your taxes data you might want to and you can actually look like he was shown with reverse engineering so I can play around. Let me try using disobey and his chunking and let me reverse engineer and see how he's gonna be starting to show that right and see what the chunks on each one of those text files come. And I can look at that and I can send you like, how is that going to work? If maybe 80 to 100 bytes or a paragraph or word? And an excerpt comes into the Patrick's talking about that now the next layer is how to read my QA prompts with that. And then another thing we haven't talked about, which is so that's like, these two layers. But then a third layer is this whole idea of like we can talk about which is sort of zero shot, one shot or few shots. So like, it becomes this interesting conversation as you go into tutorials and all. I don't think I saw the clear picture of this until we were shown this yesterday. Like, I have to think about a championship. I get to think about what kind of what's going to be my next day stores. Internal I have to think about the like how that's gonna get chunked. Then I gotta think about like, what am I promised and the amount of token what the context was in this context when they bite you in the butt many times? Because you'll set up the sort of your max tokens and it's it's everything that's like capital inputs. And, and so what are the things that need to be realized? So he just said this. A lot of times when I was using my book early on, I get like two sentences. Two sentences, and then I play with the match tokens and I get more, but I didn't realize I was doing the dirty chunking where it's taking 100 bytes. And I know that I could have based on pages. I already got, like, I guess what you're saying I want to get more but I want him to speak for somebody. So anyway, I think there's a lot there, to decouple
+
+Speaker 10  2:42:52  
+if you put it in chunks, like he said, like overlapping chunks, because sometimes you don't know what to call this. So that gives you a little bit more context of before and after. And then when you're even if you have pages, you can then summarize the pages because that gives you a new kind of embedding on that kind of global, more, more bigger chunks. So So you kind of have that more matching.
+
+Unknown Speaker  2:43:17  
+Actually summarizing instead of
+
+Unknown Speaker  2:43:19  
+a compression algorithm than
+
+Unknown Speaker  2:43:25  
+the embeddings of a summary
+
+Colin McNamara  2:43:26  
+back to the source. That's actually a really interesting so I'll go ahead, sorry. No. And I think Johnny Johnny, so you brought this back from a from a conference somewhere you call me like, oh my god, I just got this talk with this guy. And I didn't make sense. So when we're doing q&a, retrieval q&a, right, so we're putting documents in the vector store, and then we're putting like simple questions around and like, why are we doing this? I know, there's some non integrated hammer chains and whatnot, and others out of the talk urines like, oh, what's happening? It's actually putting more embedding in that vector database so that we're doing a similarity search. There's basically more clusters of vectors around that that you can come into when you talk about that. You're like enriching the paths of the neural network to the data.
+
+Speaker 10  2:44:09  
+So when you kind of stuffed them in the prompt, you have the list of documents that you've put in there. So like I said before, part of the front is only used information that you have in this document. So you know how it's being answered, and then you can ask source of how it answered that. You can't have the source obviously, of the whole LLM training, but you can say limit whatever you put forward and based on the knowledge you have there, so you have a little bit of a sourcing. Like where it came from the answer, but we turned that into us.
+
+Speaker 4  2:44:46  
+Observing that behavior, you know, that's true. It's like kind of going on on tour.
+
+Speaker 1  2:44:53  
+I don't think it's that lucky. We might sort of being analysis stuff I'm losing credit. I'm trying to summarize. So the simplest way I just keep the original report summarized there. I'm saying here's the article. But another way so the one of the problems is when you connect the data store, like the data you're loading in becomes a source. In this case is filename, unified, taking somebody else's data. In practice, human talent is a new parameter that you can put the original data you
+
+Speaker 10  2:45:29  
+put in your embedding, and then you can reverse that match the embeddings. Okay, what was the source document? Oh, this word is
+
+Speaker 1  2:45:37  
+true. But really, if you're sort of doing what I do, and I'm trying to keep my code down due to this, but but the point is, like I should be stuffing in the original source. So now when people do you stop reading against it, like pick up a face to say, hey, it was you're getting some
+
+Speaker 8  2:46:00  
+so that so many do all this as as metadata, right? Yeah. I wonder like what other than the the source linking because especially because a lot of these, a lot of these examples are like documents. Yeah. Like hey, we take something we turn to documents documents are, but as I just wonder, how much of this is like how many other types of metadata should we be looking to, to drive to like,
+
+Speaker 10  2:46:24  
+just owner tag thing. So like the source data, you can put anything like that you would filter kind of on there,
+
+Colin McNamara  2:46:32  
+like a recursive direct or recursive URL letter. So there's recursive directory letters, recursive web loaders, and examples I've seen is like a specify a source URL and I want to pull I'm looking at a public documentation website. Right? And so I have I suppose for my root URL, and I put a recursive data loader to effectively go and grab the data and split it and put it in put it in a store that you each of those source URLs you put in as metadata for the documents that created the vector store so you give it source back to it and then when you're you're when you're doing like a retrieval QA, you can specify return sources equals true and length chain. And so you put you can have that I'm blanking on the right word, but the lineage, the whatever, you can have that trace in there,
+
+Speaker 1  2:47:17  
+but it only keeps the Word document like that's all point. Sources in that case. Don't show you
+
+Colin McNamara  2:47:22  
+but you could go so far as to in your load or even go back to like, get the gift blame and insert that image and
+
+Speaker 1  2:47:34  
+maybe ever notice, but like it might change everything Yeah. JQ. like Slack channel. I mean, there's a loader for almost anything you can think of already existing relationship I mean, PDFs PDF. Simple, but there's like there's two hours in JIRA
+
+Speaker 10  2:47:58  
+slack which is well there another great example is using kind of these things as memory for your agents. So it's, it's like putting the time stamp on this was done that you're all embedding this as kind of documents and they they all get kind of like listed there. But then one of the strategies could be, well, if it's been pretty old, I'm gonna give that different weight because it's an older memory. But then you have compression mechanism that says compress all the all that bad eggs together as one memory because, you know, you can summarize that. So that's how you can play again with meta data recency in kind of those areas as
+
+Colin McNamara  2:48:47  
+well. And I've seen I ran into a challenge doing something like that where I was I was collecting audio interviews with from from suppliers and using that to create for the white papers, right? What I noticed was I biased was injected into my model, right? So it was reinforcing. The data itself wasn't validated. It was just an interview. And so you had the models were becoming very, very bias based on that as an interesting observation.
+
+Unknown Speaker  2:49:20  
+I don't want to resonate with a couple of points and then finish the demo.
+
+Speaker 1  2:49:24  
+The working lunch and grab lunch and then sharing that does that make sense? Yep. Yeah, that's great.
+
+Speaker 20  2:49:38  
+breaking for lunch. Something called go away. I don't know if you guys have to lay where you live. That's a ball
+
+Speaker 20  2:49:52  
+the simple you take a bowl, you put your base which we have a couple of bases. We have black magic rice, pesto, noodles, and kale. You could put one two or three or combination you added to vegetables. And we've got broccoli as our vegetable or I guess the second vegetable without selling tomatoes. And then we've got the the teriyaki chicken, lemon chicken or tofu as a protein topping sauces and stuff
+
+Speaker 16  2:50:31  
+I thought it was okay.
+
+Unknown Speaker  2:51:01  
+Right. A lot.
+
+Unknown Speaker  2:51:37  
+Back be
+
+Unknown Speaker  2:51:53  
+right there in the heart
+
+Unknown Speaker  2:52:15  
+what you
+
+Unknown Speaker  2:52:22  
+got to
+
+Unknown Speaker  2:52:31  
+do I still haven't
+
+Speaker 2  2:52:45  
+used these notes and all these gaps that are pointed are built on top
+
+Unknown Speaker  2:52:51  
+of open a yeah
+
+Speaker 21  2:53:03  
+so, this was GA this was they took some reason
+
+Speaker 11  2:53:39  
+I was trying to catch on and I actually having a call to our class
+
+Speaker 2  2:53:44  
+they would throw in an interpretation for the injection
+
+Unknown Speaker  2:53:54  
+or whatever it is
+
+Unknown Speaker  2:53:57  
+and it keeps dropping in internet
+
+Speaker 18  2:54:01  
+and I mean flashers just couldn't be on there. Like I've actually for this particular
+
+Unknown Speaker  2:54:09  
+one, right? Yeah.
+
+Speaker 2  2:54:12  
+But keep security components basically this box right so you can see here these are tests that there's
+
+Unknown Speaker  2:54:21  
+a real I would say like turned on or I'm sorry, turn on the
+
+Unknown Speaker  2:54:34  
+type so just not sure to somebody
+
+Unknown Speaker  2:54:47  
+or Wi Fi
+
+Unknown Speaker  2:55:05  
+Barrow
+
+Unknown Speaker  2:55:10  
+Thank you consumer grade. This is like we have parsed out, like directly binary stuff like how did you ever called support and so on. And then once they have
+
+Unknown Speaker  2:55:43  
+all this stuff
+
+Unknown Speaker  2:55:52  
+voices
+
+Unknown Speaker  2:56:09  
+trouble road is hard to
+
+Unknown Speaker  2:56:19  
+get away
+
+Unknown Speaker  2:56:23  
+from teams
+
+Speaker 21  2:56:27  
+feel we have
+
+Unknown Speaker  2:56:41  
+to
+
+Unknown Speaker  2:56:49  
+at all levels characters characters exercise
+
+Speaker 22  2:56:53  
+one roadmap of the future and space that's pretty standard that I like to add to my day right now. Oh
+
+Speaker 6  2:57:03  
+sorry. You're saying you have some near
+
+Unknown Speaker  2:57:15  
+passing
+
+Unknown Speaker  2:57:21  
+wants to
+
+Speaker 16  2:57:37  
+know this was off the air sorry.
+
+Unknown Speaker  2:58:03  
+Now it's about commenting sharing
+
+Unknown Speaker  2:58:23  
+right
+
+Unknown Speaker  2:58:29  
+so that might teach
+
+Speaker 23  2:58:42  
+workers Island
+
+Unknown Speaker  2:58:58  
+area
+
+Unknown Speaker  2:59:01  
+so I end up with different businesses
+
+Unknown Speaker  2:59:10  
+Morning guys
+
+Unknown Speaker  2:59:27  
+question is generally great questions and responses to read.
+
+Unknown Speaker  3:00:01  
+up yeah sure
+
+Unknown Speaker  3:00:19  
+yeah morning.
+
+Unknown Speaker  3:00:50  
+Stores
+
+Unknown Speaker  3:01:11  
+Guys
+
+Unknown Speaker  3:01:35  
+rich
+
+Unknown Speaker  3:01:54  
+John patient the patient
+
+Unknown Speaker  3:02:14  
+some reasons Those
+
+Unknown Speaker  3:02:24  
+are good again are you having
+
+Unknown Speaker  3:02:43  
+her to hear what happens
+
+Unknown Speaker  3:03:51  
+to change
+
+Unknown Speaker  3:04:01  
+not come to answer a few questions now would be the time
+
+Unknown Speaker  3:04:14  
+I was told to do the interview talking
+
+Unknown Speaker  3:04:31  
+about picture from the
+
+Unknown Speaker  3:04:33  
+latest Gao and I wouldn't
+
+Unknown Speaker  3:04:35  
+mind if he
+
+Unknown Speaker  3:04:46  
+was
+
+Speaker 24  3:05:03  
+really thought
+
+Unknown Speaker  3:05:13  
+afternoon
+
+Unknown Speaker  3:05:38  
+worked perfect.
+
+Speaker 16  3:06:19  
+Our last because it
+
+Unknown Speaker  3:06:36  
+exists out there we're here with the year five national
+
+Unknown Speaker  3:06:55  
+show
+
+Unknown Speaker  3:07:13  
+see you
+
+Unknown Speaker  3:07:31  
+to guys
+
+Unknown Speaker  3:08:07  
+library
+
+Unknown Speaker  3:08:14  
+What's
+
+Unknown Speaker  3:08:22  
+up year old employer
+
+Speaker 11  3:08:30  
+saw I was like I really liked this and I'm like, really? At a point in my Google Docs it's you know I have to write some kind of activity and when I lose versions of this it seems to work yeah that's perfectly
+
+Unknown Speaker  3:09:00  
+like nobody comes along.
+
+Unknown Speaker  3:09:01  
+Construction
+
+Unknown Speaker  3:09:08  
+sites
+
+Unknown Speaker  3:09:37  
+right to say things like this
+
+Speaker 25  3:10:23  
+that's the how to fish doesn't differ at all
+
+Unknown Speaker  3:10:37  
+screens. I mean yeah yeah
+
+Unknown Speaker  3:11:04  
+program
+
+Speaker 22  3:11:25  
+What's up right. Director kind
+
+Unknown Speaker  3:11:38  
+of like that context they're
+
+Unknown Speaker  3:11:42  
+gonna ask questions.
+
+Unknown Speaker  3:11:50  
+At least
+
+Unknown Speaker  3:11:56  
+okay. Right. So Saudi Arabia underneath the
+
+Unknown Speaker  3:12:19  
+video
+
+Unknown Speaker  3:12:26  
+poor she Yes, she was and I
+
+Unknown Speaker  3:12:36  
+was there and I just thought
+
+Unknown Speaker  3:12:43  
+watching her consumption
+
+Unknown Speaker  3:12:55  
+scale
+
+Unknown Speaker  3:13:13  
+afternoon
+
+Unknown Speaker  3:13:20  
+I looked at the color coordinated.
+
+Speaker 26  3:13:49  
+Up, we only gave us the chance to do all
+
+Unknown Speaker  3:14:03  
+your questions we will make videos
+
+Speaker 27  3:14:30  
+any way to get like there's something you're designating a couch you need to know the place
+
+Speaker 11  3:14:45  
+crosswalk versus designated result equals counterintuitive you do better and that's basically it.
+
+Speaker 17  3:14:52  
+So sorry, guys who has not been interviewed yet by us? I believe you have
+
+Unknown Speaker  3:15:02  
+to say first because I
+
+Unknown Speaker  3:15:03  
+don't know how to be
+
+Unknown Speaker  3:15:09  
+quiet
+
+Unknown Speaker  3:15:17  
+Wow
+
+Unknown Speaker  3:15:25  
+cost
+
+Unknown Speaker  3:15:31  
+on here that was more than the
+
+Speaker 8  3:15:35  
+same property I think wants to hang up once and as hard as
+
+Unknown Speaker  3:15:41  
+you can
+
+Speaker 22  3:15:46  
+almost close the answer profound question but that data is really
+
+Unknown Speaker  3:15:52  
+key now. They've also just
+
+Speaker 21  3:15:54  
+everyone's delivery free book club
+
+Unknown Speaker  3:16:12  
+research labs is exactly that. They never actually
+
+Unknown Speaker  3:16:17  
+not everybody's like, Oh, gotta go we're like no, no, we just got to do my earlier I see you
+
+Unknown Speaker  3:16:31  
+takes you six months to get to
+
+Unknown Speaker  3:16:33  
+New care like purchase route
+
+Speaker 22  3:16:35  
+Zach, whatever. excuses and then certainly the CEO is walking through and sees this like
+
+Unknown Speaker  3:16:49  
+what's wrong?
+
+Unknown Speaker  3:16:52  
+Do we do how do we get that call?
+
+Speaker 25  3:16:55  
+How to walk, how to modernize. And after three months?
+
+Speaker 22  3:16:59  
+That's a good question. Jonathan is going to give her why's he was called shadow.
+
+Unknown Speaker  3:17:07  
+That's so for example,
+
+Unknown Speaker  3:17:10  
+just called like, one or two. Right. The organization is just going to walk and they can't wait. There generous generous.
+
+Unknown Speaker  3:17:47  
+That's it so
+
+Unknown Speaker  3:17:47  
+we're talking about representing the story
+
+Speaker 9  3:18:00  
+they had all these emojis right so super cute thing.
+
+Unknown Speaker  3:18:05  
+You know like,
+
+Unknown Speaker  3:18:06  
+so. team working like some random person enters as a team member before logic,
+
+Unknown Speaker  3:18:18  
+realize that they put in their charter and go like
+
+Unknown Speaker  3:18:32  
+that every single time
+
+Unknown Speaker  3:18:33  
+they get their turn and go all in all
+
+Unknown Speaker  3:18:39  
+scraping secrets the limit because
+
+Speaker 9  3:18:51  
+the stuff is in that letter like for no like, it's like a, a five year old. You gotta be like, you can tell it alright save vegetables little like
+
+Speaker 26  3:19:13  
+that trademark kicks in sorry guys last time I screwed up something for a client now. Something that I thought I did to chat DVD writing a case study is actually that the problem is that I couldn't even use Google Docs and I lost all my work on Saturday. That drives me nuts.
+
+Unknown Speaker  3:19:46  
+So I said hey, this is ready
+
+Unknown Speaker  3:19:59  
+I haven't done my Are you ready? All right, well
+
+Unknown Speaker  3:20:20  
+there's a lot of
+
+Unknown Speaker  3:20:22  
+flexibility I'm having. I agree. With you.
+
+Unknown Speaker  3:20:55  
+Once again,
+
+Speaker 4  3:21:04  
+opportunity versus urgent.
+
+Unknown Speaker  3:21:24  
+Do like
+
+Unknown Speaker  3:21:29  
+to get older my teenage years ago.
+
+Unknown Speaker  3:21:49  
+There will be always things that are clustered in colony little hide my like political posts because
+
+Unknown Speaker  3:22:13  
+it's like there
+
+Unknown Speaker  3:22:16  
+a simpler registration list.
+
+Unknown Speaker  3:22:19  
+As far as PC checks
+
+Unknown Speaker  3:22:30  
+are purchased
+
+Unknown Speaker  3:22:38  
+the different types of things we can call a worker.
+
+Unknown Speaker  3:23:00  
+Now California
+
+Unknown Speaker  3:23:11  
+simply evaluate
+
+Unknown Speaker  3:23:17  
+in those situations
+
+Unknown Speaker  3:23:18  
+where sales pitch
+
+Speaker 13  3:23:21  
+originally clamps on to step two think chat
+
+Unknown Speaker  3:23:24  
+functions as a chaplain
+
+Unknown Speaker  3:23:32  
+it says it's fun and so on every boy you're selling as we grow yeah
+
+Unknown Speaker  3:23:54  
+to medical situations
+
+Unknown Speaker  3:24:01  
+outside
+
+Speaker 17  3:24:13  
+some folks, I'm sorry to interrupt play show hands who has not been interviewed yet? Tomorrow, you will be doing it. Everybody will be doing it tomorrow. Again. We'll have two more questions. Yes, we're perfect. So I believe you're the only one listening no one has to say a word and you don't want to say that you're gonna you're gonna have to sign a waiver covering my thoughts you're perfectly fine. Am I so good today? Thursday.
+
+Speaker 28  3:25:08  
+I'm like big thing and then you'll come to me
+
+Unknown Speaker  3:25:23  
+married 25 years Yeah, but that's the one that sounds
+
+Unknown Speaker  3:25:38  
+like it's like nice like community and we did it. Last year based on our stage of
+
+Unknown Speaker  3:25:49  
+conversation
+
+Unknown Speaker  3:25:59  
+good.
+
+Speaker 15  3:26:07  
+Morning want to have lots of fun salsa dancing around
+
+Speaker 21  3:26:37  
+the car to
+
+Unknown Speaker  3:26:58  
+me like I actually
+
+Unknown Speaker  3:27:06  
+yeah
+
+Unknown Speaker  3:27:10  
+very interesting. Journey. But that's really not true. Project
+
+Unknown Speaker  3:27:22  
+ended after I changed my
+
+Unknown Speaker  3:27:26  
+mind here's just
+
+Unknown Speaker  3:27:35  
+what I saw I asked you
+
+Speaker 4  3:27:47  
+just so nice versus
+
+Unknown Speaker  3:28:10  
+wrong
+
+Unknown Speaker  3:28:25  
+we're gonna try to start out by
+
+Unknown Speaker  3:28:28  
+a few questions with this reactive force question. Say Yeah, we bought about two hours it really goes to show the freedom to play I was fooling
+
+Unknown Speaker  3:28:58  
+around
+
+Unknown Speaker  3:29:07  
+with my god right so how can you possibly know
+
+Unknown Speaker  3:29:49  
+because you got out of the air force because they've learned from dinner so why don't want to go on and say oh, oh, we're not gonna step on that because we can do that. So great to have you really so can we do the same?
+
+Speaker 23  3:30:37  
+thing nothing
+
+Unknown Speaker  3:30:47  
+but find your best way to do like your first cluster
+
+Unknown Speaker  3:30:59  
+better
+
+Unknown Speaker  3:31:23  
+so now the first one you
+
+Unknown Speaker  3:31:31  
+have their understanding there always
+
+Unknown Speaker  3:31:40  
+are areas
+
+Unknown Speaker  3:31:48  
+to talk to you about
+
+Speaker 19  3:32:03  
+the functionalities on your hard drive. Are you all started back up? And it's like freak out
+
+Unknown Speaker  3:32:29  
+are you able to
+
+Unknown Speaker  3:32:46  
+first
+
+Speaker 2  3:32:58  
+but it's the this
+
+Unknown Speaker  3:33:04  
+this soulless?
+
+Unknown Speaker  3:33:12  
+To do this but to be able to fire
+
+Unknown Speaker  3:33:26  
+Oh yeah. This is my
+
+Unknown Speaker  3:33:31  
+office. A little hard to just say. Sorry.
+
+Speaker 27  3:33:37  
+You're not. Misery loves company and I'm in
+
+Unknown Speaker  3:33:41  
+and it must be some
+
+Speaker 29  3:33:53  
+people thinking, drop all of these negative
+
+Unknown Speaker  3:34:00  
+scollard into
+
+Unknown Speaker  3:34:03  
+one of these factors. Okay,
+
+Unknown Speaker  3:34:04  
+so research
+
+Unknown Speaker  3:34:11  
+theory
+
+Unknown Speaker  3:34:18  
+Oh, my God. I gotta try it
+
+Speaker 30  3:34:30  
+oh wait,
+
+Unknown Speaker  3:34:37  
+it's actually so this way.
+
+Unknown Speaker  3:34:40  
+I'll put like a light box in the ground was the patient move forward and oh yeah
+
+Unknown Speaker  3:35:10  
+I honestly
+
+Speaker 24  3:35:13  
+do my whole day. I love it. But I don't use it
+
+Unknown Speaker  3:35:20  
+because I like to run
+
+Unknown Speaker  3:35:23  
+with this other thing. I don't know if you've ever saw this. So
+
+Speaker 18  3:35:29  
+come in there. I was on the phone. Yes, I actually used to be seriously concerned about building my house. That wasn't my goal.
+
+Speaker 25  3:35:43  
+So some of them are great like a window. Yeah.
+
+Speaker 11  3:35:48  
+I probably need to like 100 of
+
+Unknown Speaker  3:36:01  
+them on earnings.
+
+Speaker 1  3:36:08  
+Conversation this couple of inches. And we begin to consider like geek out as long as we walk and get to a breaking point, which is that I think we should make a decision. Do we want to continue in this sort of learning discussion or or do we want to start the breakout session but we can wait till he gets through some of this last section. Sounds good. Sounds great.
+
+Speaker 2  3:36:34  
+I shared a couple of documents early. And I think everybody should at least if you haven't looked at it. Look at the attention is all you need. White Paper that's really the foundations of generative pre trained transformers. We have some slides that we're going to share with you that sort of break down at a high level each component and they're all in
+
+Speaker 1  3:36:55  
+Slack or chat including the I haven't taken all the papers. So all those should be right now.
+
+Speaker 2  3:37:03  
+Andre Carpathia does a good you can go on YouTube and find his video he steps through all of these and coding right. All of the training pieces and gives you a CT sort of a walkthrough on what it takes to train these things. All of the token limit elements, right so all the things that GPT three was trained on, or reinforcement learning from and feedback to tokens and and then some prompt injection and security things that people will be interested to see. If you notice every one of these applications here is exploitable in their background, some interesting stuff there. Yeah, surprise, surprise. There's another recent discussion. Andrew even did and you guys can look it up. It's on Coursera. And it breaks down in finer detail the talk that Andre Carpathia did, and it goes into a lot of detail. I do want to I won't go through all of the slides that I've adapted on all these things. There is a concept of self attention that you should become aware of this is sort of the foundation of how these transformers are trained. And and really there's two major things here to be aware of, obviously, this vector space is important. We can talk more about that encoding and decoding and training. Two big pieces that before I go further that you should know during this training, there's the concept of positional embedding and token embedding. This is how it knows what to predict based on what has come previously in context. Right. And that builds something that we're calling this concept of in context learning, which is kind of what a lot of people were talking about prompt engineering, which I know Mark and other people are doing some amazing work and be excited to hear more about what they're doing. And but I just will share a couple of high level things. So there's this concept of in context learning meaning, if you have a model and you give it an example of something that can actually learn and this is what kind of what we're gentlemen, retrieval augmented generation, just as Patrick indicated, we're trying to give it some intuition on how to respond to us. So at the at the very, let's say, the best model that exists you can do what they call zero shot. inferencing mean that you asked her a question, it knows everything so well, she's gonna respond. But not every model can do this zero shot inferencing. So what do we do in this scenario, we just say hey, classify this as sentiment analysis. And this is for manager means Coursera course so please go check. It Out. classify this review. I love this movie. So what is the sentiment? Yeah, the sentiment is going to be good, right? So then, but some model might not be able to do this zero shot so what do I do I give it an example of I classify, classify this review. I love this movie, positive sentiment then you ask a question, right? And then it can say that it's negative. Go ahead.
+
+Speaker 1  3:39:57  
+So when he did the shift to this, so we can use Charles about this discussion about zero shot, which I'm pretty sure a lot of them would do sentiment analysis, right. But but there's also this he helped me understand the shift in time I've gone down that path, like who is she and Kim? So that's another example of a zero shot. Like giving no context. I'm just asking a question that you could give me back. But if I wanted to go ahead and get into one shot, then I could do something like help you. Because I can say who is cheap, cheap given some either a hair or tell me about? So that's sort of a one shot I'm putting some context along with you. And a few shots might be here's a list of things author's telling you that gene can and that becomes the few shots so so a lot of the examples you see, just it can be confusing. It was pleasing to me that like the only example most examples were like sentiment, they came
+
+Speaker 9  3:40:55  
+up in the urban space in Chicago to like the classic AI example is if I've got a categorizer that's taking pictures and classifying them as Cat and Dog, zero shot learning if I handed it a bird, it would come up with a third category and say, I know this isn't a cat or a dog this is another
+
+Unknown Speaker  3:41:14  
+when you tell you just say
+
+Speaker 9  3:41:15  
+something, it makes may or may not get too specific, with a classic AI system, but it's not going to miss classified as a dog or a cat. So a few shot learning would need you would need to say hey, this is an actually and I love like testing stuff that way if it's supposed to be like grading papers, I'm gonna hand it like the Bill of Rights and see what it spits back at me. Zero shot at and say this isn't even the assignment like this is something else and put it in a discard pile since.
+
+Speaker 2  3:41:50  
+Yeah, so and then just the final kind of thought right is again, you have this zero shot where you may have a general purpose model that generalizes and can do things during shot. Or you may have a smaller purpose built model that needs some assistance. And this is where a lot of the retrieval augmented generation is, is gathering gathering bits of text with semantic search to grab to try to coach it along along with your prompting and you have zero shot, one shot and a few shot and you'll see these and it really depends on Do I have a large model that can do this zero shot again, do I have a smaller model that I have to prompt engineering a little bit or have a really small model that I got to get some examples so as you guys are going through your training and retrieve augment generation and your use cases, keep these things in mind that model selection is important. And then also this other thing that Patrick also mentioned, right, this context window, you've got to keep in mind that what you're doing here with zero shot one shot and the shot is you're building this out into a prompt context window so that you can kind of coach the large language model
+
+Speaker 1  3:42:53  
+includes which outputs to actually share input average the total, use the sub x token or other similar models parameter for that, but the max tokens basically, it's going to be all of the above the input and the output, and you can get so that's where I went into trouble. I was getting like two sentences.
+
+Unknown Speaker  3:43:18  
+But it was actually
+
+Speaker 1  3:43:22  
+two and it said there wasn't even enough so you got to play.
+
+Speaker 11  3:43:30  
+And when you do your flu shot or even do any shot, I've noticed that in the open AI models, if you mess up your your examples, like I saw the colons I added at the end I added one with a dash and it takes the actual what I meant to be an example and matches that with my so it's like you know the sentiment there. Change the poll actually, you can corrupt it and I kept couldn't figure out why it kept adding in this one example and it was because I had one character different than my examples and it's very specific. If you want it to really work well. Whether it's yeah,
+
+Speaker 2  3:44:14  
+I'm excited to see what people are doing that I'm still learning was prompt engineering. This is when I was tiny here. This is that concept of the context window link right or token limits. And you can see here like being and attaching the DGP 234. Now these are a little bit larger, they've got up to 32k tokens, but this is super important as you're doing retrieval augmented generation. You see Claude just recently released its tokens up to 100k. And this is really just a major little technical based on the training epics that it does in that in this transformer tuning process. Each Epic is based on exactly what John talked about a number of tokens. So what it's trying to do in this training process, and this left hand side, this is fully connected. So it's not masking anything on this left hand side, but down here in this mask detention. What it's doing is it's it's blocking off the future tokens in a document. And so what it uses that for is it gives you so many dot documents and as these networks are brought together, it utilizes that to predict what the next token will be within the context of window size. So if I give you like John's example, if I gave it 3000 tokens, and it was only a 3000 Whatever 50 token window, it would only be able to respond with you into those 50 tokens because it has to take all the data that it has, along with what it's predicting. And we include those things in context.
+
+Speaker 10  3:45:41  
+To add to that is there's we talked about giving it examples, there's a it doesn't mean I'm gonna give it more examples and we'll give better results. So there's a limit on saying, you know, usually people say, four or five is the max of examples. Because there's, there's some reason I can't explain this mathematically, but that it gets worse answers.
+
+Speaker 9  3:46:09  
+Ashby's law of requisite variety in everyone's got to do shut down. But we are running. We got into this some yesterday it's running up against Ashby's law on number of states or how complex the system you're dealing with is and then your Locus of Control has to be more complex than that. But if it gets too overloaded, there, it there hits a point where it's just not going to be able to influence the system coherently. You're dealing with something that's like, more complex than the known universe. Like if you really want to zoom out on it. But that requisite variety piece and even looking at the sample space in the question, you're answering it. So like sentiment analysis, if it's just positive and negative, it can degrade to where it's more or less flipping a coin. Sometimes it's a little bit smarter than that.
+
+Speaker 2  3:47:03  
+Yeah, so I'll go through this and we're almost finished and thank you guys for being patient and understanding your
+
+Speaker 21  3:47:10  
+stuff. Oh, so wherever Fischer and
+
+Speaker 2  3:47:13  
+I'll do that was the talk here. So as you are doing your retrieval, augmented generational q&a, there are a couple of chains that you will potentially use and these chains are they do use some tokens in the process, so be aware of that. But if I am asking for this scenario here, I've got this corpus of documents that have been splitted in sitting in my vector store, and I'm asking a question, that question is then again, embedding and I'm doing a semantic search on what's in the vector store the similar to that and retrieving back my nearest neighbors of that, that is then coming back into natural language in this block down here where it says relevant chunks. So at that phase, you just have the raw relevant chunks. Now you can see here I have my original query that's in human language, as well. So I have my query and my context, dependent on the length chain, what retriever mechanisms you are using, there are several different chains that you can choose once called stuff, which is just grabbing the wrong content from the vector store for you. One is refining again, some of these will use tokens because it's round tripping back to the LLM to say, hey, grab this context. I want you to summarize it or refine it in some way. So there's some tokens that are potentially being used here, and pass the output of that refined group of documents to my LLM from my final sort of response down here to the end user. And then we have MapReduce, which is traditional MapReduce, but keep in mind you may have a large set of data that you want to map reduce and confine that down to a specific set of documents because exactly as Chris and Patrick were saying, it can only handle so much until it gets confused on what you're prompting it to do. And then you have this map rebrand where it's a MapReduce function. But once it brings back those chunks, it executes and again, which tokens being potential used here. So be aware of that to rewrite those in the most relevant questions that have come back or answers that have come back from your question and asked those in the context. So you'll see these in your coding. Any questions or thoughts on that? So kind of back to this, this piece of trunking embedding and metadata. This is a huge topic. In this we've got some limited metadata that we are allowing the user again, first use case was a user that has their documents, they want to just do ask a PDF, or ask something from a CSV. And there's, there's actually two more demos that I can show the natural language to SQL, which I won't read and natural language into graphs. So I have those demos at some point. But in this one is a persona where a user manages a lot of data again, and they want to bring in in this particular scenario, there's almost 1000 documents right? And again, this is going into this particular transcript embedding vector store here in fine
+
+Speaker 2  3:50:32  
+it's fine, trust me, it's fine. But yeah, in this particular one, there's around 1000 documents so I can again, I can upload documents into it and I can manage these documents in this particular scenario. I've already put some tags in here. But you don't have to manually do that in this particular scenario. And I'll just summarize, what this is doing is it's grabbing that just the selected documents. It's passing those selected documents into that same question answer, and then it's having a generate a summary of that particular corpus of documents that I've selected in this particular one. Here's the summaries expert and you can see it's using the stuff protocol right. As I started a presentation about enabling DevOps in the mobile ecosystem for Shell, right. These are all the keywords that are just extracted. These are all the tags that it can generate for you. So then you can include those tags in your metadata if you like. We have a summary where you could let's say compare this on your website, you can mouse over it, it will instantly give you a summary of this one hour talk but YouTube, we can do this pretty good corpus of data.
+
+Speaker 1  3:51:39  
+But what's interesting here is this gets back into the metadata, depending on the solution, or in this case, you did separate a tagging model, put your metadata and says you create this index, you're just an expert. So I can put labels on those. And now that's another way like that gives you the Mongo index.
+
+Speaker 1  3:52:20  
+The he's keeping his own actually JSON object itself. And he's writing his interface. So the AI will say give me all the indexes are getting this job finishes. I think there is a Redis of every day among those that are open to have this interesting way for us to figure out what's the best way to meditate or separation, but the key point, I think, in most cases
+
+Speaker 2  3:53:05  
+you'll see Lamas index is open source project and do they have a knowledge graph? JSON, that they're doing interesting, we wrote this before, indexing existence. So right, but in this there is a relationship between what we're storing in the vector store and what we're storing outside of the vector store and how we overlap those. This is actually hitting the Python API directly in this example because like chain when we first started it didn't have a wrapper for all the API API's advanced like chains don't catching up, right? So we're getting in this particular scenario, the client with API directly, but as you can see, here, I have, let's say this one single document, and I have every every individual chunk here, and again, like I showed before, I can manage and update each individual chunk. I can tag each individual document or chunk, I can have metadata on retrieval. Like who's getting this, how often are they hitting it so I can audit how this documents are being used. And the beautiful thing about this is if I go back to this, like ask docs, is that I can actually now that I've gotten the data, I can generate questions. I've generated these questions based on this document that I may not even know the context so with that I can Create Question and Answer pairs right out of my document if I want to do FAQs or if I want to enrich the vector store and or if I want to take this question answer pairs or instruct pairs back to our original Gen aiops workflow and add this document documents are approved right? We can take in generate question answer pairs, those question answer pairs or instruction pairs are exactly what we need to take a foundational model and bake that into our actual model versus having it as an external corpus of data into perpetuity. And once you have that model, then you can share that model kind of like a binary right? You're putting this model out to production and people can consume it because it's been that team etc, etc. Clear.
+
+Speaker 11  3:55:04  
+On your example, there, were you were you showing that data chump my old man eyes so yeah, I think you went to the you clicked on a document and had the tags and such was that
+
+Speaker 2  3:55:20  
+so what I did was I selected your chapter I selected an individual document like this document here, okay. And when I selected that individual, document it automatically chose all of the chunks of that particular document. Now I could choose just one chunk if I wanted to. Right but in this scenario, I asked it to summarize this selection. So it took that individual document and summarize that selection. I can take this entire database if you will, and have an attempt to summarize add, well obviously, the context window would be crazy. But in this scenario, I can fine tune each document and then if it's a corpus of data, I can take in half questioning and answering on one subset of data associated with the tags right. And or I can kind of age out documents right over time that have been baked into my foundational model or that are you know, it's an old SOP that I don't want to have in my back story.
+
+Speaker 11  3:56:15  
+So is that a certain jump? Is that a machine learning back end? Or is that a function of some kind of indexer in the pine cone itself that does that? Does the manipulation of the documents into like, Question and Answer pairs or is that a human
+
+Speaker 2  3:56:34  
+doing it here based on my interface right? But yeah, I mean for this you see I'm selecting which document right it is. But really, realistically, it's going to have like the whole corpus of all of these, let's say these are transcripts. But as I asked a question about a particular topic, it may search through the metadata and say is looking for SIC code, or our industry code and if you're asking about a bank, and maybe it just asks for the financial industry and the banking clients and responds back, like what are the biggest challenges of banking, it'll just pull back the data from the bank.
+
+Speaker 11  3:57:09  
+So it's the actually the model is is searching through that and giving you that answer. Well,
+
+Speaker 2  3:57:15  
+it's gonna require you to add some code. But the metadata is there for you to do so in this scenario, we're just illustrating that I can add tags and I can automatically generate tags, and then you can use that metadata to refine what documents are retrieved in your q&a process. Okay, that was that was
+
+Speaker 1  3:57:35  
+what he's actually doing. So he's actually going to create an index is in this case, bind COVID. He's actually
+
+Unknown Speaker  3:57:42  
+adding tags. Yeah. Okay. That's now
+
+Speaker 1  3:57:45  
+using his mapping of the tax rules user. You said hopefully, they are right so that he can just pull the tags right and so right now he's got JSON. But again, one thing provectus I think there's tremendous opportunities. When we were talking about like the strategy and our chunking I don't understand how it's built based on how we tokenize you can sort of reverse engineer it's on display so I can get my data here. And I can take my strategy maybe I'm doing the page and then I can look to each other. But look at him and sort of see am I actually is my chunking strategy actually getting my this kind of data and processes and then I consider reverse engineer how to put like using tick tock and then look at this sort of efficiently chopping off like the way to picking up the work and why it's based on this work. And then sort of working our way back to it seems like a lot of work but at some point, then you get to maturity. If that's what do you got? Really and this becomes the pipeline or the pipelines. You know, how do we allow the sort of every organization to load documents in a day great most optimum scenario without them having
+
+Unknown Speaker  3:59:03  
+a lot of this kind of?
+
+Speaker 2  3:59:06  
+Yeah, maybe this is just, it's just pretty simple. We're trying to take the simple atomic use cases and expand on it for self service, right? When you've got your document you want to ask questions, but then you have a corpus of documents you want to publish through, you know, go through public release to release them appropriately. And then you can manage those documents here. And then if you want to train it, right, allow us to create question answer. But to your point, you can inject large language models and all of these things to say, if somebody asks about this, look up for all the stuff that's related to that fine tuning. Do you think it's good if it's good, add it into the contract. You don't think it's good you know, go out to this URL and pull in the stuff from the internet. You can integrate all of those into your you're changing. You're changing. And I think that arrest anybody has any additional questions. I
+
+Speaker 10  3:59:53  
+think maybe one remark we discussed during lunch. Like what are the things our team that that was?
+

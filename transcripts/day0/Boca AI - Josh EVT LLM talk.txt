@@ -1,0 +1,1709 @@
+Speaker 1  0:00  
+also a cheer mean all the rage today. My name is Joseph Enix will be speaking today and we'll have some larger introductions with the team. There's quite a few more people that are going to be joining here as a long list of distinguished guests. But today I'm just kind of giving an overview and, and starting things off. And as always, for us here we always like to start with why so with like, devops.com, right, which is a division tech strong, launched in 2014. Right, they have established themselves as an indispensable resource for DevOps and education community building really focused on all elements of DevOps, including the philosophy the tools and business impacts, right. devops.com is known for having the largest collection of original content associated with DevOps. And then when we look at the organization I represent ROI ADT is really to enrich the human experience and we do that by understanding our customers wise first and really start from that. And then once we understand there, why we make that ROI, and we bring people services and technologies. And if you look on the left hand side, this is all the way back to the roots of our organization with some of the you know, the leaders here in this discussion talking about gambling, right and what Deming said is that every system is perfectly not designed to get the results that it does. That's why we have to continuously visualize and improve our systems. And with that, I'll move right into some of the components with these large language models in general AI, so many of our customers and enterprise have really taken a stance of hey, we're just going to lock everything down. We're so scared about this. We're going to just lock it down and no one's going to do anything until we can figure this out. And then other organizations have really decided they're going to be completely open. They're like, hey, you know what, let's go for it. You know, no holds barred. And then at some other organizations they're creating internally governing bodies. Talking about the chief AI officer, but nevertheless, in all of these six scenarios, security is a must right, security, compliance and auditability. And, as you guys have seen in the news, there's been a lot of things and discussion about open AI, the elements that it was trained on and things of that nature. Well, I'm not going to get into a lot of that today, but we are going to talk about just Gen AI and LLM and some of the foundational components of that and our view, but before we do that, we're going to just focus on some terms really, it's going to be assumption, assuming that we know have looked into some of these terms, so the large language model training embeddings embedding an encoding and decoding token limits, training model parameters, prompt engineering, prompt injection, model, fine tuning things like Laura and RFH. If you have any questions, we can talk about that but some of these terms will be used and we're going to assume that we have a working knowledge of some of these terms. And so for us, our real point of view is that we want to be able to focus on on outcomes. And that that real focus is is that these monoliths are are are really right now where the start is, and sorry. The Monolith is really where people are starting right now. And this is what your open AI and your other large language models, but we feel like for enterprise that these monolithic, API driven may become a less of a focus and some of these organizations may look at a an ensemble of fine tuned foundational models that may become the production use case. So
+
+John Willis  3:29  
+just just to get the sort of terminology right like a fair amount of people just call these the foundational models. And we want to be sort of stick to, like monolithic or foundational, if you have a choice or
+
+Speaker 1  3:42  
+call them monolith, we can call them like API, API driven, or I don't know what Yeah, well,
+
+John Willis  3:51  
+I guess the point is like so I the way I've been sort of learn luckily, you have, like we would say that GPT three, five or a Bert or TPD for all foundation models. Or if you see that different as would you should call those monolithic. Well, it's not like it's like what is what's gonna be a commonality. They match what the industry is talking about.
+
+Speaker 3  4:16  
+It implies they're a bit of an ivory tower through like, I know,
+
+John Willis  4:19  
+but my only point is, it's been a lot of literature where it's been called foundational. So I don't want to rewrite the
+
+Unknown Speaker  4:27  
+foundational monolithic
+
+Colin McNamara  4:30  
+Are you differentiating between externally hosted like, an AI versus say, would you consider a llama to a foundational model?
+
+Speaker 1  4:40  
+I would say any foundational model for my definition is a model that can be in any monolithic model that they don't allow you to fine tune and will be considered model if
+
+John Willis  4:52  
+you get that you can capture that as a good way to sort of Express. Okay, do you mean like this? Well, you just said foundation models. Are this monolithic or this? Yes. So we can catch this later. But
+
+Speaker 1  5:03  
+yeah, and I'll start back on the slide. Don't Don't worry about like it's not. So our point of view is really to focus on outcomes. And those outcomes are really the end state along with that why or work ourselves back to where we're at. Many organizations are looking at these monolithic l ones and will really define those monoliths as a foundational model that you cannot then fine tune in training. Whereas when we look at foundation models in general, these are models that can be given to you in an open source format, that you can then fine tune and then turn it into something specific for your use case and we feel like that, that longer term that these ensembles of fine tuned foundational models will become the enterprise production use cases for things like cost and security and things of that nature. The monolithic LLM 's are really going to be powerful, but in enterprise we feel like many organizations will will take a look at these things and be able to fine tune those foundational models. Key with that is this last mile of integrations right this last mile with our existing dev SEC ops world is really where all of this rubber meets the road because we have to take these foundational models and or API driven monolithic models and put them into production. So we've got to build scaffolding around all of these large language models in order to support our clients that make it secure and auditable throughout this process. And with that, sort of a final thing, is that you have to have sort of a cross account pipeline. And what we mean here is your traditional promotion process from dev to save to staging through all of your QA processes into production. You have to sort of define that. And then my hope is is that through this week that some of the things that we'll all be able to agree on is Hey, at the end of this, at least we'll have sort of a foundation. How are we going to support these enterprises and other organizations that are going to try to put these things into production as the broader DevOps and Dev SEC ops community, they'll be relying on us to try to give them some guidance and some, again, foundation or guardrails on how to think about deploying these things into production. may go pause there for any questions and feedback. I think we're good. Okay. So over the last, let's say 90 days and this is just a portion of the announcements, right? We've gotten things everything very rapidly in this space. If you look at like on the left hand side, we've got large organizations like Palantir, releasing their AIP with the concept of controlling governing and trusting the data that's going into your large language models. We have organizations like ServiceNow and Nvidia Partnering for GPUs, and along with ServiceNow in hooking face releasing foundational models, I star coder and things of that nature and open sourcing these things to the community. And this is again, just a month or so ago. And then we've got h2o releasing their h2o GPT and LM studio, we'll do a demo of some of some foundational components that are built on top of these here and a little bit. We also have organizations like Databricks that are going all in with the $1.3 billion acquisition of mosaic and their foundation model capability
+
+Unknown Speaker  8:23  
+once the h2o
+
+Speaker 1  8:27  
+h2o dot AI is their open source consortium of tools for ml ops and they've released a set of tools associated with a large language model. Okay, and we'll I'll be demoing some of this content based tools, open source, okay can deploy on their cloud and they will support you through a SaaS offering. Okay. They also are supporting the community with open source products Okay. Also, when we take a look here at Databricks in the center, as part of their unity catalogs, and a part of this acquisition, they have this concept of sort of fully governed and lineage aware and lineage track provenance of their data. They have made a recent partnership with pine cones vector store, their big focus is on SAS and open source like language models. Also being able to train write your own foundational model to evaluate providing gateways to that and ultimately serving those models into production. Again, there's this emerging stack of large language models that it's coming about, but this is even created a month or so ago and there's even new additions on to this and things are moving very rapidly, obviously, Microsoft and their you know, as your partnership with open AI and find some and recently as your Microsoft's partnership with a llama models along the two models. And then again we've got us and other players in here that are integrating things like CO here and the anthropic models into their ecosystem as well. So a lot of moving parts
+
+John Willis  10:05  
+in this industry, but to say that AWS you know, the kind of conversation we had this morning like there's a potential and I don't think it's gonna play out but like a big three could be open AI, with sort of tightly aligned with Microsoft. anthropic tightly aligned with Google and then cohere tightly aligned with AWS or do you don't think that sort of way it will play out?
+
+Speaker 1  10:28  
+I believe that in this sprint that people are making a ton of partnerships right now, right? Everybody's trying to make up their partnership in this in this space, right. I do though, believe that. This is a marathon. Okay. And I believe that that based on the the advances and change the change rate, the amount of papers that are being released, and the things that are being figured out faster and faster and faster with the assistance of these large language models, that that there will be in six to 12 months, there's going to be a landscape that we probably won't even recognized and then pushed out, you know, to 18 and 24 months. I don't even know if I can predict trust would be
+
+Unknown Speaker  11:16  
+the limit on the big three cloud. Yeah. So
+
+John Willis  11:18  
+that what I heard at the analyst summit was one of the sort of guys on a panel expert panel which he said that he saw sort of the potential this big idiots used word victory but like it's in our familiar search, we know what that means. But he said that you can see Microsoft with with open AI which is obvious and then the anthropic chord with with Google and cohere with Amazon, so that is going but I like your answer because we have no clue. The other question I had cubic feet aside Yes. The Could you give me the sort of skinny the elevator pitch on what I should know about Metis llama to and why it's why is it interesting or different or is it not different from everybody else?
+
+Speaker 1  12:07  
+That's a great, great question. Is it not meta? I really don't know a lot of people recognize this but meta has making significant investments in this and has been bringing on some of the foundational people who who created original artificial intelligence have been on Metis sort of for a long time. They've been in my view, and they've been in classes and courses. And they have really been involved in this from the beginning. And they've been a thing. I don't think a lot of folks recognize how much Matt has been investing in these things, right? If you look at the founder who created the digits dataset, he works keywords for men, right and teachers and and so when you look at that and you look at the llama models, llama one and now one or two, and obviously one the one was released with some challenges because it was not supposed to be released. Our commercial commercially viable fashion was just more of a research within the weights and things got put out there in the community. But then with llama two, with the release of the 7 billion parameter Allama to 13 billion parameter and 70 models. They have another 33 billion parameter model that they have not released yet. A lot of people believe that will be the sweet spot between a specific precise use case and a general purpose use case at 30 billion parameters. It has not been released yet. But the thought processes here is that they have a commercially viable model where they spent a vast amount of GPU resources to train but they released it with a model where any of us can
+
+Unknown Speaker  14:00  
+take it anywhere. It's an open and take it's an open model up until
+
+Speaker 1  14:03  
+700 million users really so at 700 million users or when you get close, you probably are going to have to give that a call about licensing.
+
+John Willis  14:15  
+And there's no dumb question but it is considered a generally but it is a considered in the category of generative pre trained trust
+
+Speaker 1  14:26  
+is located retraining transformer that has done some reinforcement learning with the back sort of fine tuning on it and it is a foundational model that you can then take and apply really low rank adaptation or whatever mechanisms that you want to fine tune into purpose built large language model for your release as a product or for your use.
+
+Speaker 3  14:48  
+Okay. We're just circling back. You're saying well is foundational because it can be fine tuned, but initially calling you'd mentioned the question whether llama might be foundational or not. Yes. And I wanted to pull that thread a little bit where that question service
+
+Colin McNamara  15:07  
+as more asking for clarification for the terminology that we're using where you were where you would classify these and whether that that division was hosted or not, right blackbox or non like open I am connecting one model and the connecting the different models. Are they moving things in and out because they have to do with the ability to audit that to be able to self audit and train on it? A lot of questions.
+
+Unknown Speaker  15:31  
+Mama's gonna give me so
+
+Speaker 1  15:34  
+you can host it. I'm going to show a demonstration. We're self hosting it in our labs. You can host it on pretty much any cloud. It'll run on it as long as you have CUDA running. You can even do a DML where you could run it on CPU, but the inferencing speeds may not be what you want, but yes it can be released on your own hardware, however you want to run it. And there are many quantized versions. I don't know if you guys have seen the usually when these models are released, they're released at like 16 floating point for their parameters. But for him to run that on your GPU, it can be a significant amount of GPU resources and testing it. So people have been taking these models and quantize them down to eight bit or four bit. So there there's an algorithm that steps through those parameters and truncates, the 16 bit ones that aren't as in there's an algorithm statistically as important, and they can concatenate those 16 bits down to a bit or four bit and they won't take up as much space in memory, you do lose a little bit of fidelity in the responses, but many folks are willing to do that for testing and then maybe running the 16 production unit. But yeah, so you can do anything you want to with those models.
+
+Colin McNamara  16:58  
+Juicy use cases like that implemented in a release pipeline.
+
+Speaker 1  17:03  
+I anticipate that that either organizations will trap these foundational models. Some of them will build foundational models, but that's going to be a very interesting paradigm because the data scientists and they have for the reinforcement learning and human feedback and the time it's going to take them to build their foundational model. It may be easier for them to to take a commercially viable foundation model like a falcon or a llama model. It's already gone through a lot of this training right and then take their corpus of data and set up question answer pairs or do instruction to do something to sort of fine tune those smaller models for their specific use cases. They're
+
+John Willis  17:50  
+probably don't want you to answer the full answer this question right now, but don't you think about it unless you have a sharp quick answer, which is, do you have any sense of which of those sorts of foundational models are going to be useful for what patterns? Any early observations because I've, I've asked this question to a couple at a couple of conferences where I was looking for some expertise just for myself like self serving, like
+
+Speaker 1  18:16  
+I do. believe there are some sweet spots for these. Release the recent paper that was released a test in the criminal alpaca right and there'll be more of these dolly mosaics MBT tested all of these with a with a different set of corpus of data right, validated and tested them against the specific use case. Okay. And an interesting thing now this was released in June, so it's a little bit dated June in this world, like 30 days,
+
+Unknown Speaker  18:45  
+sure, sure, a lifetime.
+
+Speaker 1  18:47  
+But if you can see in this scenario when they ask these questions, this is a percentage of examples where the models ranked number one, if you look at them, clearly, there's no in this scenario clear winner, right. And this is building in this concept where people are talking about this ensemble of large language, right. And then potentially having a feed forward mechanism where or when a question comes in, and it's sped forward through all of these large language models. And the best natural, the best answer will naturally come out and softmax and that can either be aggregated or presented to the user in a safe way, based on the model that's fine. tuned for that. And it could also be, this may be retrieval augmented generation, you may have a vector store that is plugged in and front ending some of these as well. So this these are listing foundational models, but let's not forget that they're making better stores included in these things as well as part of
+
+John Willis  19:50  
+your study or what you think post study being actually could change the dynamics of that question. Okay.
+
+Speaker 1  19:56  
+A foundational model with a vector store. Retrieval augmented generation may perform better and and a foundational model again, could with vector store, they may produce different results, right, based on what is being fed to them one, zero shot or launch right?
+
+John Willis  20:18  
+And then like I said, then send them probably the, the variation of the different vector stores probably won't and correct me if I'm making a statement that you think is wrong, but the variance there won't be as high because well, from like, like the sort of the question I'm getting at is like this, this sort of, what's the what answered the best questions in this ensemble question, but then your point is that the vector data stores will show that put some variance in the answers to those. But my guess would be the variance of the different vectors, data stores wouldn't create the same level of variance. Sure, because they're sort of all similar,
+
+Speaker 1  20:56  
+I would say correct. Now, there may be depending on your parameters of, you know, how you're doing your similarity search, right? On how the code is executing a query. On the vector store. There may be some difference
+
+John Willis  21:13  
+their algorithm choices like Ryan Cohen versus somebody versus
+
+Speaker 1  21:17  
+Well, the vectors store is one thing, but what we're doing in retrieval, augmented generation, is what we're doing something very specific with a large language model Mehrdad retrieval generation, we are first training on a corpus of data right right. We are then splitting that and we may be splitting on paragraphs or sentences or it could be an image or however we are
+
+John Willis  21:54  
+saying that's the first level of variance then is how you basically yeah, okay, you're doing this and then went over this morning, but yeah, explain it. For me. This is really interesting. So the
+
+Speaker 1  22:05  
+process of splitting is not how it's done. Like laying chain has a model that a lot of folks are using.
+
+John Willis  22:23  
+Just while he's doing that, I'll just try to explain what I think I learned this morning which is there is like methodologies for chunking Yeah, you knew this. Okay. So like you might be sent in space. So I'd be paragraph base.
+
+Colin McNamara  22:34  
+Okay. Yeah. So you might you might want to identify a concept you might want one interesting one I heard her son Chase talk about one of his recent calls was demonstrated using piping markdown in in that in the document ingestion to be able to use the headings and sub headings as like a boundary point where it's natural construction the document versus like that you heard that buffer and that's that's pretty
+
+Speaker 1  23:00  
+interesting. I've seen that. Similar talk about more or less the same folks but and also utilizing an asking the large entourage to respond in Markdown as well.
+
+John Willis  23:14  
+We do a lot of that. That's super simple, but the idea of chunking it based on the Markdown is really clever.
+
+Colin McNamara  23:19  
+Yeah. So in Yeah, it was really clever and being able to pass to even to pass that enabled natively into into that link chain code. And in that one example, you mentioned at the start of going over the slide talking about training on that data, where you're saying training the model of actually training training a model or like a lower depth in the model. Are you more referring to your document ingestion into your vector store and then having the model gain access to that
+
+Speaker 1  23:47  
+thank you ultimately become both on what your vision your long term vision was, if your vision was always to live in return for retrieval, augmented generation world, it may just be for your vector stores and giving last month access to those. If you do then want to take your large language model and have it creating questions and answers that it already knows. Yeah. Right. And then utilizing those question answer pairs for Laura and fine tuning that scenario those question answer pairs would be important to and how you did the chunking whether it was on sentences on paragraphs, that would be important in how the the epics or training
+
+Colin McNamara  24:33  
+issue mentioned the question, answer pairs I think, John, you're the one to explain me why this was important. We, as where you saw someone putting warming up their their their vector store and ingesting JSON data into it, and then going through like a retrieval QA and asking specific questions as I understood it to actually put more vectors around that initial vectors when implemented. The you mentioned to actually training a Laura adapter based on that. How does that compare and contrast to that?
+
+Speaker 1  25:06  
+I think I'll show you an example of that and maybe at the demo, and maybe it'll give some intuition
+
+John Willis  25:12  
+and Joseph, again, this helps me to say a statement and say, you know, you, you're an idiot, like there's no way that's what I said this morning, but the one takeaways I had we had this question this morning. Why would you choose one and one of the sorts of outcomes basically, maybe the mathematics to get there, very but is it with the law or you create a binary they accept it as a package binary Okay. Whereas the the vector and so like, I'd ask them Do we really need to worry about Laura and fine tuning right now, but even in this week, yeah. And he said I'll let you be the judge it at the end, but the point being instead of like me, having to have you pass around an index thing, what if I can create a binary and give it to you ship
+
+Colin McNamara  25:53  
+it to your phone?
+
+Speaker 1  25:55  
+So that was that nailed the vision? Recognize that as your question so I apologize.
+
+Colin McNamara  26:01  
+I can apologize for not being clear.
+
+John Willis  26:04  
+Ross's we've been sort of working together. So I know. Like I I can guess he can guess what my question is gonna be I can guess mostly what his question is gonna be. So
+
+Speaker 3  26:13  
+the question I've got because I think even bigger takeaway I got from this morning. Is that this like top level corpus data going into our tech splitter we didn't talk about that was more SOP like the top of the box of the game board on my rules of Operation versus actual operational data ingest? Is that true for this retrieval augmented generation? Or is this a different use case?
+
+Speaker 1  26:46  
+Well, it can be used as real time as you want it to as long as you're ingesting and filtering and cleaning and making sure that the factory stores in our Christine fashion for you to give it on your front end. Right and making sure that it can get the throughput and latency to your customers right in some scenarios. So it can definitely be used in real time use cases, but I think the longer term and as you scale, you may want to bake things in a large language model to to reduce you know, these round trips from the database if you will. Is the vector storage, really a new data type? Right? We may want to reuse that over time. So in your scenario, I think it may be phases that will continue. Over time, there'll be a cycle there where today I'll put some SOPs in my vector store. At some point in time I may decide that no, I'm going to bake this into my foundation model. So day zero, it may be baked into my foundational model, but then day zero t plus 30 days, there may be new corpuses of data. I may not want to go through attorney epic on my fine tuned model at that 30 days, it may not be the opportunity may not arise for me. So those things can sit in my vector store to help me do retrieval augmented generation, six months down the road, I may want to create construction pairs or question answer pairs and bake that into a model. But again, it depends on the organization. So I feel like there might be a cycle there that organizations will use their vector stores up to a certain point and at some point, if they choose, they'll find it interesting.
+
+Speaker 3  28:18  
+I'll be quiet a little further. For the Text clutter perspective. I might say. Here's how we have tickets. Here's how we do database schema and we're gonna like maybe you want that embedded out of your model. Maybe you want that in your back your DVD, but you wouldn't actually put your ticketing data or actual loss tables that far upstream in your system. It depends. Right? It seems expensive as hell at a minimum because it's gonna go stale quicker than bar level structure.
+
+John Willis  28:53  
+And my takeaway was so it was sort of maturity thing. I think what I've been doing so when I I don't know if you want to jump to the models your slide, but the one where he has a really good model for
+
+Speaker 1  29:05  
+Oh, yes. Finish this and you just have to do this quickly. Can you know
+
+Colin McNamara  29:11  
+what I made? Our gaps? It's so many.
+
+Speaker 1  29:17  
+Obviously, we're taking a corpus of data. We're splitting it up with some intelligent understanding. Now here's the thing. It may not be text, it could be images, it could be other things. So this is just an example. But we're breaking it up into a language that the foreign language understand. we're embedding it there's many different choices of embeddings that we can use and and many different shapes and sizes of vector stores that we can choose to some of them have our general purpose and some of them are limited in scope and what they can do. But that
+
+John Willis  29:47  
+seems like a black art too, though, right? Like how to know what what embedding model to use, right? And it seems that
+
+Speaker 1  29:55  
+it's ever changing. Yeah, if you look at the leaderboard, there's a huge report for Okay, okay, okay. That leaderboard changes, but it again, it's use case specific on what's going to be good for this use case. Okay, and then the vector stores like let's say pine cone, which has gotten a lot of notoriety is more of a general purpose. Right. But then you have some other ones like Chroma
+
+John Willis  30:21  
+well, actually about to give the choice of the embeddings that you saw, yes, absolutely.
+
+Speaker 1  30:24  
+But it's so some of the vector stores cannot store all of those vector types and support.
+
+John Willis  30:33  
+So you have to so one is you got to know for your vector store which ones you can use, and to then you have to then leaderboard does that give you a sense of not just speed and, but also like, what's the best for what kind classical classification
+
+Unknown Speaker  30:48  
+Alright, that's good. It's actually this classification.
+
+Speaker 1  30:52  
+Size, right? Because the number of embeddings the complexity of the number embeddings, because if you look at down here, and I promise to jump back to to our other slide, but if we look at the, the amount of tokens if you are you have the right the encoding parameters, or if you will, like the number of possible encodings that you can have, right? There's a number like if you live in this archaic decay base, which was okay, Chapter Three are 50k right for dimension two, and then you have the C 100k based GPT. For those embeddings there's more of them. And so there's more complexity. in it. Its decision on how it embeds certain words. It can be different. Whereas if I like have the word my ear with a capital M, I write there, there may be a choice when it's doing its embeddings on on what it does with certain words, it may take one word and break it up into two or three individual tokens. And again, that's dependent on this encoding scheme that you choose for veterans.
+
+Colin McNamara  32:07  
+Have you seen as I look at this, you know, I envision multiple file types, multiple file system types that are happening over and over and over as we as we move forward with with new models, right and having this incredible spread. Obviously, one option is to readjust and create new embeddings for whatever that cost. Have you seen any examples of taking from one embedding type and then re re ingesting or train or translating it embedding two embedding into into a new type.
+
+Speaker 1  32:37  
+I have seen some discussion about it and there are some underlying like a backup, if you will, the vector store, potentially be utilizing that backup to hydrate a new vector store and do a transition process from initial, you know, vector store type and embeddings to another but I think most people that I've seen, we've just recreated thread I
+
+Unknown Speaker  33:02  
+wouldn't be worried about a degradation of quality somewhere else. Yeah, their finger in the wind saying,
+
+Colin McNamara  33:07  
+I especially it seems like a file system migration,
+
+John Willis  33:10  
+just so I can sort of put this for now what you're saying is like, like the seat What is it like 1000 base, right? The significant difference between that and like, say the, you know, one of the other ones like the P 550. K base is how they organize tokens like token size or when it's doing
+
+Speaker 1  33:32  
+its encoding, right it may take let's imagine we had somebody's name that was like a bunch of here, right? One more simplified encoding scheme, a grab that whole thing and create a, okay, but one has more nuance to it may grab the first couple of letters and then the second couple of letters and then let's say the third group, okay, now, you may have three events. Right, so, so there is a importance on
+
+John Willis  34:02  
+right so how do you know then like in terms of like the sort of known ones, like what did they sort of publish how they're going to tokenize it or
+
+Speaker 1  34:10  
+not for a long time, okay. But there are most of the open source ones do and then it's deterministic on what word that it sees on how it's going to encode and decode that group of words.
+
+John Willis  34:23  
+Okay, but what can tick token, can you then say, here's the encoding scheme, you take my data and then it shows you how it's going to tokenize it. In this scenario,
+
+Speaker 1  34:33  
+what you do is you just encode it, and then it would show, right, you would just
+
+John Willis  34:38  
+pass it, you'd encode it first and then you could then you can see the token structure based on so then you know, how it optimized your data, okay.
+
+Speaker 1  34:52  
+In this talk, we're gonna take a corpus of text here. These are very simple encodings right. And then before you did your training, right, this is showing you converting these tokens into the training set. But in this scenario, you would be able to see exactly a one to one encode decode relationship. So you'll absolutely be able to see this connectors that are created as they're being introduced into the vector store and what papers that this is from Andrew Carpathia, he did a talk.
+
+Unknown Speaker  35:26  
+You can look and you'll find it. Yeah. But
+
+Speaker 1  35:29  
+it's really the foundation is from this tick token GitHub. Yeah, when you can read the ticker from GitHub, and there's a lot of data that is open source in there, but when you get down into the token, embedding magic, there are some components that are not
+
+John Willis  35:47  
+but the point being. So the point being like if I took, like, for example, one book, and I use like the GPT, and token versus the Codex, or I'm just doing the short versions I could do that. And then I could reverse engineer through some tools to see how it actually chunked Oh, that chunk was how it tokenized the word
+
+Speaker 1  36:07  
+you would 100% be able to see that the encoding and decoding that's the whole beauty of the vectors, okay, is that and that's how the large language models function. So to your point in this example, here, capital M y was a capital M and a lowercase y is always going to be a 366. Space. Oh, word favorite, right and a lowercase f and a space before it is always going to be for for space and then we're color space and the word is space, lowercase red with no decimal place. always going to be this. Now here's the
+
+John Willis  36:44  
+oh, there's going to be that for any of the encoding models or just just to this encoding model for the one that was what was the example in that case was using the justice? Okay, got it. Okay. Okay. Right. And this is
+
+Speaker 1  36:55  
+exactly this. screen captures from Open API, open API is released paper. Okay, so these are all these are all cut and pasted from their documents that you can read when they were open sourced,
+
+John Willis  37:11  
+when they were sore, so assumption is the same. I'm sorry, oh, please go. So like this is probably a bridge too far for why I should know, but those basically then indexes for in the graph and like you said, it's always a 366 3666. So is that the next level is that that's basically the indexing? Yes. So if you take the simplest because it's all based on a matrix, right? I mean, this is another but I know that we want to go this deep, too deep here. Space and
+
+Unknown Speaker  37:43  
+matrices, matrices.
+
+Speaker 1  37:47  
+All right. Okay, let's just take it as simple as Andrew Gaines Coursera course that was recently released, okay, so you want to take his course but this is an example where he takes a very simple sentence, right? And he describes how it's placed in vector space. Okay. So in this scenario, you have like each individual word, right? And imagine each individual word is a token. And each token is a number that exists in vector space. And then there was a relationship between the origin and that other word. And so, building upon this view, right, if you will, to a set of words or a corpus of documents or the semantic relationship of a sentence or a paragraph, expanded into your vector store. This is conceivably what it's doing, but it's just showing you in a word by word scenario here to make it simple for you. But imagine these question answer pairs for the segments of your book, being placed with their understanding, like a 366
+
+John Willis  38:57  
+might be where student is right or
+
+Speaker 1  38:59  
+what 100% Yeah, it really
+
+Unknown Speaker  39:02  
+makes someone so would just be a word and we'd be
+
+Speaker 3  39:05  
+console. You got an x on what I would call the y axis and the Y on the x axis that an X on this computer I think
+
+Speaker 1  39:13  
+this is what the left hand rule or something like that. Yeah, don't quote me. on that. But this is from Andrew Yang, so we'll probably call him
+
+Unknown Speaker  39:22  
+now watch the course and investors jumps.
+
+Colin McNamara  39:26  
+Further questions about this. So if you have the vectorize locations within this matrix of the words and the concepts and how they relate together, and that is routed out of a document or maybe in a log entry that comes inside of here, is there the notion of validating the integrity of that transformation like a CRC or signing
+
+Speaker 1  39:51  
+there? Should be an especially like PII data or filtration or auditing or any data that's coming into the vector store between chunked up there should definitely be some sort of enterprise mechanism for validating the data going in meet your SOPs and meets whatever quality controls you have on data going into the vector store. There were also I would submit to you there also be if it missed it, right should also be some potentially scans of your vector store periodically like to do a virus scan, and then we'll talk more about in the infrastructure but there should also be an outbound critic that sitting there and making sure that PII and external data coming out of your large language model or your ensemble larger models for you retrieval augmented generation, it's validating this final response and if it doesn't conform to the organization's policies. It responds back with please ask that question in a different way or some sort of, you know, approved response. And that's a good way of, say whitelisting questions that people have or denying questions and seeing if people are trying to prompt eject you
+
+Colin McNamara  41:04  
+so would you would you would my understanding of that having like, a it's not a confidence score, but there's a an accuracy score that at least responded from the models. So are you saying filtering for a certain levels based on
+
+Speaker 1  41:21  
+the encoding level? I think, you know, because it's its decision criteria for encoding specific words and pretty consistent throughout the documents. That in that scenario is probably not as big of a problem because its nearest neighbor search or cosine similarity search is going to do those. Those mathematical calculations and when it lands in vector space, all of the data that's coming in are being encoded with that same scheme. So I would assume that any variance that we have statistically from the numbers that are coming in would be the same throughout all of the data that's coming in, meaning that it's the same sort of wrong for all of the data coming in, and that the angle, if you will, of a nearest neighbor search would be off by much response. There's
+
+Speaker 3  42:09  
+a neat thing. You can do vector spaces where you just pick the origin, like the coordinate system at the origin and you can move it around the data in a system so it remains consistent, which is exactly like it. It may not be exactly calibrated, but it is consistent is that it's just
+
+Speaker 1  42:26  
+a transformation. And this is Rick Monte this is all statistical. None of this is you know, we don't we don't actually know the base foundation is all based on tokenization. And it's based on statistics on how we're question answering and making predictions on what the next token is going to be. It's all based on statistics. So there's no real ground truth on any of this. That we that we understand completely right. Thank you.
+
+Speaker 3  42:56  
+Think back to and that's the graphics cleaner and I thought that is a zeal Yeah.
+
+Unknown Speaker  43:09  
+Yeah.
+
+John Willis  43:13  
+I don't know. Politician witness this deep in the weeds, but yeah, probably want to get back to them. Yeah. Go for it back to the
+
+Unknown Speaker  43:20  
+Yeah. So
+
+Unknown Speaker  43:23  
+we'll be here 15 hours.
+
+Colin McNamara  43:26  
+I know. There's a lot of sort of generalized Oh yeah. I don't want to derail at all sorry.
+
+John Willis  43:32  
+This. This was back to sort of Chris's question. This was just what he went over this morning. So I think the way I took sort of the question that you had is like the way a lot of people including myself a lot examples is we're shoving everything into a data store now. Right? Because that's the model the examples we're seeing. He's proposing a more mature, scalable option where your sort of vector data store might become your static or your so SRP or some corpus of data that really doesn't change a whole lot. And then, you know, the sort of next level of how you like today, we would take Jura data, we'd slam it into a back dish. But he's proposing a model where you start off with a corpus of data. Yeah. And then you create sort of a lifecycle for creating fine tuned MLMs. And then you sort of have a gateway or link train between that stuff. Yeah. For interaction.
+
+Colin McNamara  44:21  
+Yes, you'd have an agent that has tools defined where yeah, you're the Vectra store tool. You're different. You're different train model tools. And then I would suspect what from what you're describing kind of similar like there's a there's a pattern pretty common Southern California a number of years ago for taking MySQL scale out database clusters and then every so often rolling them into an index that was for like high speed access lots and lots of data on this similar to to that and analytics space. Yeah, no, this is this. This makes sense.
+
+Speaker 3  44:58  
+That top layer is here's how the field gets chopped up in the rules of engagement. And then as you move further down into the like, strategy for how we're going to approach this when you hit all the data on the right side, let's actually start the clock and let some some players play get on the field. Yeah, it's Tim. And I guess this bottom shot precarity the metaphor a little bit farther, is the broadcast with the announcers on and what is actually hitting the screen, because because they're brought in
+
+Speaker 1  45:35  
+exactly right. It's a buffer in between what's going on live and what the, the feed and what's actually going on.
+
+Unknown Speaker  45:43  
+Are we working with a five second lag?
+
+Colin McNamara  45:47  
+Yeah, to to to the to that point on speed. Are you seeing performance degradation or any sort of any sort of performance curves in as you populate the vector stores is
+
+Speaker 1  46:02  
+definitely isn't the tune just right with throughput, right and latency. So there absolutely is a relationship to that. And that embeddings that we talked about. So the vector store with this, the more dimensions it has, right, the more resources that it takes to query that vector store. Okay, so those embedding models that we were talking about some of their degrees of freedom, if you will, or smaller guy which reduces the number of possible embeddings that it has, but those are faster and quicker to return. And when I say faster, it's all in latency and throughput, right? So I shouldn't skip over, but you know, how quick it is to respond, latency wise and how much throughput it can ask. But those are very dependent on how you set up the vector stores just like you are for Oracle right back in the day, how many copies of this database that I have sitting on disk, right, and where's my tablespace living and things of that nature? All those rules still sort of apply in vector stores? On how many it's going to be a little bit different? Because when you look in, let's say, a pine cone, it's like, how many duplicates do you have and how many of those can occur simultaneously, right? And in that scenario, that impacts the throughput and latency of the vector store.
+
+Colin McNamara  47:21  
+So are you taking in it my hearing you say that you're incorporating, scaling out horizontally across logical components in your vector scores to handle performance and speed you absolutely
+
+Speaker 1  47:36  
+need to account you need to know the number of users right and those latency requirements and throughput requirements, right. And those calculations are going to determine how you structure your vector stores, right and you may choose a different embedding scheme for a specific corpus of data because it may be faster because you want a more real time answer, where the large language model that stays tuned where it can get zero shot or like one shot. And so it's responses back from the vector store. It can compensate for some quality in the nearest neighbors retrieval mechanism. But it's faster depending on your latency characteristics. This
+
+John Willis  48:14  
+was interesting to just kind of this morning too, because there's there's so many sort of variances like one is that how you chunk it and all that right when it comes to performance. I suspect there's a level of performance based on the choice of the tool use like latency, is it sort of Chroma rises? It sort of, is it an in memory one is it one that you sort of build or is it SAS based and then set but then the third piece which I think you made a really good point this morning is how you weren't like is zero shot one shot Yeah, like those become you know, and then that becomes like the
+
+Colin McNamara  48:45  
+complexity like some really like a demand side delivery side, right.
+
+John Willis  48:49  
+And but then the question then becomes like, so if you really fine tune your data on sort of zero shots. I'm just trying to see if I'm getting this right from the memory of what we talked about 20. Like, like a smaller corpus will give you a higher performance, but less generalization right versus the opposite. So it's just so I think it's interesting from a performance perspective to think through all that, yeah, of not only like how you chunk it, but as the results of how you chunk it, the question of maybe sort of the latency of the choice that you use to store it, and the indexing or whatever that and then the third is how you actually are going to ask your questions, ties it all back together, because it was very specific data, and performance will be high. But if I need more generic questions, and I'd probably want, you know, a different
+
+Speaker 3  49:39  
+I'm also seeing like a temporality in the day like, zero shots a targeted condition. You're trying to achieve, but depending on your integration lifecycle, and what is actually happening in the data. It's good, like, statistically speaking, there's a strong probability it's going to drift off your chart over time and you're going to have to update either your model or your vector store to accommodate novel emergent behavior.
+
+Speaker 1  50:11  
+I think it's a it's a race between that and how quickly the industry trains foundation models, below the training of foundational models, it's going to the philosophy of that is going to it's going to exceed your expectations. Depending on what your expectations are, I think Allama three, or four or Allama five, think the capabilities that are going to be baked into those foundational models are going to surprise you. And I think that their reliance on external datasets unless it's proprietary data, your SOP, your policy is going to be baked into those foundational models, and it'll be trained on like, everything, let's say if it's foundation or wrong coding, right? You are today say well, I have this language that I know better than anybody. I'm going to take this corpus of data, I'm going to create a million questions and answers of Java. I'm gonna bake that into a foundational model. And let's say it's a llama to today a response for Java better than any model that exists. But in six months, they make all the data that we had every data that's ever been talked about with about Java, and its foundations and everything. They just make that natively into the model. Yeah, and it made them respond better than your llama to model with a corpus of data or with your fine teams data as well.
+
+Colin McNamara  51:40  
+So to that point, or expanding on that, whatever the words are to continue. So say I have a project open source code, public good, whatever. There's stuff that I want externally in the world. Is there a fast track to getting in these foundational models? Is there a flag that's like indexes, please?
+
+Speaker 1  51:58  
+You know, that's above my paygrade. But you guys probably know some people know but there's these companies that could do that. But there are many papers coming out that the quality of the data, the foundational data, determines the the quality and the reduction of the number of parameters that you need. If you're using quote unquote, textbook, quality data, then you require less parameters. And that's actually you know, the cycle whether they used to say garbage in garbage out data, the corpus of data that this foundational model was trained on is super high quality, then you don't need as many parameters for it to have the same so
+
+John Willis  52:37  
+this one this is why we need to have Shannon because like she didn't we'd have confort explained to me one thing she told me is that and I don't know if this I'm just not understanding correctly, but she's thinking there's a killer app and robots that text. Yeah, and I'm wondering if that does play into this like that, you know that please incorporate me. And this is more important, or don't incorporate this
+
+Colin McNamara  52:58  
+is well structured. This references XYZ
+
+Speaker 1  53:03  
+announced it but don't use your robots. txt. Oh, they have that? Yeah, they just recently added the ability to edit robot stuff. So you can opt out. So by default it is.
+
+John Willis  53:18  
+Yeah, of course. Yeah. But that's even if you don't have it, like text, right, but like, to your point like it could be like maybe more meta,
+
+Colin McNamara  53:26  
+like Google Webmasters Tools if I want to if I want to update my whereabouts attacks but also so like, if I wanted to search engine optimization on an article or website, whatever, right. Not only having a robust thought tags not only will have probably a sitemap but I'm probably going to register it with with Google Webmaster Tools or whatever and and encourage that to be in as in manage that is in I guess that that the related questions okay, we have these foundational model generators out here. Are Is there any research in the space are there any early implementations is in Is there anyone that would know about it?
+
+Speaker 3  54:05  
+Yeah. And I think like we're brushed is brushing up against some limitations around Ashby's law, which is like, I'm sure everybody's gonna have to do a shot when I say actually is
+
+Colin McNamara  54:17  
+what's asked besides
+
+Speaker 3  54:19  
+law requisite variety, the control mechanism curious system has to be more complex than the portion of the system that you're trying to control. And like the catch with Ashby's law a lot of people miss is that you can never to have like full control over the system. The control mechanism has to be more complex. To really get like full total causal control of the universe. You need something more complex in the universe. Like we can't do that and fundamentally impossible. So like I'm gonna have
+
+Unknown Speaker  54:52  
+this conversation later on.
+
+Unknown Speaker  54:55  
+Yeah, let's definitely this is an interesting
+
+Speaker 1  54:57  
+because that one's a good one. But I would say that like Starks and snarks go against that, you know, you're you're into the crypto world of fts CK algorithm nearmap tt you should look at this because in the stark and snark, S n AR K algorithm, they in that proof and I'm not a mathematician like Timex math guy, but in that proof they state that this that this snark algorithm is a smaller, less complex mechanism that requires less resources and controls a much larger and more complex scenario.
+
+John Willis  55:39  
+So not I mean, you know, math and you know, this stuff went deep into me, but at least working with James gave me a little sense of, because he's a guru on this stuff as well, but it's not really complex. It's the number of states so but that's, that's a little different in complexity, right. And I mean, what it says right here, a system of three stable the number of states that is a control maximum is capable of attaining, right in other words, yeah, so I think there's a difference between
+
+Speaker 3  56:05  
+you can say state you can say, variety,
+
+John Willis  56:09  
+but every definition says here that for a system to be stable, its control mechanism must be capable of attaining a number of states to try our variety that is greater than or equal to the number of states in the system being controlled. So So I think that plays more into your that you can't that may be not more complex, it can be less complex, but it can have in
+
+Unknown Speaker  56:28  
+our lives more degrees of freedom than what
+
+Speaker 3  56:32  
+anyway nuance comes into fat and kills are on the distribution is this an 8020? Split or? And just that 10% As we get along the plot of the rest of it might be like, unknown elements in the universe. We haven't discovered yet which most people, right, you shouldn't know. Thank you.
+
+Unknown Speaker  56:54  
+All right. That'd be good. Let's go back to the show. Yeah.
+
+Speaker 1  56:57  
+So getting back to our sort of ginning I ops architecture again, at the start, we all agree that the you know, the vector type and the way that our um, we're calling document in a loose sense, it could be images, video could be anything that we're embedding, we need to have metadata associated with that we need to be able to manage those things, and ultimately, for free will augment a generation it comes down to either a monolithic model that we're using, or a fine tuned foundation model or disinclined to model that we're feeding these data into attempting to stop hallucinating and to give them some intuition on either in zero shot one shot or a few shot type of in context. And so outside of this block, then we move into sort of this LM lat LM ops model lifecycle. And this is sort of the model that we were talking about earlier, where you have a corpus of data, and maybe that vector store has data in it that you want natively to be in your foundational model, Are you determined, again that you want to productize this fine tuned model? So you take a corpus of that data? And you want to bake it with questioning, answering or whatever your output model is going to look like? And you can generate questions using your large language model. Right out of the vector store will demonstrate that right so you can generate the training data and validate it based on data that you've already made sure is clean enough challenge that fits in all of the policies, right, so you're natively doing the first step of your data science lifecycle and cleaning the data. In a vector store. So that would be you would reduce your expense to go there and get trained datasets and now you got it. You also, in my opinion, are eliminating some of the reinforcement learning with human feedback at the entrance of the data coming into the model because you're not feeding it data that hasn't been vetted. Right. So in that we would be able to take this data, depending on our use case. Those are our governance problems, monsoon clean scenario, and then do model valid model training, validation and red teaming on that data to produce a fine tooth model fine to model. And then from that scenario, once we have a pricing model over again, we're using a an API based scenario. Then we have our enterprise integrations here. And right now this is where the line chains of the world are really sitting right there sitting in this integration between our vector store integration between our external data sources. And then so what we talked about earlier was, again, you got our foundational model, and it may have an SOP that it's being constructed from a vector store and you can have different types of data in here, but then for real time data, let's say if I'm asking it who's my top customer for the last hour? million customers that right? Those million customers won't be stored in the vector store, and I may have a stream of data coming by in real time. This vector store of cheating this fine to model can generate SQL that SQL can hit a Spark cluster and pull the transactions off and respond back to me and it can build that sequel natively. Right? That's an example of how we would want to integrate in with with data sources, right? So in this scenario, we have again, data sources, API's URLs that have been whitelisted for our organization, our source control, to be able to interact with our source control our JIRA tickets if I wanted the last 10 JIRA tickets. That's not something I would necessarily want to bake into my vector store every day. Right. But I want to be able to interact with my source control in JIRA and my which is
+
+Colin McNamara  1:00:46  
+not challenging that statement, but I can expand on that you may
+
+Unknown Speaker  1:00:49  
+want to Yeah,
+
+Speaker 3  1:00:52  
+like you want in your vector store. This is JIRA tickets are claiming this is like the variety of ways we structure them was in order to train but the actual data going into is going to it's going to be a lot cheaper for the model to hit the API query in JIRA tickets. Let me go find these then having to retrain the model by pulling the vector data. Like not only do I think what he's talking about, it's gonna give you a higher quality result. Your cycle time will be less expensive. Okay.
+
+Speaker 1  1:01:28  
+So if I have tickets open, let's say something's not working, right? There may be a scenario where to your point, I've initially hit the vector store for legacy problems that related to this. Yeah, I may pull out a reasonable amount of that data and put it in context window. i That made no feed those elements, right, those previous ticket IDs into my environment to pull out very important data, I mean, heavy that and synthesize that and maybe utilize that to sort of cross reference any other issues. that have come up, since I've put data in the vector store and use that sort of chain of thought to come up with a suggestion or resolution for that person that end user. Really again, depends on and I think this is a is a cycle as well like what we were talking about on the data that goes into the vector store and your interactions between your external sources. So it's really what's in production today, right and versus what's going to be in production. 30 days from now, those things may rapidly change. And again, this may rapidly change based on the capabilities of your foundation models whose names gain intuition. There may be a corpus of data for every trouble ticket that Cisco has ever seen, ever that's been PII has been taken out of it. So natively your foundational model may be able to know everything
+
+John Willis  1:02:52  
+about a Cisco, to guarantee that it's going to happen, right we're going to see sort of these corporate status get incorporated. into like some vendor might actually have, oh, everything that's already happened, and you don't have to collect that data about that vendor.
+
+Colin McNamara  1:03:05  
+Yeah, I can see in hyperscale, that being a trainee using the using juror database this year, the service estimate of the database is special result tickets to be able to train and have a more performant way more performant way of answering but also skiffs right if for any of the like, you know, three letter agencies and stuff like that being able to ship a binary down to them
+
+John Willis  1:03:27  
+configured to get to the LM to the last tear down there. Yeah, because that's what I want to hear your thoughts on. Because this is really interesting. Yeah. So the
+
+Speaker 1  1:03:35  
+there's two things we didn't talk about at the time here. But there is a paper that was released about open AI and the champion btn GPT. Four and one of the information that was released there's this concept of a mixture of experts or an ensemble of experts. And what the paper talks about, this has not been substantiated, that there were 16 underlying large language models that were working together in a feed forward mechanism to provide you GBT four. So in that scenario, if we look at sort of a brief example here, we have an expert that is sort of receiving your question. Now, this is not showing a caching mechanism, which will show me a diagram that if it's been a question that's been asked within a certain period of time, and it's live, we don't want to round trip up to our large language model. We want to alleviate our teaching resources, our networking resources and things of that nature. Just give them the answer, again, based on the time to live with things. This is not illustrating. But in this scenario, let's say in a baseball analogy, we've got a first base coach, a catching coach and outfield and coach we got someone to coach to the shortstop and we've got all of these coaches that have their entire life on teaching, how to play shortstop, right, the drills for pitching or whatever it is right? Imagine each one of those individual coaches is an expert here, when your question comes in as embedding, it then looks to figure out which expert is the first base coach. And then that first base coach these may all know baseball, but this particular expert that knows how to play first base than anybody else, his output is going to be much stronger right in this output and soft max than the others. So his his response will be weighted higher and or depending on how soon it may just give you the response from that particular expert. Yeah.
+
+John Willis  1:05:31  
+And this is just the Arvixe primer revision language model with an assemble of experts. Is that the paper
+
+Colin McNamara  1:05:40  
+that sounds correct, is this is this related to like laying things conversation router, embedding embedding based conversation router model?
+
+Speaker 1  1:05:49  
+I would have to take a look at that. I'm not exactly sure on if that one is at this level or if that is in the integration level.
+
+Speaker 1  1:06:10  
+Here on the left hand side on how it's querying those external resources, I have to look at the
+
+Colin McNamara  1:06:14  
+the GitHub, I know that what I've seen is that there's like four different models of doing it and the first level being just looking at the words that are used
+
+Speaker 1  1:06:23  
+stuff and then you're fine and then re rank and after, you
+
+Speaker 2  1:06:27  
+know, that would be I'd like to hear your answer on that question. But ya know, I'd
+
+Colin McNamara  1:06:30  
+be very interested in that and that that, that I know there's a method for when you pass when you when you pass when when you run a query that you effectively hit a router, which a lot which in a number of different methods will route you to a specific LM chain. Inside of there, so yeah, is what you're referencing. There, like magics is done on the Lord after a level versus that and
+
+Speaker 1  1:06:59  
+yeah, you know, I don't want to go that because I'd want to look at this source control and see exactly what those functions are doing. Okay. I think it's the same concept, right? It's going to try to route it to the API handler large language model that it thinks is best suited for that particular question. I think in that scenario, it's more trying to do what open API's plugins are doing. So it knows whether to use Wolfram. Yes. And that scenario, that's why I was thinking that it's more associated with the external data source. It's going to interact with because that's the specific chain. Yeah, and this error versus a hitting another specific language model, because I think in this scenario, it would be line chains hitting large language model number one, but it's enriching large language model number ones. Context window with data that it's pulling in from a chain that it has selected. Yes, based on your question. Yes. Right, because what we're saying here is is like, like this, that I've got an API exposed to my users, and there's actually four large language models in the back end. Right. And those can have access to the same external data sources downstream. But in this scenario, we have four separate large language models that would be fine tuned on specific corpus of data, okay, okay. Right, and then they may be able to respond back quicker. What you're talking about is enriching. A single large sandwich model with external data for it to respond to, I believe, yeah. Yeah, we should look it up together and see exactly how it's
+
+John Willis  1:08:33  
+Can you hit the original question you answered, which is like, what's the difference between which stuff and the different options that you can select when you're sort of
+
+Speaker 1  1:08:41  
+Yeah, and that quote me on this? I'm not an expert on how to pull out the function.
+
+Speaker 2  1:08:46  
+Oh, yeah. No, but they're good primer because that's something I have no clue what's going on there.
+
+Colin McNamara  1:08:52  
+Like I know you put different words in different things come out. Yeah.
+
+There's like more efficient ways or some
+
+Speaker 1  1:09:07  
+method to use. You got to look at the chain. But stuff is just in general. What it's talking about. If you're going to do a nearest neighbor search in your store, you're going to pull back all that stuff. It's going to include that in the context window and it's going to respond to you based on what the vector store has provided to you
+
+Colin McNamara  1:09:29  
+Gotcha. In this
+
+John Willis  1:09:34  
+amount of data that brings back to where
+
+Speaker 1  1:09:37  
+it's learning. And then sort of in the refined model, what it's actually going to do is it's going to try to synthesize the responses back that you have gotten the context window before it gives you your final response and we'll refine the data that is pulled out of the vector store and use that sort of summary of those data
+
+John Willis  1:10:00  
+points or does it use for the purposes of refining or the mechanism for refining you know,
+
+Speaker 1  1:10:06  
+based on the q&a use case? For a general purpose question. Answering the use case stuff may be just perfect for you, because you're wanting high quality results that you may want to use refined and then dependent on your top k that came out. Let's say you're pulling back a lot of data. This is where these Matt and Matt reread because a map will map the data points in for you and give you that data, but then every rank will rewrite them and what it believes to be the highest order of priority will only give you that top k from the reread cancers. So these are all relevant in the number of k values like nearest neighbor values you're doing
+
+John Willis  1:10:53  
+okay? So there's all based on what you set by top k, right? Or top.
+
+Speaker 1  1:10:59  
+Respond your context window. Okay? All together. You have to take in all of those iterations and tests but
+
+John Willis  1:11:08  
+then, alright, so just to sort of go through this stuff is going to be your General q&a, like really,
+
+Speaker 1  1:11:15  
+your vector space, right? And it's going to pull in, right your nearest things, and it's just going to give that to you. Okay, all right, you're just gonna get exactly what it has. Like. Let's say it's the top three.
+
+Unknown Speaker  1:11:31  
+That's right. Okay, like top three, maybe top three, okay.
+
+Speaker 1  1:11:33  
+And then the Refine will do the same nearest neighbor search. And then it'll do some refinements
+
+Unknown Speaker  1:11:42  
+on the responses, so what do you what are the what's an example of
+
+Unknown Speaker  1:11:44  
+refinement? I can summarize them, right.
+
+John Willis  1:11:48  
+So do that by sort of default Lexa synthetic example. So I say, like, tell me who to give me. Who is Jean Kim? Right. So and who is Jean Kim? stuff would get what I'm normally getting because I'm using stuff right? So he wrote a book, he did this, he did this and did that. But a refined would pass like I'm sure we run this
+
+Speaker 1  1:12:11  
+intermediary set. This kind of synthesize it into something more logical and then it'll pass it on to another final semi. Final response. This is that refined stuff.
+
+Speaker 3  1:12:25  
+So you could say whose kingdom can refine stuff might be let's say I'm talking to the Sisa. Pillar, see, so who Jean Kmeans is gonna go grab all of that and filter and refine to give you a more packaged target audience on that.
+
+Unknown Speaker  1:12:38  
+Is that true? There's some
+
+John Willis  1:12:41  
+because it sounds like it's just happening by default, right? In other words, if I just just this is part of how you sort of setting up the query, and so these are specific parameters that you specify, so if I do stuff, I know what I'm going to get if I'm going to refine you're saying like it's going to do a refining process by default, but you're saying it's going to hit another LLM? If I even if I don't.
+
+Speaker 1  1:13:02  
+Yeah, right. It's chaining things together. So which but but if I don't say
+
+John Willis  1:13:07  
+what else, like let's just say when I'm literally setting up the creating up the embeddings, basically, right, because that's where you say, if I remember, right, it's basically on the retrieval cue A's are
+
+Colin McNamara  1:13:22  
+advanced, right? So that's a damn advanced retrieval refinance. Apparently. There's a Crowdcast that
+
+Unknown Speaker  1:13:32  
+we have this I have the code Yeah.
+
+Speaker 1  1:13:35  
+Let's just let's just, for example, say that putting data in your vector store let's just call that our embedding. But training, if you will, or kind of Yeah, okay, that's fine data. This stuff, refine map and rewrite these inferences, right.
+
+John Willis  1:13:51  
+So just so I go to what I know and then I can ask these questions a little better because
+
+Unknown Speaker  1:13:57  
+I set this in.
+
+John Willis  1:14:03  
+Yeah, I set it right here. Basically, if I'm using laying chain, I should use retrieval QA from chain type. And then I said like LLM equals, in this case, open a And then I said like LLM equals, in this case, open AI. And then I have a chain type equals stuff. Right. So that's been sort of the default that I've been using. Right. And so like I'll ask who is Jean Kim and I'll get back like a paragraph, right? So if I turn that then I could if I had free time, I'll just run this but if I go ahead and just change the graph, the token response that
+
+Speaker 1  1:14:32  
+it gives you then you'll see exactly and you can look at the source control on refined and you can probably inject some stop points in there. Okay, and numerate those but in general, though, like just
+
+John Willis  1:14:44  
+run this anyway, but like if I just change this code to refine, change and turn right, well, yeah, I mean, yeah. But yes,
+
+Unknown Speaker  1:14:52  
+then and then in that case, but just to
+
+John Willis  1:14:54  
+follow your thing, it's going to take a refining process just by default by me asking the same question. Yes, I know that's later in the thing, but I'm just this is where I'm actually setting up the chain right. But you say then it will go back to an LLM without me. What if I haven't defined anything other than the next thing I do is who is Jean Kim? Well, it's using whatever open AI
+
+Speaker 1  1:15:16  
+or LLM that you initially talked about. It's going to use that term. So that JBI token then you have throughout his chain so so so if I'm just getting this right then if
+
+John Willis  1:15:27  
+if all I do is an example where I basically do who is Jean Kim and I changed that to stop a to reach to refine, what's going to happen is it's going to instead of just give me back what it would have given me, they'll go back and do some refined processing and then it will pass that back to the same LLM. indicate in the case that I didn't I didn't define any other sort of any other sort of, I didn't have to set up a set of tools or oil. All right.
+
+Speaker 1  1:15:56  
+Okay. Okay. The roster. Yeah. And it is then passing that with some
+
+Unknown Speaker  1:16:06  
+refining and it's really asking the question
+
+Unknown Speaker  1:16:08  
+against the scene. Yeah.
+
+Speaker 2  1:16:10  
+Okay. All right. Yeah, that prompting that it has received back
+
+Speaker 1  1:16:14  
+to, again, whatever token. Yeah. Right, which is the API for open AI. It gives you some response back that's been refined and in the very next step is a new prompt. That has been taken your original question, along with this refined context. Oh, you get to see that that actually happens
+
+John Willis  1:16:39  
+in Okay, or you don't be able to see that but let me let me. I'm going to try I'll start. Please, if I miss No, no, I'm not
+
+Speaker 1  1:16:46  
+asking you guys please slap me around. But I believe right now that that needs to be how it functions at a high level. Okay.
+
+Unknown Speaker  1:16:56  
+They're just good. And then the map would
+
+John Willis  1:16:59  
+be the scenario where you're actually using MapReduce. And it is a scenario where you expect like a ton of data coming back and you know that the performance is could be an issue. So use a MapReduce model does that in general, that's the thought process of this map,
+
+Speaker 1  1:17:18  
+in the map ranks those as the data is coming in. So that you get so that it's not passing, let's say from that 50 things. And once we rank them, it's only let's say, passing the top five of those to you. Okay, let's go through the MapReduce and say, Okay, I'm not going to go through all
+
+John Willis  1:17:33  
+the 50 I'm just going to take the top five and in this scenario, I'm making some assumptions.
+
+Speaker 1  1:17:37  
+Again, source control, but I believe in like in this q&a model, that there is a relationship right CSL in here, where it's round tripping back to the same large language model and chaining its requests to that same large language model, but the end state the state that you see, is that final, you know, after it's done? Sure, yeah. Okay, after it's done all those steps. You get your final LLM response that's presented to you got it
+
+Unknown Speaker  1:18:11  
+that was great.
+
+Speaker 1  1:18:18  
+And again, sort of the final thing here and I'll try to paraphrase all this and then time stuff for refined for math or mastery, rank these elements here as we go through, obviously, we obviously apologize. But we've taken our documents, we've split them, we've embedded them, we've put them in our vector store. So we've got our data sitting there. Then our user comes in and asks a question that query comes in, in natural language, it is then embedded in the same embedding strategy. That our vector store was trained on, and then does its nearest neighbor search whatever we're, our algorithm is doing to pull back that top k that we've set for it is then pulling that back and then based on the relevant chunks, this is where it's then apply this okay stuff. We're refining our memory ranges. Yeah. Right along with our query in the context that is given into a prompt and then that prompt is then passed finally, through our last step here to our large language model that then gives us our response back. And so these these steps are all a way of curating our context. Culture. Yeah, from a facilitation perspective,
+
+Speaker 3  1:19:34  
+now might be a good time to take a bit. Yeah, that sounds good. Joseph by
+
+Unknown Speaker  1:19:38  
+the water. Here's,
+
+Unknown Speaker  1:19:40  
+here's the diagram.
+
+Colin McNamara  1:19:42  
+So it's under the Python link chain self query. And there's original query a constructor, and then it constructs a query out of it, and then it translates it queries again in the vector store. And fascinated Yes,
+
+Unknown Speaker  1:20:00  
+and then there's examples.
+
+Colin McNamara  1:20:03  
+This is this is what I saw on from the chroma guys. Cool. And then if you actually look into the examples, so basically, population documents is going to query and store this metadata into it and then when you here's the here's the query, what are some movies about down so sweet? They pop these documents about dinosaurs, and then actually did multiple queries, I believe where it says don't set up a Slack channel, because I didn't read
+
+Unknown Speaker  1:20:30  
+the wrong thing.
+
+Unknown Speaker  1:20:33  
+The point of the point I was making is that diagram
+
+Colin McNamara  1:20:35  
+that self pairing I believe that's the refinement chain, right. Yeah. Amy I'm gonna create a document tonight on the Slack channel
+
+John Willis  1:20:42  
+and then I'll put all these links or no video to
+
+Colin McNamara  1:20:47  
+learning webinars.
+
+Unknown Speaker  1:20:50  
+No, no, this is good man. It's
+
+Unknown Speaker  1:20:52  
+a please like,
+
+Colin McNamara  1:20:53  
+all my questions are complete curiosity. I don't know anything. Your presentation is mind blowing. Wow. It really is.
+
+John Willis  1:21:03  
+This is why this is why I did this impromptu thing today. Like, when he was talking this morning, I was like, Holy crap. I'm gonna take this off but I think you guys need to mind
+
+Unknown Speaker  1:21:13  
+teams
+
+Unknown Speaker  1:21:33  
+this thing. Thank you, John.
+
+Colin McNamara  1:21:35  
+This is great. I'm loving it. I'm always like, I have this natural curiosity. Right. And I always have to make sure I'm not like challenging people. No, I mean, smarter than I was like, I couldn't believe how
+
+John Willis  1:21:48  
+much we even got into half. Of the shit he's got. He's got like, massive analysis of the vector data stores which is crazy. The stuff he's from Ireland. Pausing,
+
+Colin McNamara  1:22:03  
+I need to hit the girls room. I just Soon as I just sent this to magically obey you you back that question as long as it's tiny and there should be a time to live in that
+
+Speaker 1  1:22:22  
+cache, I shouldn't be bending on my GPUs or round tripping wasting tokens back to open AI or Azure open AI. I shouldn't be wasting those tokens. I should build an architecture that captures those things. Yeah, okay. I'll do this final thing and I'll jump on my call. So this here, this LM gating, this this this gating piece is kind of like what you were talking about in the, the lane change sort of router scenario, which I believe to be applied in multiple scenarios here, but in this one it's okay, is this to my cache? Is it approved? Fine. I'm going to give it from the cache. A question comes in and LM gating and it's going to and this is starting to depict in an architecture but it's really a feed forward mechanism, right, kind of like what we showed before the question comes in and hits your mixture of experts potentially, right. And then it audits all the questions and potential responses. And then you have this critic and as critic initially could just be listening. It's another problem here is trained on SOP, and it can have its own either corpus of data, right, or things that are baked into it, where it's looking for responses. Yeah. It's looking for people who have prompt injections. It's trying to validate what the expert that responds back to it before the final answer gets to the user is critic is going to be there to sort of protect you at the last mile from giving potential PII from driving somebody to get to you and things of that nature. Okay. And then obviously, down here we have our tracking and logging and monitoring. And all of these components, as you can see, can be used for fine tuning our next iteration of our mounting model that we're putting out and it can be used to put things into our database. Awesome. Thank you.
+
+Colin McNamara  1:24:07  
+Again for my call, guys. Apologies. I got to work for a limit. quarter off again. Yeah, yes, please. Take the full 15
+
+Unknown Speaker  1:24:19  
+minute break. And
+
+Unknown Speaker  1:24:24  
+get you gotta love it. Sorry, guys,
+
+Speaker 5  1:24:30  
+can you just I mean, just grab any one of those offices over there. That's it.
+
+Unknown Speaker  1:24:59  
+Are you guys couldn't wait to jump on the game.
+
+Unknown Speaker  1:25:05  
+Can you show me an office that he can use? Sure.
+
+Unknown Speaker  1:25:13  
+This way?
+
+Unknown Speaker  1:25:15  
+I know this better. So was an incredibly enlightening
+
+Colin McNamara  1:25:21  
+couple hours there. I've got one that I want to check
+
+Unknown Speaker  1:25:27  
+to see what the difference looks like.
+
+Unknown Speaker  1:25:38  
+It's really
+
+Speaker 6  1:25:40  
+Yeah, it's fine. I just wondered when he was going.
+
+Unknown Speaker  1:25:43  
+Oh my god. I don't want to wait till
+
+Speaker 7  1:25:45  
+tomorrow. Get as much as in today. As we can start tomorrow like much more accelerated pace. Yeah, I was banging my head against code. The
+
+Speaker 6  1:26:01  
+head the linesman stuff working and so my code in there bang and see that email got there. I'm like, Okay,
+
+Colin McNamara  1:26:06  
+I'm done. I was gonna if you said no, I was gonna say Dude, get over here.
+
+Unknown Speaker  1:26:12  
+I'm not gonna say no to you, man. No, no.
+
+Colin McNamara  1:26:17  
+No, no, no.
+
+Unknown Speaker  1:26:21  
+Every time I hear about it
+
+Speaker 6  1:26:22  
+a different direction. I have the ability that ask questions. Why not? Like
+
+Colin McNamara  1:26:25  
+it's interesting. I'd like to do those who want to start
+
+Unknown Speaker  1:26:31  
+thinking about like, these threads start seeing
+
+John Willis  1:26:34  
+things like okay, like the whole point about
+
+Speaker 7  1:26:39  
+the spinners because like like this factors feedback, database performance, right? This is nice chunking strategies that can be a whole sector. Performance latency or so the choice of letters in memory, sort of promo over the sort of assessed space and then some of the stuff there on multiple tiers. And then like, how it applies this a sort of
+
+Speaker 5  1:27:05  
+a new pier where but how it applies to whether you're doing zero shot
+
+Speaker 7  1:27:09  
+single shot a few shot in relationship with the specific so like back to that generic versus specific versus, like if I want to my performance would be really high if like for like my damning books good example. My question is against the demographic, the vectorized are going to be a high performance. A lower performance would be like one of the things I loved what he did is just mind blowing. Remember, actually, I check in that Redis conversation, because I did a summary but I just reran it. Yeah. And Claude and
+
+Unknown Speaker  1:27:51  
+I just ran it.
+
+Unknown Speaker  1:27:53  
+Wood here.
+
+John Willis  1:27:56  
+I reran it again, but I asked the way he asked those two questions just like summarize, but give me additional research. And so that's another that's even better example of taking a Redis document. And so what I did is I took the
+
+Unknown Speaker  1:28:11  
+kill that window
+
+Unknown Speaker  1:28:20  
+to avoid again yeah
+
+Speaker 8  1:28:36  
+so, that idea that like,
+
+John Willis  1:28:39  
+not only can it summarize that but this is the beauty of being able to use this. So foundational model, which is
+
+Speaker 7  1:28:49  
+you know, what I posted yesterday so go in and say go ahead and get us this guy, this is that Redis right. I take that to start with chat, so by default it
+
+Unknown Speaker  1:29:03  
+actually summarizes it.
+
+Speaker 7  1:29:07  
+And then I just start to ask more questions, and I was going to give more details on that stuff. But I like what he does in all those prompts. He does and give me additional research. Yeah, so that like allows you to escape out of the out of the dock and CLM like the things mentioned here, so So I did that. I basically took his question. And it was like, I wish I would have known that before I wrote the LinkedIn thing, but so now I should summarize the paper
+
+Unknown Speaker  1:29:41  
+summarize the document.
+
+Unknown Speaker  1:29:50  
+Research. So this was beautiful because yeah, this not only did the summarization
+
+Speaker 8  1:30:00  
+and I see why he does this every time now because it's like the perfect question not only just summarize it,
+
+Speaker 7  1:30:04  
+but then now give me how can I clarify? So like, literally does the RE summarization? Yeah.
+
+Speaker 8  1:30:15  
+If you read the raddest it's impossible. This is like beautiful, right? I just took a Redis
+
+Speaker 7  1:30:19  
+conversation that was about 25 pages. Oh, the subreddit. Yeah. And here we go.
+
+Unknown Speaker  1:30:25  
+This is great. Like, it's not like real. Oh, no sources.
+
+Speaker 2  1:30:29  
+Wow. Yeah. Oh, wow. Wow. It's crazy, right?
+
+Speaker 6  1:30:36  
+I mean, she's pulling in a paper and then saying how can I learn more about that by itself?
+
+John Willis  1:30:42  
+is made of gold? Yeah, it's read a paper. Why don't I just throw it in really quickly. Let it summarize it? Yes, I know what I'm going to read. And then oh, by the way, I'm done reading it. These are the places I can go look further. Oh, absolutely. Absolutely.
+
+Colin McNamara  1:31:01  
+That's pretty cool. Let me share my milestone here. But the loader
+
+Speaker 8  1:31:18  
+Have you been playing with chunk sizes like you said, like, looking at like
+
+John Willis  1:31:21  
+paragraphs versus sentences. I've been mine mainly playing with chunk size when i i
+
+Colin McNamara  1:31:28  
+make contacts with my contacts window gets too big and yeah, I have not been I played a little bit with the vectorbase conversation router. Oh, okay. That's an interesting because he didn't really he said he hadn't really done research on that. Yeah.
+
+Speaker 2  1:31:45  
+Research sounds much better than what I'm doing.
+
+Colin McNamara  1:31:51  
+I'm just trying to get it all the work and learning as the learning is research right.
+
+Unknown Speaker  1:32:07  
+Were you guys going to dinner tonight?
+
+Unknown Speaker  1:32:09  
+I think we're going to get laughs
+
+Speaker 2  1:32:12  
+laughs Yeah. Lux love, love lust Invoker.
+
+Speaker 8  1:32:24  
+Fancy joint. No triple challenge goes into secret place right there. I don't know.
+
+Unknown Speaker  1:32:29  
+To show you this.
+
+Unknown Speaker  1:32:31  
+So this is running. Oh, this is basically
+
+Colin McNamara  1:32:34  
+link chain chat with documents that's running from this code. So I have a notebook here. And it. I take basically a similar to that right. And then I run streamlet Yeah. Okay, I showed that. Okay, yeah, we definitely went through that was cool. I got one of those.
+
+Speaker 2  1:32:53  
+I got mine running and it was really cool. It's crazy. Like no, it's saying is just so fucking fun.
+
+Colin McNamara  1:33:03  
+Just break this one's been working forever.
+
+Unknown Speaker  1:33:05  
+Do not import Chroma DB Python package.
+
+Speaker 2  1:33:07  
+pip install Chroma dB, it's fucking installed
+
+Unknown Speaker  1:33:21  
+we don't have Chrome one dB installed. Well, I ran it.
+
+Colin McNamara  1:33:26  
+And this is another additional trust we
+
+Speaker 2  1:33:28  
+may have. I've noticed sometimes that I'm connecting the one instance on the
+
+Colin McNamara  1:33:33  
+back end and maybe installed installed somewhere else. And I just ran it should scrunch.
+
+Unknown Speaker  1:33:41  
+We don't have Chroma dB.
+
+Unknown Speaker  1:33:44  
+Are you doing how would there
+
+Colin McNamara  1:33:47  
+be no, my magic answer. Like this has been running up for a while.
+
+Speaker 2  1:33:54  
+I mean, I can do that but I think it's gonna fail again. I think it's I think it's a misleading error message. They shutting settings has removed the pandemic packet. Yeah, this is not better. Further.
+
+Speaker 8  1:34:12  
+Yes, it's back to the changes so fucking off.
+
+Unknown Speaker  1:34:17  
+It's not the package to delete
+
+Unknown Speaker  1:34:42  
+is especially something changed.
+
+Unknown Speaker  1:35:03  
+In New York State check that something
+
+Unknown Speaker  1:35:14  
+GBD.
+
+Unknown Speaker  1:35:32  
+Show back Oh, that's really cool.
+
+Colin McNamara  1:35:39  
+I try that we've summarized the paper. So I took the how we method for Incident Management right. Summarize the summarize that and then Norah Jones his blog on it. You said the same thing since rising and provide that's really great.
+
+John Willis  1:35:55  
+I think if you start doing this enough you'd like you can read like when people are no that shit. Like catch little things and like oh my god. hoss. Yeah, like that's so fun.
+
+Unknown Speaker  1:36:06  
+Oh, show
+
+Unknown Speaker  1:36:44  
+any broken
+
+Speaker 8  1:37:45  
+Chris. Where are you like from in America or the world?
+
+Colin McNamara  1:37:51  
+I live in Woodstock, Georgia.
+
+Unknown Speaker  1:37:54  
+Northwest and I grew up in southwest Georgia and lived in Georgia and traveled a lot but that's always been at home for life. I don't know maybe
+
+Unknown Speaker  1:38:10  
+I'm in the pickled hour. I bought a house
+
+Speaker 3  1:38:13  
+with the right time. When it is too damn big for my kids. They're 18 And of course, in this five bedroom house by myself, wow. It's a lot. My mortgage payments are so low like it's so quick to pay it off. Yeah, yeah. Like why? Why do you like enter a bunch more
+
+Unknown Speaker  1:38:33  
+debt or just like early on equity.
+
+Speaker 3  1:38:35  
+But then there's somebody online last week that was looking to lease flat in London for a year is there's one company it's a three year commitment. But it's an around the world cruise and they've got like co working space off. So your co working digital nomads with like the nerd Bert, the nerd ship and they're taking you like
+
+Colin McNamara  1:39:05  
+around the I imagine there's some retirees and stuff on it
+
+Speaker 3  1:39:09  
+to about Josh there's dating options are like only young granny likes to get down.
+
+Colin McNamara  1:39:16  
+Three years, three or
+
+Speaker 3  1:39:20  
+three years if she did well. You actually
+
+Colin McNamara  1:39:24  
+save money because it's like
+
+Unknown Speaker  1:39:26  
+30 grand a year or something? Yeah, no, that's not really
+
+Colin McNamara  1:39:32  
+all that's 30 grand a year.
+
+Speaker 3  1:39:36  
+It is you want to be cheaper than a regular day like an accountant.
+
+Speaker 9  1:39:41  
+She says if we go on that cruise a terrifying lesson, living our own lives is estimated there's some question as to where they try to nickel and dime to get on board like what are
+
+Speaker 3  1:39:53  
+they charge for laundry service yesterday, but I wouldn't mind doing three years cruise and we love cruises. We go all the time. I have three kids. Middle School. My brother is like what do you do three years you don't like what's going on? So you're committed
+
+Colin McNamara  1:40:11  
+$90,000.03 years. Wow. But talking to my brother.
+
+Unknown Speaker  1:40:18  
+He's like, I know what they're doing here. You're
+
+Speaker 3  1:40:19  
+gonna get off of this. They're putting your ass on a shuttle to Mars. Like a pre train Are you stuck with 5000 of your nerdiest friends I forgot before
+
+Unknown Speaker  1:40:35  
+Dennis starts on pull it
+
+Speaker 8  1:40:41  
+up. I mean as a single guy Are there really? Three years no girl my friends
+
+Speaker 9  1:40:59  
+yeah, this isn't something my dog
+
+Speaker 2  1:41:04  
+it's gonna it's just basically something changed and oh try
+
+Speaker 7  1:41:10  
+importing Lane chain experimental. They've been moving
+
+Colin McNamara  1:41:13  
+moving stuff back and forth. But I don't think that it is a chroma DB issue either maybe right?
+
+John Willis  1:41:20  
+This sucks I hate with this crap this stuff changes every week should that like works and then you guys spend like hours debugging simple shit because something changed and use the length chain or, or the coordinates and Chroma or whatever it just hasn't adapted to it. Maybe it didn't stop. I mean, that's not it's this right here.
+
+Speaker 7  1:41:43  
+Base settings has been moved to pi Dantec settings. Package. Okay. Yeah. So
+
+Colin McNamara  1:41:47  
+what's happening is the current Chroma DB is not picking up that change.
+
+Unknown Speaker  1:41:51  
+Oh.
+
+Unknown Speaker  1:41:55  
+Maybe this is an example of specifying specific versions. So yeah, that's the thing.
+
+Colin McNamara  1:41:58  
+I guess I could do that. Let me see what now I gotta figure out what the chroma DV versions
+
+John Willis  1:42:03  
+I've been looking at my PIP my Pippin installs and
+
+Colin McNamara  1:42:10  
+realizing that I'm sitting on a time bomb Well, yeah, because then once you see then when do you fucking
+
+Speaker 2  1:42:20  
+Are you say yes, we're just we're both saying install latest and yeah, no, but then
+
+Colin McNamara  1:42:24  
+like so then you pin it. So I've got like now I've got some code that Lang chain
+
+Speaker 2  1:42:27  
+broke about a couple of weeks ago. Now I have that sort of pin. And you know, see if you keep
+
+Speaker 7  1:42:34  
+Alright, so looks like August 15. Let's go back to Oh, four three right.
+
+Speaker 8  1:42:49  
+There they leave off. You can get on either November or November 5.
+
+Speaker 3  1:42:53  
+That's crazy. Istanbul our single I think it's similar. What
+
+Speaker 2  1:42:59  
+was the other one? Porcelain? Yes. 380 imports
+
+Speaker 3  1:43:04  
+140 countries. That's literally like a navy tour. Like your neighbors really move. Well, listen, if
+
+Speaker 9  1:43:20  
+I was retired, and I had no other carriers in the world, I would think about like, Gee, how's your shuffleboard?
+
+Unknown Speaker  1:43:28  
+What about your Bacharach on
+
+Colin McNamara  1:43:30  
+your Masan Yeah, but like a geek one it probably be like you'd probably be every night just
+
+Speaker 2  1:43:35  
+hanging out with a bunch of tech talks. Yeah, so I'm saying like every three year hackathon,
+
+Unknown Speaker  1:43:41  
+a Debian cruise
+
+Unknown Speaker  1:43:48  
+sorry. I'll see you in three years.
+
+Speaker 2  1:43:57  
+You know, under any other circumstance, I wouldn't do this to you but the three years I mean, cruise. It's happening. It's now love you. I'll see you in the ports.
+
+Colin McNamara  1:44:09  
+Yeah. Amy and it's the beard April and
+
+Unknown Speaker  1:44:14  
+Portugal in like July. Yeah, we can have a great time dinner. He's the one he
+
+Speaker 2  1:44:24  
+didn't think. All right. What about these family
+
+Speaker 3  1:44:28  
+members that are like getting up? Passes? Yeah, we use get my room on the cruise. Tough shit honestly like my dad.
+
+Colin McNamara  1:44:47  
+Anytime there's a Death of the Family he likes the family to be represented
+
+Unknown Speaker  1:44:58  
+around the car
+
+Speaker 8  1:45:10  
+gonna rush in anybody because this is my late night tomorrow that I
+
+Speaker 9  1:45:15  
+afford their stay late. But does Allen expect you guys at a certain time tonight John Are ya? Enough time Yeah.
+
+Speaker 2  1:45:25  
+First opinion comedy billion or so when should when when should we plan on like when the wraps on some
+
+Unknown Speaker  1:45:33  
+in this room?
+
+Colin McNamara  1:45:34  
+Well, if he gets back here for 30 Let's do another half an hour and get out here.
+
+Unknown Speaker  1:45:38  
+Like in debrief mode. Okay.
+
+Speaker 3  1:45:42  
+For tomorrow, yeah. Yeah. Well, I'm not rushing you guys. Yeah, no, no, no, we
+
+Unknown Speaker  1:45:47  
+need to pace ourselves. Yeah.
+
+Speaker 3  1:45:51  
+Where it is. But yeah, the question that's going to come like how much this flow came up this morning. I think even for you that day, but you were there a couple of
+
+John Willis  1:45:58  
+times when I asked. Do we do it all day tutorial tomorrow and then do the hack on Wednesday, Thursday, or do we just go right into hack? I mean, I want to ask that question tomorrow. Is there a way to chunk things up so that we have like focus areas education
+
+Colin McNamara  1:46:13  
+like we have three breakout by
+
+Unknown Speaker  1:46:19  
+that you guys Yeah, no I need to start
+
+Speaker 9  1:46:20  
+here. And then you can break out No, I know I'm asking more of a meta question of like for I should do for the group not not a logistics but
+
+Speaker 2  1:46:31  
+I think we need to like tomorrow. We need
+
+Speaker 3  1:46:34  
+at least to your point and at our juicy q&a for our group. Let's stick them to like so without the fear then we can basically with Imagine
+
+John Willis  1:46:45  
+we spent two days with all like did like people like us would quadruple the amount of questions that are gonna happen. So let so I think I want to work with him. In fact, that's what we should do now. down to like what would be an appropriate hour figure,
+
+Unknown Speaker  1:47:01  
+you know, our well, he
+
+John Willis  1:47:03  
+said like, give me a half an hour and plenty and a half an hour. Of q&a But but give him an hour tomorrow
+
+Unknown Speaker  1:47:14  
+nothing, nothing ever runs on time. Yeah, so that's a good way to spend the next half an hour when he gets back
+
+Unknown Speaker  1:47:26  
+what do we say half hour
+
+Unknown Speaker  1:47:27  
+we realize it's three.
+
+Speaker 9  1:47:32  
+Yeah, but I actually want to keep it like two an hour. But unless work unless everybody reads it. We
+
+John Willis  1:47:36  
+spend the whole day in tutorial mode. I think we need to like set thresholds during day one where they vote
+
+Speaker 3  1:47:43  
+or we're gonna keep q&a tutorial presentation lecture style. I think by mid they need to move into hackathon mode. Worst case we start off in the second half of day two and then second half a day three needs to be like read through and like summarization and wrap up. I will definitely ask tomorrow but it will definitely get him in. So I think we'll do intros tomorrow we'll give him an hour.
+
+John Willis  1:48:15  
+And then we'll just sort of like have a discussion about like what we want to accomplish. But we need to make sure we manage that to like I don't
+
+Speaker 3  1:48:28  
+like popcorn Brian. Those are going to clean up some slides for Ignite sessions. Yeah, no, I mean, I'm thinking that we might.
+
+Speaker 5  1:48:41  
+We might sound like a great idea, but I think we're gonna be in such overload learning that. Well, it's just I thought the idea of breaking it up and
+
+Unknown Speaker  1:48:52  
+nobody's even signed up. So
+
+Unknown Speaker  1:48:53  
+that's a good start. It's like
+
+Speaker 2  1:48:57  
+I was playing on I was where I was going to work on one today. And then I'm here which this has been great.
+
+Colin McNamara  1:49:04  
+I've got maps from our own
+
+Unknown Speaker  1:49:06  
+platform stuff from Chicago, which Yeah, I don't think those discussions were meaningful,
+
+Unknown Speaker  1:49:13  
+or at least were the ones that I wasn't
+
+Unknown Speaker  1:49:15  
+in or the one I was in Miami mean I can show my hand. Nobody wants to see
+
+Speaker 3  1:49:22  
+it. No, I'm just saying that. I mean, I'd rather have you do something else.
+
+Unknown Speaker  1:49:29  
+Well, no it was that the session
+
+Speaker 3  1:49:31  
+we were in together or were you and other other Chicago sessions where you
+
+John Willis  1:49:35  
+had some meaningful stuff? Yeah, because when we were in was not not nothing at you, but like that was sort of a lot of nonsense talk. That woman was just thrown out big words. And then the other guy was talking about pre GPT based AI models. Right, but there's like,
+
+Unknown Speaker  1:49:55  
+the,
+
+Speaker 3  1:49:56  
+I'm not gonna tell you what you can and can't do. I'm just saying that my opinion. If it is,
+
+John Willis  1:50:01  
+if it's a map of that session I was in. I don't think it's going to render a lot of value.
+
+Unknown Speaker  1:50:08  
+Because I didn't, I didn't, I didn't
+
+Unknown Speaker  1:50:10  
+get the sense that we got any value out of that
+
+Speaker 7  1:50:12  
+conversation. There was the session the day before, okay, platform engineering and how
+
+Speaker 3  1:50:19  
+DevOps and SRE fitting in to that right. And then there's a question of how does that shift pulling in? What is this community you can do it? Okay. All right. Well, yeah, platform engineering discussion,
+
+Unknown Speaker  1:50:37  
+centered around the slide we talked
+
+Colin McNamara  1:50:38  
+about for about 45 minutes. There's that's a real discussion, but we're not going to I mean, again, that's what he's talking about and ignite.
+
+John Willis  1:50:46  
+Oh, yeah. Like we're not gonna give everybody 45 minutes. We'll never Yeah. I mean, the original idea was we're bringing out is bringing in lunch, three days, so to working lunches. That's my original idea since we had such talent here, and it's probably still a good idea. I was gonna talk about big food not even Well, that's why I'm saying I think it might be nice to sort of break up you know, the sort of the like, whenever it gets a good idea, and I suppose that's like the thing I'm
+
+Speaker 3  1:51:15  
+excited about that graphic. juices, Ben Sherman, lines up with my platform. Value Stream, so kind of been doing around this, which is cool. Yeah, and the fact that the DevOps crowd agreed with all the platform map between DevOps and sre. So it's a nice little trend. It's nice little it reinforces the concepts everywhere and it
+
+Colin McNamara  1:51:42  
+ties a conversation together which is which includes so many other people. That's good. There's not a there's not even one more zero.
+
+Unknown Speaker  1:51:56  
+By the way, I don't want to slow usually gentleman called McAfee this morning
+
+Unknown Speaker  1:51:59  
+and it hurts like a kitty.
+
+Unknown Speaker  1:52:04  
+Cat also, I'm sorry.
+
+Colin McNamara  1:52:06  
+It happens when you get old like sound fun at all?
+
+Unknown Speaker  1:52:24  
+95 pounds,
+
+Speaker 6  1:52:26  
+Labrador, and I tried to run with it this morning. And it just didn't.
+
+Unknown Speaker  1:53:07  
+I'm surprised that Chicago
+
+Speaker 3  1:53:13  
+I mean, it just being sort of brutally honest. I mean, I saw it.
+
+John Willis  1:53:18  
+I said most of the again the woman was I mean, as far as I can tell was literally had read some blog articles about GPT wishes throwing out sort of big words. And because I mean, like I'm not an expert on this stuff, but I like I can tell the difference between him and her. I know enough to know when somebody's just bringing up really nuanced HJ stuff. But But But even she wasn't even
+
+Speaker 3  1:53:49  
+to the point though. Like she didn't even understand. Like, if I would,
+
+John Willis  1:53:53  
+she'd say something I'd say well, is that part of this this? And like her whole, like, like if if I said something about math, and then you said well are you using and I was like, Yeah, three out of five dentists recommend you'd be like, Oh, shit, right. It was sort of like that, right? And then the other guy kept arguing about his model. And then when I realized his model was was it was some marketing, research or firm that did media. And they weren't using you know, generalized pre training transformers. Well, that was a lot of the conversation. They were in with
+
+Speaker 3  1:54:34  
+in Genesis brought up brought it up this morning. We I talked about it today, but from a variety of perspective, when you actually need like a generative vector driven system versus like, we can write budget for MapReduce and k nearest neighbors on this. It's just my opinion and the game but but the point being is that discussion
+
+John Willis  1:54:57  
+is all germane to journalize pre trench performers. He's talking about a world that existed before all this crazy stuff. And so trying to mix and match it's back to what I asked him this morning. You weren't dead I asked. Like the the you were there. So part of it is, you know, like all the AI and ML ops stuff. What is his position on how relevant it is with LLM? And the answer that I heard a pine cone conference, he validated to me is very minimal. So again, that was sort of a conversation that was a pre LLM there it was no I mean, it was clear he but one like when I asked him like specific like what faith vector data store you like, he didn't know that, you know, send a question. And then when I came to the conclusion was, yeah, they probably have an amazing model that they've built on incredibly smart stuff, but it isn't a GPT based structure. It's not based on sort of LM and foundation models. And again, I think those conversations are sort of mildly if not at all interesting in these discussions, but that's just my opinion, because that goes back to the biggest question that they answered in the keynote at the pine cone. Ai summit was why now. Like, How come we've been doing all this stuff's been going on for forever and why now? Is it happening so I think that having conversations about like how we do it, that are sort of pre GPT based, it's a different world. I'm, I pretty zoomed in on that threshold between the
+
+Speaker 3  1:56:42  
+two. They were like, the justification of the expenses. That's like me, speaking as a mathematician, let's pull out even old school MapReduce stuff. You can learn to crack it algorithmically on a whiteboard, if you know the right but to push the whole thing Jesus fight on paper. Yeah. Again, it's just my opinion. So I mean, whether
+
+John Willis  1:57:13  
+we can have differing opinion on that I just, in all the conversations I've been thus far
+
+Speaker 7  1:57:20  
+that conversation was mildly mileage may vary. Not interesting. And it's not a judgment call. That's just my experience of all the summits I've been to the current sessions I've had with him counselors have with them in the bathroom. There was I just think we're off course. related to what we're talking about today.
+
+Unknown Speaker  1:57:52  
+Current statement
+
+Unknown Speaker  1:57:54  
+I will just leave it at that so there's no wrong or right answer.
+
+Speaker 6  1:58:01  
+Set for again, here we are in the squad code is working for two months just stops
+
+Speaker 7  1:58:07  
+It's so fucking annoying. Makes me feel better. I fix mine. What makes it feel better I fix my number one. No chain Chroma.
+
+Unknown Speaker  1:58:18  
+No, this was taking
+
+Unknown Speaker  1:58:21  
+multiple agents that were
+
+Colin McNamara  1:58:22  
+referencing different vector source, okay, and routing between the different vector stores, okay. Which the agents like, kind of go off on their own right so you don't know what chain they're gonna take? Right? And so, the challenge I was having, I was trying to plug into the frickin link Smith and I've been setting my environment variables inside of my Varzim B. So any my code was using it. And I was trying to do per notebook set set up to connect to Lang Smith with a specific project name and it wasn't mapping I wasn't setting my I wasn't using OS dot environ. Sorry, I was just doing it. I was I was using a bank command pop it as a shell and export it and it wasn't working okay. I've been trying to fuck around with this this some some JavaScript to pull the notebook name and throw it in there. I realized like this is overcomplicated things. Yeah. I made it back.
+
+Unknown Speaker  1:59:28  
+Yeah, the stretch though. Yeah, please. No by any stretch,
+
+Unknown Speaker  1:59:34  
+so it's better when someone else
+
+Colin McNamara  1:59:36  
+stretches you? Oh, yeah. I
+
+Speaker 10  1:59:38  
+took John there. The last time he made their way out on the table. It's shocking to you or fall off. Yeah. They stretch you. You know, different stretches for like different muscles. It's really good. I mean, it because if you try this when you're young, but as you get older, it gets I hips, knees. I had my hips get tight and I wasn't I wasn't
+
+Colin McNamara  2:00:03  
+I was neglecting my stretching practice before you work out I ruptured disk into place to to your Fuck yeah, yeah, this would be good for what I I've been I was on the I was on the couch late lay down on the bed on the couch for almost six months. Yeah, my core is so much stronger. Now. And I use a strap my yoga straps, right? So this is great, like, hip extensors stretches where I'll strap my foot and I'll lay one foot out and lay on a bed doing that you actually have someone doing it for you, right? Oh, and then there's
+
+Speaker 10  2:00:37  
+some there I do cuz I had something here which is cool. Three years ago, I was walking with a walking stick I hear so much. Not epidermis. There's a small muscle that attaches from your hip. Like the knife to your to your spine here and it's called the arm remember? I was yeah, she would know I'm sure it's like something St Germain anyway. So x go here more. Yeah, I hope they do good stretching for that. So there's from from the hiring of that that. This one is a
+
+Colin McNamara  2:01:18  
+very small muscle goes right. It just goes right here.
+
+Speaker 10  2:01:22  
+But when He tightens up, it takes him locks your hip into it so you can't you don't remember what my hip muscle failure was
+
+Unknown Speaker  2:01:38  
+because it was part of
+
+Speaker 10  2:01:39  
+your IT band know what to do. So last year it no I don't remember. I know which one you're talking about. Yes. A great way through Joshua to finish in McAllen. We're gonna do some wrap ups. Yeah.
+
+Unknown Speaker  2:02:01  
+Throw me a curve there.
+
+Speaker 10  2:02:04  
+And then we're gonna do wrap ups. No one else is coming. We're just meeting everyone at the red shift to come down this way anyway from New York. She had checked in or she underwear she has we checked in right before I came
+
+Speaker 10  2:02:25  
+over there these guys go great. Yes, very cool. My brain
+
+Unknown Speaker  2:02:33  
+hurting from all the swelling
+
+Colin McNamara  2:02:36  
+it's good. I don't have a brain so he never slows.
+
+Unknown Speaker  2:02:39  
+Oh, that's good brains getting in trouble.
+
+Unknown Speaker  2:02:42  
+No brains, no headache.
+
+Colin McNamara  2:02:44  
+I was just getting myself in trouble with it without breaking
+
+Speaker 2  2:02:48  
+it. It's her nature. You got.
+
+Unknown Speaker  2:03:03  
+To take a peek at this real quick.
+
+Speaker 6  2:03:05  
+So I have these races. Right. So I created a
+
+Colin McNamara  2:03:10  
+it's an agent and vector store notebook. Right. That's taken from the docs, right? Vector store. Are you able to run a chroma DB
+
+Speaker 5  2:03:22  
+and it's not failing? No. No, it's not. Yes, Chrome Chrome or from documents right?
+
+Colin McNamara  2:03:27  
+So I have two vector stores. I'm defining loading state of the union and then I have a web based loader which is pulling this URL I'm crawling down on my own to compare notes because my mind is failing. And
+
+John Willis  2:03:40  
+I don't know why the fuck is failing. I'll happily compare notes.
+
+Colin McNamara  2:03:48  
+So you have pip installed as Q link
+
+Unknown Speaker  2:03:51  
+chain open AI club MBA currently
+
+Colin McNamara  2:03:57  
+does not.
+
+Unknown Speaker  2:04:00  
+Indeed, did you delete the instance and start from scratch? Okay, cool.
+
+Colin McNamara  2:04:05  
+I'm gonna go do it again but
+
+Unknown Speaker  2:04:12  
+just ran this
+
+Speaker 8  2:04:24  
+the petition because early about I'm afraid to move it back.
+
+Unknown Speaker  2:04:28  
+That actually fixed a bug I had like a month ago.
+
+Unknown Speaker  2:04:33  
+And pip install here just make sure
+
+Speaker 8  2:04:41  
+you guys solve all the world's problems. Just like this is an annoying thing. I had this
+
+John Willis  2:04:46  
+problem a DB thing work and just stop working. It's been working for two months straight and it just stopped there again. It's just pips says Chrome or Chrome or DBS not installed, but that's not true. So it's actually some virtual environment. Yeah, run it. I'm running it right now. So you can see the or you're not you're not using Python virtual environment using
+
+Colin McNamara  2:05:07  
+ADB. Okay. Cool. I mean, I'm using clap Yeah.
+
+Unknown Speaker  2:05:17  
+So now, what do you have for the
+
+Unknown Speaker  2:05:20  
+to include?
+
+Speaker 2  2:05:21  
+Is it just my includes? I've been, I've imported
+
+Colin McNamara  2:05:26  
+these four right here. It's very simple and yeah, that's what I have. And then I have importing. From link chain dot vector storage. We were we got dinner at 530
+
+Speaker 3  2:05:45  
+link that we started. We want to do a summary rather than trying to
+
+Speaker 1  2:05:51  
+regroup on Agenda tomorrow. Yeah.
+
+Unknown Speaker  2:05:58  
+Yeah.
+
+Unknown Speaker  2:06:00  
+All right. We've been asking a lot
+
+Colin McNamara  2:06:02  
+of you literally did not see what are you doing?
+
+Unknown Speaker  2:06:08  
+Like literally ours is
+
+Unknown Speaker  2:06:09  
+identical now. I can understand.
+
+Unknown Speaker  2:06:14  
+So that's kind of
+
+Unknown Speaker  2:06:21  
+just
+
+Speaker 6  2:06:23  
+you know, it could be maybe it has something to do an exam getting a failure on a load, but I'm getting knowing documents
+
+Unknown Speaker  2:06:33  
+loaded but it's a weird error. That's just
+
+Unknown Speaker  2:06:42  
+function routines. Here
+
+Speaker 8  2:06:55  
+Okay, I'm ready to get up and turn the TV. Probably be
+
+Speaker 1  2:07:00  
+a good idea. I will do my thing.
+
+Speaker 8  2:07:16  
+Okay. So yeah, so let's just do the like really fast
+
+John Willis  2:07:20  
+version of what you think we should cover. So I think I still want to give you an hour tomorrow. But our includes, like intense q&a. So like, what would be the slides that wouldn't make us have to have four hours worth of these first 17 slides are okay. We've just got
+
+Speaker 1  2:07:39  
+just the intro our why right and get everybody in. I don't know if I have this list or order. But you know what we could do? There's so much decision time go back to that slide. So what we'll do at that point is,
+
+John Willis  2:07:52  
+we'll actually I'll just say a couple of things about sort of logistics, whatever. And I'll turn it over to you and we decided we'll have everybody do their introduction. And then I had this I just put this in here
+
+Unknown Speaker  2:08:07  
+yeah, just for now, like just delete that for now.
+
+John Willis  2:08:13  
+Because we're gonna have ton of like, what but definitely do keep yours right for sure. And then yeah, then this slide is good. This. Yeah, this is great. We've got so there's some terms Yeah.
+
+Speaker 1  2:08:27  
+I think so. Yep. Okay, perfect. Backups.
+
+Unknown Speaker  2:08:32  
+to kind of get into Are
+
+Speaker 1  2:08:33  
+you okay, like that? A lot of discussion on what we're calling. But I think back to like, just at that point that like Colin showed you and to clarify,
+
+John Willis  2:08:43  
+like what's the difference between a monolith and a foundation and I think you nailed that right. So well, that's a good way that so then, in the future, we can have all are kind of like to Chris's point this morning. The more we can be consistent, the less friction we have later like so when somebody uses a monolithic LLM. We're really clear at this point. That means it can't be drained. When we say foundational, it's one that can be drained. I think that's okay. Definitely doesn't matter. Right. It is like what we're if we
+
+Unknown Speaker  2:09:14  
+agree to agree, then we use it and
+
+Unknown Speaker  2:09:16  
+then we stick with it to areas Okay.
+
+Unknown Speaker  2:09:18  
+All right. Good.
+
+Unknown Speaker  2:09:22  
+I do want to do this
+
+Speaker 3  2:09:24  
+evolution platform in five minutes on that tomorrow. The Gambit I wanted to offer is do you want me to do that five minutes before he gets go to morning because it's five minutes and so I'm able to do it at night talk. Alright.
+
+Unknown Speaker  2:09:44  
+And then this industry overview.
+
+Speaker 1  2:09:45  
+Okay. Sounds good. That was really good and straight into
+
+Unknown Speaker  2:09:50  
+it. Keep doing, please do and then just a quick demo
+
+Speaker 1  2:09:53  
+if we have time to do and the demo is Yeah, totally. Okay. And the demo are the two demos that we saw here for just start document q&a. Right, right. Along with destice document management, yep. And how we're dealing with metadata and again, this is by no means the end all there's just like, gain intuition on how people how we think about the day in the life of someone who loves no cell service to people who are going to create these vectors for security. And then the and then if you could also, just a quick
+
+Speaker 2  2:10:29  
+note here about sort of to your earlier point,
+
+Speaker 1  2:10:34  
+like some of some of us may want to and I think a lot of us will want to opt in for models that may not like an APA API based model that has already been training on a deep amount of knowledge on the general purpose model, because it's the easiest place to start to start working with. What were some of the slides that we covered where you want our questions jumped and I'm wondering if we can slam in a
+
+John Willis  2:10:56  
+couple of those. Do you remember the ones that you sort of jump to? Okay, all right.
+
+Speaker 6  2:11:05  
+I mean, at this point, like we don't really need a court anymore. See that? This
+
+Speaker 2  2:11:09  
+is more of yeah, we're just trying to finish up.
+
+Colin McNamara  2:11:13  
+Yes, so don't worry. All right. Go be with your wife. Yeah. All right. I'm gonna stop recording and get out of here.
+
+Unknown Speaker  2:11:25  
+Okay, sounds good. Yeah, it was awesome.
+
+Unknown Speaker  2:11:28  
+So remember that
+
+John Willis  2:11:29  
+there were certain sites we jumped into some of those I think would be valuable, if you remember. Well, I have to say. I wish I would remember what they were how I look through here and I wouldn't mind pushing them into this. Just those were like very relevant for sure. Yeah, totally. include that in the original
+
+Unknown Speaker  2:11:48  
+discussion for sure.
+
+Unknown Speaker  2:11:52  
+I have these
+
+Unknown Speaker  2:11:58  
+your overview slide with here. Okay. First backups. Yeah,
+
+Unknown Speaker  2:12:07  
+that's a good one, too. I have these
+
+Speaker 2  2:12:12  
+stack ones from Andreessen Horowitz I have
+
+Speaker 1  2:12:15  
+this. Yeah. Check us in a different direction. enterprise scale factor is a good one.
+
+John Willis  2:12:21  
+You have that though. Right in the first 17. Okay. These are technical. Yeah. Yeah.
+
+Speaker 1  2:12:28  
+Yeah, I think we went to the vote go back to those. That that one. Yeah, that one.
+
+Unknown Speaker  2:12:32  
+I take his word. Wow. Yeah, my tickets down the rabbit hole.
+
+Unknown Speaker  2:12:39  
+You know, it's in a backup slide. I
+
+Unknown Speaker  2:12:40  
+can include it to the deck. I'm
+
+Speaker 1  2:12:42  
+going to send it to you. All right. It will send me the like, whatever. Like if you could send me that deck. That'd be awesome. But
+
+John Willis  2:12:48  
+just send you the whole deck. I don't want you to do that. Why don't you send me that deck tonight? I'll go with Oh, that one, I think is ensemble I think first 30 slides
+
+Speaker 1  2:13:03  
+okay, I wouldn't mind you send me the whole thing because then I can see what that's okay.
+
+Unknown Speaker  2:13:08  
+I mean, those might be that might
+
+Unknown Speaker  2:13:10  
+be like like these should be covered in day two, right like
+
+John Willis  2:13:14  
+the ones that I've taken that Andrew Yeah.
+
+Speaker 1  2:13:18  
+I thought was an abridged version. Okay. But it's literally like a two hour start from zero you know nothing to and the end of it. You understand what it takes to train a model you understand? Self attention, you understand positional encoding, the embedding all the way to the sort of final point where we were doing hero shot, one shot, shot, and how they got there and why those smaller models can only do a few shots. versus one shot. Okay, there's doors. So all right, I think that's good.
+
+Unknown Speaker  2:14:00  
+Yeah, we're gonna leave about 10 minutes Yeah.
+
+Unknown Speaker  2:14:11  
+So this is
+
+Speaker 1  2:14:12  
+we're taking this we're using three foundational models, one, open AI and are using one to seven V Allama, 13 v and along with Baffin, which is out of the UK. So we have those models. And then this sort of Bake Off environment where locking down the top P that temperature or locking down all the parameters that we're passing to these models. These models are then exposed by API you can with this scenario, add retrieval object manage generation to any one of them. And you could potentially add different queries of retrieval Augmon generation to each one of them, larger data, fewer data, different encoding types, all these things, potentially debate this off, but this is a sort of scenario where we think people will eventually you have this ensemble of experts that are there that they'll want to test against. So this is sort of a rig leveraging open source software that can potentially front end whether you're doing an AWS with COVID embeddings or anthropic or the coherus foundational model your leveraging data bricks with their NPT models that they've acquired along with either Dali or any of the hugging face models that are out there or something from h2o Ai, the rig and the rig components that we're using are some open source components from h2o dot AI that I'm going to demonstrate here. But again, we are reaching out to open AI for one at least. So the scenario these systems here's the four models. As you can see, we're using long a seven B Falcon seven B Allama 13 D and then GPT 3.5 Turbo, and we've got two systems running here on the inference. So we've got a exposure of an API endpoint here of four 5000. This is my Falcon model. And you can see here for 5001 in this environment in my llama 13 V environment that's running. And then here, I have my inferencing server, that's the front end front ending all four of those models. And then I have the long seven V model that's running here. And these are you can see the space in the memory that you're using. And this is what we're kind of calling full stack. Ai because you really want to be able to characterize the CPU memory disk throughput by the GPU resources that these models are going to consume natively. And then when you put them under load, how many transactions per second can they handle and then eventually, you're going to want a front end cache and various things to offer this. This just as a given you a semblance of what it takes to run some of these foundation models in productive production. And I have just a simple question here about financial literacy. Right? I'm gonna ask that same question to all these models. Now, notice that chat GPT it's out the gate but the keep in mind is up to 3.5. It is the fastest model, right? And it's running over here, right in our Azure open AIG three right environment and it's got a ton of special sauce that's running in the background to make it super fast. We're just running these things right. Native offered these small lab systems that are running on RT, but as you can see, they're responding. They're doing most of them. actually already done. So. So their responses, maybe took a little bit longer. But again, we can catch those things. We can do various mechanisms to make them go faster. But look at the responses. In fact, the response rating for these responses is just as high as the algorithm that we're using. 3.5 So if you get to a scenario where you have an internal use case where it's just training internal users, let's say you're putting this out to salespeople, they don't want to have to get the SEM. Right. You can ask they can ask a technical question or you have let's say a new drug that you're putting out there and you want a question and answer bot from scratch. You can take a corpus of data, put it on top of the foundation on a cloud off and they kind of want that round tripping after 50 million customers and paying by the train to an open AI or and drop it. But in this scenario, you could take this off, you can read team it driving you can move it through that data set off slide like lifecycle if you will run by using a tool like this. So this is again just a high high level demonstration of how we kind of look at this problem. We probably want to get crankin Let's go.
+
+John Willis  2:18:59  
+Any final thoughts? No, I think that's great. I think that'd be a great a great overview tomorrow. There'll be tons of q&a and at that point, we you know, if we're what I want to do is after your after we've gone through a full hour. Then we'll ask everybody like to Christus example as soon as something like like a sort of weird version of coffee shops or whatever the what's the coffee, like call the barber sorry. Like a like we'll just like does everybody want to spend another hour until tomorrow? They want to break out. Like let me know like if we want to do like coffee with you know, I don't want
+
+Speaker 3  2:19:36  
+to delete coffee. I'm just saying like being coffee. Yeah, I definitely. I mean,
+
+John Willis  2:19:40  
+I prefer not to do in coffee. But what I would like to do is have that kind of vote yes or no. After his hour to decide, you know, what do we want to do? Do we? What's the general consensus should we basically do another hour tutorial? Or should we start a discussion about Breakout Rooms saying the Lean Coffee piece because q&a,
+
+Speaker 3  2:20:00  
+regroup and just get what everybody's thinking and try to agenda for the rest of the stream from the hip. Like I'm
+
+Unknown Speaker  2:20:10  
+doing facilitation modes.
+
+Unknown Speaker  2:20:14  
+That layer and a whole bunch of things. Like
+
+John Willis  2:20:17  
+I think it's it's like not a whole bunch like we're not we're not doing like,
+
+Speaker 3  2:20:22  
+real facilitation stuff that I didn't think about. I just thought he was like, I know we're gonna just do Oh, no, we're not gonna I don't want to do breakout.
+
+Unknown Speaker  2:20:34  
+Just to get topics together and
+
+Speaker 3  2:20:37  
+and then we'll see I want to do that more like an open spaces model. I want people to sort of stand
+
+John Willis  2:20:43  
+up and give a presentation on their total like like how we do open spaces, ft. Anyone pretty much the same thing. Right? But I don't I don't want to do anything published. I want to do an open space. I'm gonna do a breakout versus well, but the first thing I want to do is
+
+Unknown Speaker  2:20:58  
+sort of ask everybody do we want to go in at our tutorial
+
+John Willis  2:21:00  
+or do we want to do the breakout or discussion and then based on the vote, we go into a different tutorial session for another hour. Or we then everybody gets up, started proposing their ideas and we talked about on Reddit, and you can even split topics on that. What do we want to cover in QA? What
+
+Speaker 3  2:21:20  
+are we downloading to break out as much? Yeah, I mean, some people might just want to have a meta conversation. Some people might want to jump in and code
+
+John Willis  2:21:28  
+and that's fine, too. Right? Just like an open spaces. Right, but not all. All right. We're all in sync then. synced up. All right. So you're getting picked up by Abby, right?
+
+Colin McNamara  2:21:38  
+Yeah, she submits out.
+
+Speaker 2  2:21:39  
+You go back now can I get right oh, we all gotta hit right. Are
+
+Colin McNamara  2:21:43  
+we going to let's go back to
+
+Unknown Speaker  2:21:45  
+the hotel. We're going back to hotel. Well, you
+
+Unknown Speaker  2:21:48  
+don't have to but you got a few guys in
+
+Colin McNamara  2:21:50  
+the parking you're gonna double parked.
+
+John Willis  2:21:52  
+It's like two blocks from the restaurant next to the hotel which literally two blocks from this. Okay, cool. You're saying no,
+
+Unknown Speaker  2:22:02  
+no, no, not to book resort. It's from the high read that
+
+John Willis  2:22:05  
+they're all at the Hyatt or the Hyatt. I'm gonna I'm moving over my luggage at the Hyatt. Okay, so I'm gonna be my wife sleeping there and she's going where am I? What's going on?
+
+Unknown Speaker  2:22:18  
+Today was supposed to be your day off. It's all
+
+Unknown Speaker  2:22:21  
+okay with that you was supposed to be your day off. It's
+
+Unknown Speaker  2:22:23  
+all okay with that. Yeah
+
