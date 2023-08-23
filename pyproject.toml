@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "media-toolchain"
+version = "0.1.0"
+description = ""
+authors = ["Patrick Debois <Patrick.Debois@jedi.be>"]
+readme = "README.md"
+packages = [{include = "media_toolchain"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.0.271"
+openai = "^0.27.9"
+python-dotenv = "^1.0.0"
+ollama = "^0.0.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
