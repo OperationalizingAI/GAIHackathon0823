@@ -704,6 +704,19 @@ python-levenshtein = {version = ">=0.12", optional = true, markers = "extra == \
 speedup = ["python-levenshtein (>=0.12)"]
 
 [[package]]
+name = "google-search-results"
+version = "2.4.2"
+description = "Scrape and search localized results from Google, Bing, Baidu, Yahoo, Yandex, Ebay, Homedepot, youtube at scale using SerpApi.com"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "google_search_results-2.4.2.tar.gz", hash = "sha256:603a30ecae2af8e600b22635757a6df275dad4b934f975e67878ccd640b78245"},
+]
+
+[package.dependencies]
+requests = "*"
+
+[[package]]
 name = "gptcache"
 version = "0.1.40"
 description = "GPTCache, a powerful caching library that can be used to speed up and lower the cost of chat applications that rely on the LLM service. GPTCache works as a memcache for AIGC applications, similar to how Redis works for traditional applications."
@@ -3311,4 +3324,4 @@ termcolor = ">=2.3,<3.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "be20eea4187021f3fd0a4e77c3c1f4883cbc0c9200311c7f3a3c3f1dfad175b9"
+content-hash = "1ea9ef21329691c645eae2e92062d1b6216ba290142dc97ad1cab5f85c1ae3d6"
