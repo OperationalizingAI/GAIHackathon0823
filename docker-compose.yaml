@@ -1,0 +1,20 @@
+version: '3'
+services:
+  streamlit:
+    image: streamlit:latest
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    environment:
+      OPENAI_KEY: /run/secrets/openai_key
+    ports:
+      - '8051:8051'
+    #volumes:
+      # map your external files here
+      #- ${PWD}/vector.db:/app/db/vector.db
+    secrets:
+      - openai_key
+
+secrets:
+  openai_key:
+    file: openai.key 
