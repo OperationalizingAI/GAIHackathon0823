@@ -4,3 +4,6 @@ __pycache__
 map_cache_*
 faiss.index
 sqlite.db
+.DS_Store
+**/*.ipynb_checkpoints/
+*.key
