@@ -1,12 +1,10 @@
 version: '3'
 services:
   streamlit:
-    image: streamlit:latest
+    image: gai:latest
     build:
       context: ./
       dockerfile: ./Dockerfile
-    environment:
-      OPENAI_KEY: /run/secrets/openai_key
     ports:
       - '8051:8051'
     #volumes:
