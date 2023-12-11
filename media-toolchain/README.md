@@ -11,12 +11,12 @@
 
 ## Programs 
 
-- 01_simple_llm.py 
-- 02_simple_chat.py
-- 04_caching_llm.py
-- 05_docloading.py
-- 06_splitters.py
-- 07_embeddings.py
-- 08_retrieval.py
-- 09_agent.py
-- pretty_print_callback_handler.py
+- 01_simple_llm.py - Sample program to use a simple LLM
+- 02_simple_chat.py - Sample program to create a chatbot
+- 04_caching_llm.py - Sample program to show caching
+- 05_docloading.py - Sample prograam for document loading
+- 06_splitters.py - Sample program to split text 
+- 07_embeddings.py - Sample program to use embeddings
+- 08_retrieval.py - Sample retreival example
+- 09_agent.py - Sample agent example
+- pretty_print_callback_handler.py - Sample code for tracing
