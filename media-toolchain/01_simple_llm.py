@@ -1,11 +1,9 @@
 from langchain.llms import OpenAI, Ollama
 import dotenv
 from pretty_print_callback_handler import PrettyPrintCallbackHandler
+from langchain import PromptTemplate
 
 dotenv.load_dotenv()
-
-
-from langchain import PromptTemplate
 
 # prompt_template = PromptTemplate.from_template(
 #    "Tell me a {adjective} joke about {content}."
@@ -18,4 +16,4 @@ llm.callbacks = [pretty_callback]
 # llm = Ollama(model="llama2-uncensored")
 result = llm(prompt)
 
-print(result)
+print(results)
