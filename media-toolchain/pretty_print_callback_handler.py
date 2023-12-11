@@ -5,7 +5,6 @@ from langchain.schema.document import Document
 
 from uuid import UUID
 
-
 class PrettyPrintCallbackHandler(BaseCallbackHandler):
     """Base callback handler that can be used to handle callbacks from langchain."""
 
