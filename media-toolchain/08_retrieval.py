@@ -5,7 +5,6 @@ from langchain.vectorstores import Chroma
 from langchain.embeddings import SentenceTransformerEmbeddings
 from pretty_print_callback_handler import PrettyPrintCallbackHandler
 
-
 from dotenv import load_dotenv
 
 load_dotenv()
