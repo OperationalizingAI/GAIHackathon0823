@@ -1,10 +1,9 @@
 from langchain.chat_models import ChatOpenAI
 import dotenv
 from pretty_print_callback_handler import PrettyPrintCallbackHandler
+from langchain.chat_models import ChatOpenAI
 
 dotenv.load_dotenv()
-
-from langchain.chat_models import ChatOpenAI
 
 chat = ChatOpenAI()
 
