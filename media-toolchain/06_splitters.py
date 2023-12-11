@@ -11,7 +11,6 @@ def text_splitter():
     # )
     # texts = text_splitter.create_documents([meta_snippet])
 
-
 def markdown_splitter():
     meta_snippet = ""
     # This is a long document we can split up.
