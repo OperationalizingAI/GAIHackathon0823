@@ -9,7 +9,6 @@ dotenv.load_dotenv()
 
 embeddings_model = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 
-
 embeddings = embeddings_model.embed_documents(
     [
         "Hi there!",
