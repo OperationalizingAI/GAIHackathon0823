@@ -8,10 +8,8 @@ from dotenv import load_dotenv
 
 from pretty_print_callback_handler import PrettyPrintCallbackHandler
 
-
 load_dotenv()
 my_callback = PrettyPrintCallbackHandler()
-
 
 search = SerpAPIWrapper()
 tools = [
